@@ -8,12 +8,14 @@ import { MaterialModule } from './material/material.module';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { VoitureComponent } from './voiture/voiture.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    VoitureComponent
   ],
   imports: [
     BrowserModule,
