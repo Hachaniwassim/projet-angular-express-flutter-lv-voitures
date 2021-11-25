@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {voitures} from "./../voiture-list";
+import { voiture } from "./../voiture.model";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public voituresList: voiture[] = voitures;
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
