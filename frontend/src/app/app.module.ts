@@ -9,13 +9,17 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { VoitureComponent } from './voiture/voiture.component';
+import { FooterComponent } from './footer/footer.component';
+import { VoitureDetailsComponent } from './home/voiture-details/voiture-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    VoitureComponent
+    VoitureComponent,
+    FooterComponent,
+    VoitureDetailsComponent
   ],
   imports: [
     BrowserModule,
