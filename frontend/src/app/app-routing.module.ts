@@ -11,7 +11,13 @@ const routes : Routes =[
   { path : "voiture", component : VoitureComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path : "voiturevendre", component : VoiturevendreComponent},
-  { path : "**", component : NotFoundComponent}
+ //teams routing
+ 
+ { path: 'teams', loadChildren: () => import('./teams/teams.module').then(m => m.TeamsModule) },
+ 
+ //notfound
+
+ { path : "**", component : NotFoundComponent},
 
 ]
   
