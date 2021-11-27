@@ -1,1 +1,30 @@
-<p>teams-details works!</p>
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          
+            <div class="container mt-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-7">
+                        <div class="card p-3 py-4">
+                            <div class="text-center"> <img [src]="team?.image" width="200" class="rounded-circle"> </div>
+                            <div class="text-center mt-3"> 
+                                <h5 class="mt-2 mb-0" >{{ team?.name }}</h5>
+                                <div class="px-4 mt-1"> 
+                                    <div style="text-align: bottom;"><span> Mail  : {{ team?.mail }}</span></div>
+                                     <div style="text-align:bottom;"><span> Phone : {{ team?.phone }}</span></div>
+                                     <div style="text-align:bottom;"><span> City  : {{ team?.city }}</span></div>
+                                    <a mat-icon-button ><mat-icon>facebook</mat-icon></a>
+                                    <a mat-icon-button> <i class="fab fa-instagram fa-lg fa-fw "></i></a>
+                                    <a mat-icon-button> <i class="fab fa-twitter fa-lg fa-fw "></i></a>
+                                    <a mat-icon-button> <i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+   
+</main>
+<br><br><br>
