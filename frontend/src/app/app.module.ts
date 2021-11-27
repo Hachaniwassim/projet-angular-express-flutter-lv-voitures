@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { VoitureComponent } from './voiture/voiture.component';
 import { FooterComponent } from './footer/footer.component';
 import { VoitureDetailsComponent } from './home/voiture-details/voiture-details.component';
+import { VoiturevendreComponent } from './voiturevendre/voiturevendre.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { VoitureDetailsComponent } from './home/voiture-details/voiture-details.
     HomeComponent,
     VoitureComponent,
     FooterComponent,
-    VoitureDetailsComponent
+    VoitureDetailsComponent,
+    VoiturevendreComponent
   ],
   imports: [
     BrowserModule,
