@@ -12,6 +12,8 @@ import { VoitureComponent } from './voiture/voiture.component';
 import { FooterComponent } from './footer/footer.component';
 import { VoitureDetailsComponent } from './home/voiture-details/voiture-details.component';
 import { VoiturevendreComponent } from './voiturevendre/voiturevendre.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ClientsDetailsComponent } from './clients/clients-details/clients-details.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { VoiturevendreComponent } from './voiturevendre/voiturevendre.component'
     FooterComponent,
     VoitureDetailsComponent,
     VoiturevendreComponent,
+    ClientsComponent,
+    ClientsDetailsComponent,
  
   ],
   imports: [

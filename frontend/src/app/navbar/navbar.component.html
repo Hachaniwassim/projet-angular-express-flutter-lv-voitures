@@ -18,7 +18,7 @@
                       <a class="nav-link" routerLink="/home">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/teams">About</a>
+                      <a class="nav-link" routerLink="/teams">About</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" routerLink="/voiturevendre" >Buy</a>
@@ -26,8 +26,16 @@
                   <li class="nav-item">
                       <a class="nav-link" routerLink="/voiture">Rental</a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Contact</a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      options
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="/clients">clients feedback</a></li>
+                      <li><a class="dropdown-item" href="#">sign in</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">sign up</a></li>
+                    </ul>
                   </li>
               </ul>
           </div>
