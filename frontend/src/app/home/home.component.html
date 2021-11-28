@@ -76,11 +76,8 @@
   <section class="container py-5">
     <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-            <h1 class="h1">Categories of The Month</h1>
+            <h1 class="h1">Our Categories </h1>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
         </div>
     </div>
@@ -100,21 +97,19 @@
   <!-- End Categories of The Month -->
   
   
-  <!-- Start Featured Product -->
+
   <section class="bg-light">
     <div class="container py-5">
         <div class="row text-center py-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Produit en vedette                </h1>
+                <h1 class="h1">Voitures en vedette </h1>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                  when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
             </div>
         </div>
-        <div class="col container" *ngFor="let voiture of voituresList">
-            <div class="col col-md-4 mb-4">
+        <div class="col container" >
+            <div class="row">
+            <div class="col col-md-4 mb-4"*ngFor="let voiture of voituresList">
                 <div class="card h-100">
                     <a href="#">
                         <img [src]="voiture.image" style="height: 210px ; width: 100%;" class="card-img-top" alt="...">
@@ -129,7 +124,7 @@
                         <a href="#" class="h2 text-decoration-none text-dark">{{ voiture.title }}</a>
                         <p class="card-text"> {{ voiture.description|slice:0:70 }} [...]</p>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/detailsvoiture"><i class="bi bi-zoom-in"></i></button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" ><i class="bi bi-zoom-in"></i></button>
                             <button type="button" class="btn btn-sm btn-outline-secondary"><i
                                 class="bi bi-cart-plus"></i></button>
                         </div>
@@ -137,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            
+           </div> 
         </div>
     </div>
   </section>
