@@ -12,7 +12,7 @@ export const teams :Teams[] = [
     
   },{
     id: '2',
-    name: 'Mouhamed Wassim Hachani',
+    name: 'Wassim Hachani',
     mail: 'WassimHachani@gmail.com',
     phone: '+21612345678',
     image: 'assets/images/wassim.jpg',
