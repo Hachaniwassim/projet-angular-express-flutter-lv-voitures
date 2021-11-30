@@ -8,10 +8,13 @@ import { MaterialModule } from './material/material.module';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
-import { VoitureComponent } from './voiture/voiture.component';
 import { FooterComponent } from './footer/footer.component';
-import { VoitureDetailsComponent } from './home/voiture-details/voiture-details.component';
 import { VoiturevendreComponent } from './voiturevendre/voiturevendre.component';
+import { ServicesComponent } from './services/services.component';
+import { CarsComponent } from './cars/cars.component';
+import { AboutComponent } from './about/about.component';
+import { BlogComponent } from './blog/blog.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -19,10 +22,13 @@ import { VoiturevendreComponent } from './voiturevendre/voiturevendre.component'
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    VoitureComponent,
     FooterComponent,
-    VoitureDetailsComponent,
     VoiturevendreComponent,
+    ServicesComponent,
+    CarsComponent,
+    AboutComponent,
+    BlogComponent,
+    ContactComponent,
  
   ],
   imports: [
