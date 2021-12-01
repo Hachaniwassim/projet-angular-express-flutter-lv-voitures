@@ -24,6 +24,8 @@ const routes : Routes =[
  //teams routing
  
  { path: 'teams', loadChildren: () => import('./teams/teams.module').then(m => m.TeamsModule) },
+
+  { path: 'voiture_vendre', loadChildren: () => import('./voiture-vendre/voiture-vendre.module').then(m => m.VoitureVendreModule) },
  
 
  //notfound

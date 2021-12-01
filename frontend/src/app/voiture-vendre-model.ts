@@ -9,4 +9,9 @@ export interface voiture_vendre {
     price: number;
     goals: string[];
     requirements: string[];
+
+    doors: number;
+    seats: number;
+    transmission: string;
+    age: number;
   }
