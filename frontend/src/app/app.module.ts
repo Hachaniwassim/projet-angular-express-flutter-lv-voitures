@@ -15,6 +15,7 @@ import { CarsComponent } from './cars/cars.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
+import { VoiturevendreDetailsComponent } from './voiturevendre/voiturevendre-details/voiturevendre-details.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     BlogComponent,
     ContactComponent,
+    VoiturevendreDetailsComponent,
  
   ],
   imports: [
