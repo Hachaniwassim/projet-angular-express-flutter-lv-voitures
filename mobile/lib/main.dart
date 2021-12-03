@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './classes/voitures.dart' ;
+import 'package:mobile/rentcars.dart';
 import 'about.dart';
 void main() {
   runApp(const MyApp());
@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Myaboutcreen(title: 'Welcome to our Project'),
+      home: const Myaboutcreen(title: 'Flyquest Rent and Buy cars'),
       routes: {
         '/About': (BuildContext context) => const Myaboutcreen(title: "About page"),
+        '/rentcars': (BuildContext context) => const Myrentpage(title: "Rent cars page"),
+
       },
     );
   }

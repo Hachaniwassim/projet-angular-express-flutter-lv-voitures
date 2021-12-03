@@ -18,14 +18,30 @@ class Myaboutcreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              "About page",
+              "About Page",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
                 color: Colors.teal
               ),
             ),
-
+            const Padding(padding: EdgeInsets.only(bottom: 20)),
+            RaisedButton(
+              child: const Text("Rent a car"),
+                color: Colors.teal,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/rentcars');
+                }
+            ),const Padding(padding: EdgeInsets.only(bottom: 10)),
+            RaisedButton(
+                child: const Text("Buy a car"),
+                color: Colors.teal,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/screen3');
+                }
+            ),
           ],
         ),
       ),
