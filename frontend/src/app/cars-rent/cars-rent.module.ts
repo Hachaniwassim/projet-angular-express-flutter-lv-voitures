@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CarsRentRoutingModule } from './cars-rent-routing.module';
 import { CarsRentComponent } from './cars-rent.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { CarsRentComponent } from './cars-rent.component';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     CarsRentRoutingModule
   ]
 })
