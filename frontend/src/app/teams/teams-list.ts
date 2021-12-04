@@ -7,7 +7,7 @@ export const teams :Teams[] = [
     mail: 'abirtarchoun.8@gmail.com',
     phone: '+21628097322',
     image: 'assets/images/abir.jpg', 
-    city: 'bizerte'
+    city: 'bizerte',
   
     
   },{
