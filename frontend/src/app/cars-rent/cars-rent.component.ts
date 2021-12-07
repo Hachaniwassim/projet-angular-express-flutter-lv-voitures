@@ -9,10 +9,13 @@ import { voiture } from "./../voiture.model";
 })
 export class CarsRentComponent implements OnInit {
   public voituresList: voiture[] = voitures;
+ 
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(
+   
+  ): void {
   }
 
 }

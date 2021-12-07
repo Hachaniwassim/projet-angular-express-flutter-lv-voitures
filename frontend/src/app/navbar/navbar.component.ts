@@ -12,4 +12,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  reloadPage() {
+    setTimeout(()=>{
+      window.location.reload();
+    }, 1000);
+}
+
 }
