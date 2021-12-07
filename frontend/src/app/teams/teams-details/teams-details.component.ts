@@ -25,4 +25,6 @@ export class TeamsDetailsComponent implements OnInit {
     return this.team ? this.team.mail : "";
 
 }
+
+
 }

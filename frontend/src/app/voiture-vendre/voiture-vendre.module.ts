@@ -6,6 +6,7 @@ import { VoitureVendreComponent } from './voiture-vendre.component';
 import { VoitureVendreDetailsComponent } from './voiture-vendre-details/voiture-vendre-details.component';
 
 
+
 @NgModule({
   declarations: [
     VoitureVendreComponent,
@@ -13,7 +14,8 @@ import { VoitureVendreDetailsComponent } from './voiture-vendre-details/voiture-
   ],
   imports: [
     CommonModule,
-    VoitureVendreRoutingModule
+    VoitureVendreRoutingModule,
+  
   ]
 })
 export class VoitureVendreModule { }
