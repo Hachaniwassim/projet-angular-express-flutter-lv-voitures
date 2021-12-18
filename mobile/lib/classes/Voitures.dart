@@ -1,13 +1,12 @@
-import 'dart:ffi';
 
 class Voitures{
     int _matricule;
     String _marque;
     String _modele;
     String _puissance;
-    Float _kilometrage;
+    String  _kilometrage;
     bool _etat;
-    Float _prix;
+    String _prix;
     int _quantite;
     String _couleur;
     DateTime _date_dernier_entretien;
@@ -42,9 +41,9 @@ class Voitures{
     _quantite = value;
   }
 
-  Float get prix => _prix;
+   String get prix => _prix;
 
-  set prix(Float value) {
+  set prix( String value) {
     _prix = value;
   }
 
@@ -54,9 +53,9 @@ class Voitures{
     _etat = value;
   }
 
-  Float get kilometrage => _kilometrage;
+    String get kilometrage => _kilometrage;
 
-  set kilometrage(Float value) {
+  set kilometrage( String value) {
     _kilometrage = value;
   }
 
