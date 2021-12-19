@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
-import { AboutComponent } from './about/about.component';
+
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 
@@ -22,7 +22,7 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     FooterComponent,
     ServicesComponent,
-    AboutComponent,
+
     BlogComponent,
     ContactComponent,
  

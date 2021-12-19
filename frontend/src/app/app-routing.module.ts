@@ -4,18 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ServicesComponent } from './services/services.component';
-import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
-import { TeamsComponent } from './teams/teams.component';
 
 const routes : Routes =[
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path : "home", component : HomeComponent},
   { path : "services" ,component :ServicesComponent},
-  { path : "about", component: AboutComponent},
+ // { path : "about", component: AboutComponent},
   { path : "blog", component :BlogComponent}, 
   { path :  "contact",component: ContactComponent}, 
 
@@ -27,6 +25,10 @@ const routes : Routes =[
   { path: 'voiture_vendre', loadChildren: () => import('./voiture-vendre/voiture-vendre.module').then(m => m.VoitureVendreModule) },
 
   { path: 'cars-rent', loadChildren: () => import('./cars-rent/cars-rent.module').then(m => m.CarsRentModule) },
+
+  { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
+
+  { path: 'feedback', loadChildren: () => import('./feedback/feedback.module').then(m => m.FeedbackModule) },
  
 
  //notfound
