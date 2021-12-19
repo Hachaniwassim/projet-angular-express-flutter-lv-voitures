@@ -48,7 +48,13 @@
   <div class="overlay"></div>
   <div class="page_title_area has_overlay d-flex align-items-center clearfix">
     <div class="container " data-aos="fade-up" data-aos-delay="100">
-      <div class="row">
+        <div class="row justify-content-center text-center mb-5 section-2-title">
+          <div class="col-md-6">
+            <span class="text-primary">Our Cars</span>
+            <h2 class="mb-4">Our Cars For Sales </h2>
+          </div>
+        </div>
+        <div class="row">
         <div class="col-lg-4 col-md-6 mb-4" *ngFor="let voiturevendre of voituresvendreList">
           <div class="item-1">
             <a href="#"><img [src]="voiturevendre.image" alt="Image" class="img-fluid"></a>
@@ -80,7 +86,7 @@
 
               </ul>
               <div class="d-flex action">
-                <a routerLink="/voiture_vendre/{{ voiturevendre.id }}" class="btn btn-primary">Rent Now</a>
+                <a routerLink="/voiture_vendre/{{ voiturevendre.id }}" class="btn btn-primary">Buy Now</a>
               </div>
             </div>
           </div>

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { companys } from './company-list';
-import { Companys } from './Company.models';
 import { teams } from './teams-list';
 import { Teams } from './teams.model';
 
@@ -11,9 +9,6 @@ import { Teams } from './teams.model';
 })
 export class TeamsComponent implements OnInit {
   public teamsList: Teams[] = teams;
-  public CompanyList: Companys[] = companys;
-  public company?: Companys;
-
   constructor() { }
 
   ngOnInit(): void {

@@ -27,8 +27,7 @@ export const voitures: voiture[] = [
       id: '2',
       title: 'Golf 8',
       description:'La Golf VIII est une berline compacte qui est la 8e génération de Volkswagen Golf produite à plus de 35 millions exemplaires depuis 1974 par le constructeur automobile allemand Volkswagen, et commercialisée à partir de mars 2020. Elle succède à la Golf VII produite de 2012 à 2019.',
-      image:
-        'https://sf2.auto-moto.com/wp-content/uploads/sites/9/2019/10/volkswagen-golf-8-1-615x410.jpg',
+      image:'https://sf2.auto-moto.com/wp-content/uploads/sites/9/2019/10/volkswagen-golf-8-1-615x410.jpg',
       last_update: '5/2020',
       instructor:  'Wolswagen',
       language: 'English',
