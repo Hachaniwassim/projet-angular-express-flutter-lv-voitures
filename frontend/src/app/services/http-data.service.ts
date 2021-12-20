@@ -53,11 +53,23 @@ create(item:any):Observable<Voiture>{
  }
 
 
-  // get carq by ID 
+  // get carq by matricule
   getByid(matricule:string):Observable<Voiture>{
     return this.http.get<Voiture>(this.base_url + '/' +matricule).pipe(retry(2),catchError(this.handleError));
 
   }
+
+   // update cars by Id the
+   update(matricule: string , item :any){
+     return this.http.put<Voiture>(this.base_url + '/' +matricule,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError));
+   }
+
+    // delete cars
+    delete(matricule: string){
+      return this.http.delete<Voiture>(this.base_url + '/' +matricule,this.httpOptions).pipe(retry(2),catchError(this.handleError));
+  
+
+    }
 
 }
 
