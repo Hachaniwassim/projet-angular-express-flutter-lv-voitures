@@ -1,0 +1,45 @@
+{
+  "voiture": [
+    {
+      "matricule": 1123,
+      "modele": "Porche",
+      "marque": "Porche",
+      "puissance": " c4-12",
+      "kilometrage": "200/klm",
+       "prix":"350000"
+    },
+    {
+      "matricule": 1124,
+      "modele": "Porche",
+      "marque": "Porche",
+      "puissance": " c4-12",
+      "kilometrage": "200/klm",
+       "prix":"350000"
+    },
+    {
+      "matricule": 1125,
+      "modele": "Porche",
+      "marque": "Porche",
+      "puissance": " c4-12",
+      "kilometrage": "200/klm",
+       "prix":"350000"
+    },
+    {
+      "matricule": 1126,
+      "modele": "Porche",
+      "marque": "Porche",
+      "puissance": " c4-12",
+      "kilometrage": "200/klm",
+       "prix":"350000"
+    },
+    {
+      "matricule": 1127,
+      "modele": "Porche",
+      "marque": "Porche",
+      "puissance": " c4-12",
+      "kilometrage": "200/klm",
+       "prix":"350000"
+    }
+  ]
+
+}

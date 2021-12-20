@@ -7,7 +7,6 @@ import { ServicesComponent } from './services/services.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
-
 const routes : Routes =[
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
