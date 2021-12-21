@@ -1,6 +1,54 @@
 
     
 
+	  <!-- backtotop - start -->
+		<div id="thetop"></div>
+		<div class="backtotop">
+			<a href="#" class="scroll">
+				<i class="fa fa-arrow-up"></i>
+			</a>
+		</div>
+		<!-- backtotop - end -->                  
+   
+     <!-- preloader - start -->
+  <div class="preloader">
+    <div class="animation_preloader">
+      <div class="spinner"></div>
+      <p class="text-center">Loading</p>
+    </div>
+    <div class="loader">
+      <div class="row vh-100">
+        <div class="col-3 loader_section section-left">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader_section section-left">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader_section section-right">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader_section section-right">
+          <div class="bg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- preloader - end -->
+  
+  
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('assets/images/plan19.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h1 style="color:rgb(232, 232, 232)">Our Blog </h1>
+            <h3 align="center"  style="color:rgb(232, 232, 232)">Feel The Difference
+              ,Going Beyon</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
 <br><br><br><br><br>
 <div class="container">
     <h1></h1>
@@ -46,7 +94,7 @@
      <mat-header-cell *matHeaderCellDef></mat-header-cell>
      <mat-cell *matCellDef="let row">
        <button mat-icon-button ><mat-icon>edit_outline</mat-icon></button>
-       <button mat-icon-button color="warn" ><mat-icon>delete_outline</mat-icon></button>
+       <button mat-icon-button color="warn" (click)="onDelete(row.matricule)"><mat-icon>delete_outline</mat-icon></button>
    
      </mat-cell>
    </ng-container>
