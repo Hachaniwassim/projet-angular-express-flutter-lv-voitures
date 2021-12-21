@@ -7,7 +7,6 @@ import { ServicesComponent } from './services/services.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
-
 const routes : Routes =[
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +28,8 @@ const routes : Routes =[
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
 
   { path: 'feedback', loadChildren: () => import('./feedback/feedback.module').then(m => m.FeedbackModule) },
+
+  { path: 'cars', loadChildren: () => import('./cars/cars.module').then(m => m.CarsModule) },
  
 
  //notfound
