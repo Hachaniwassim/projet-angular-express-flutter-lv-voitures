@@ -37,9 +37,9 @@ export class CarsComponent implements OnInit {
   }
   ngOnInit(): void {
     
+    this.datasource.sort = this.sort;
     this. datasource.paginator = this.paginator;
-
-  this.getAllCars();
+    this.getAllCars();
 }
 
 

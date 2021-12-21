@@ -1,4 +1,6 @@
 
+    
+
 <br><br><br><br><br>
 <div class="container">
     <h1></h1>
@@ -17,7 +19,7 @@
 <div class="mat-elevation-z8">
  <mat-table [dataSource]="datasource" matSort>
    <ng-container matColumnDef="matricule">
-     <mat-header-cell *matHeaderCellDef  mat-sort-header > Matricule# </mat-header-cell>
+     <mat-header-cell *matHeaderCellDef  mat-sort-header> Matricule# </mat-header-cell>
      <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.matricule}}   </mat-cell>
    </ng-container>
    <ng-container matColumnDef="modele">
@@ -30,15 +32,15 @@
    </ng-container> 
    <ng-container matColumnDef="puissance">
      <mat-header-cell *matHeaderCellDef mat-sort-header>  Puissance </mat-header-cell>
-     <mat-cell *matCellDef="let element">      {{element.puissance}}   </mat-cell>
+     <mat-cell *matCellDef="let element">{{element.puissance}}</mat-cell>
    </ng-container>
    <ng-container matColumnDef="kilometrage">
      <mat-header-cell *matHeaderCellDef mat-sort-header> Kilometrage </mat-header-cell>
-     <mat-cell *matCellDef="let element">      {{element.kilometrage}      </mat-cell>
+     <mat-cell *matCellDef="let element">{{element.kilometrage}  </mat-cell>
    </ng-container>
    <ng-container matColumnDef="prix">
      <mat-header-cell *matHeaderCellDef mat-sort-header> Price</mat-header-cell>
-     <mat-cell *matCellDef="let element">      {{element.prix}}   </mat-cell>
+     <mat-cell *matCellDef="let element">{{element.prix}}</mat-cell>
    </ng-container> 
    <ng-container matColumnDef="actions">
      <mat-header-cell *matHeaderCellDef></mat-header-cell>
@@ -51,7 +53,7 @@
    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
  </mat-table>
- <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+ <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
 </div>
 <br>
