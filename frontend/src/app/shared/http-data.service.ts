@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Voiture } from '../models/listvoiture';
 import { retry, catchError } from 'rxjs/operators'; 
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -33,18 +34,15 @@ export class HttpDataService {
     // the response body may contain clues as to what went wrong 
     console.error(`backend returned code ${error.status}, ` +
     `body was : ${ error.error}`
-    );
-
-
-  }
+    );}
    // return an observabel with a user-facing error message 
   return throwError( 'something bad happined , please try again later .');
 };
 
 
 // insert a car
-create(item:any):Observable<Voiture>{
-  return this.http.post<Voiture>(this.base_url,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError));
+create(car : Voiture):Observable<any>{
+  return this.http.post<Voiture>(this.base_url,JSON.stringify(car),this.httpOptions).pipe(retry(2),catchError(this.handleError));
 }
 
 //get all cars data 
@@ -67,15 +65,33 @@ create(item:any):Observable<Voiture>{
     // delete cars
     delete(id:number){
       return this.http.delete<Voiture>(this.base_url + '/' +id,this.httpOptions).pipe(retry(2),catchError(this.handleError));
-  
-
-  //  }
-      // Delete
-  //delete(id: any) {
-   // return this.http.delete(`${this.base_url}/${id}`);
-  //}
 
 }
+
+//validation formulaire
+  form : FormGroup= new FormGroup({
+  id : new FormControl(null),
+  matricule: new FormControl('',Validators.required),
+  modele : new FormControl('',[ Validators.required,Validators.minLength(3)]),
+  marque: new FormControl('',[Validators.required,Validators.minLength(3)]),
+  puissance : new FormControl('',Validators.required),
+  kilometrage : new FormControl('',Validators.required),
+  prix : new FormControl('',Validators.required)
+});
+
+// inialisation formulaire 
+initializeFormGroup() {
+  this.form.setValue({
+    id: null,
+    matricule: '',
+    modele: '',
+    marque: '',
+    puissance: '',
+    kilometrage: '',
+    prix: '',
+  });
+}
+
 }
 
 

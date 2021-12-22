@@ -1,8 +1,7 @@
 import { Component, OnInit , ViewChild } from '@angular/core';
 import * as _ from 'lodash'
-import { MaterialModule } from '../material/material.module';
 import { NgForm } from '@angular/forms';
-import {HttpDataService} from '../shared/http-data.service';
+import { HttpDataService} from '../shared/http-data.service';
 import { Voiture } from '../models/listvoiture';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -18,9 +17,12 @@ import { NotificationService } from '../shared/notification.service';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  @ViewChild('carsForm', {  static : false}) carsForm!:NgForm;
+  @ViewChild('carsForm', {  static : false})
+  carsForm!:NgForm;
   carsData !: Voiture ;
   voiture !: Voiture[] ;
+  
+  base_url ="http://localhost:3000/voiture";
   
   datasource = new MatTableDataSource(this.voiture)
   displayedColumns : string []= [ 'id','matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
@@ -30,7 +32,7 @@ export class CarsComponent implements OnInit {
   isEditeMode = false ;
   searchKey!: string ;
 
-  constructor( private httpDataService : HttpDataService ,  private dialog: MatDialog, private dialogService: DialogService,
+  constructor( public httpDataService : HttpDataService ,  private dialog: MatDialog, private dialogService: DialogService,
     private notificationService: NotificationService) { 
      this.carsData = {} as Voiture;
   }
@@ -90,6 +92,23 @@ export class CarsComponent implements OnInit {
 
     }
 
-  }
+    onSubmit(){
+      if (this.httpDataService.form.valid) {
+          this.httpDataService.create(this.httpDataService.form.value).subscribe((response)=>{
+            console.log(); 
+            
+      this.notificationService.success(':: Submitted successfully');
+            this.getAllCars();
+            
+          })
+        } }
 
+  
+
+  
+  onClear() {
+    this.httpDataService.form.reset();
+    this.httpDataService.initializeFormGroup();
+  }
+}
 

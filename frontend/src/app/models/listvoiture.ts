@@ -1,10 +1,9 @@
 export class Voiture {
-    id!:number;
-    matricule!:string;
-    modele!: string;
-    marque!: string;
-    puissance!:  string;
-    kilometrage!: string;
-    prix!:number;
-  static matricule: string;
+   
+    matricule:any;
+    modele: any;
+    marque: any;
+    puissance:  any;
+    kilometrage:any;
+    prix :any;
 }
