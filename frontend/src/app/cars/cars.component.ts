@@ -23,7 +23,7 @@ export class CarsComponent implements OnInit {
   voiture !: Voiture[] ;
   
   datasource = new MatTableDataSource(this.voiture)
-  displayedColumns : string []= [ 'matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
+  displayedColumns : string []= [ 'id','matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort, {}) sort!: MatSort;
     
@@ -62,20 +62,33 @@ export class CarsComponent implements OnInit {
       this.datasource.filter = this.searchKey.trim().toLowerCase();
     }
 
-    onDelete(matricule: string){
-      this.dialogService.openConfirmDialog('Are you sure to delete this record ?')
-      .afterClosed().subscribe((res: any) =>{
-        if(res){
-          this.httpDataService.delete(matricule)
-          this.datasource.data=this.datasource.data.filter((o:any)=>{
-            return o.matricule !== matricule ? o : false ;
+    onDelete(id: number){
+    this.dialogService.openConfirmDialog('Are you sure to delete this record ?')
+     .afterClosed().subscribe((res: any) =>{
+       if(res){
+          this.httpDataService.delete(id).subscribe((response:any)=>{
+            this.datasource.data=this.datasource.data.filter((o:any)=>{
+              return o.id !== id ? o : false ;
+            })
+            console.log(this.datasource.data);
+
           })
-            this.datasource.data;
            this.notificationService.warn('! Deleted successfully');
+           this.getAllCars();
         }
-      });
+     });
     }
 
+    Edit(element :any){
+
+      this.carsData= _.cloneDeep(element);
+      this.isEditeMode=true;
+    }
+    cancelEdit(){
+      this.isEditeMode=false;
+      this.carsForm.resetForm();
+
+    }
 
   }
 
