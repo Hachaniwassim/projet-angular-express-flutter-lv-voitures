@@ -20,21 +20,30 @@
     },
     {
       "id": 3,
-      "matricule": "123-tunis-8202",
+      "matricule": "123-tunis-8200",
       "modele": "BMW x5",
-      "marque": "lamburghini",
-      "puissance": " LMB",
+      "marque": "bmw",
+      "puissance": " x5",
       "kilometrage": "200/klm",
-      "prix": "800000000"
+      "prix": "10000000"
     },
     {
       "id": 4,
-      "matricule": "123-tunis-8203",
-      "modele": "passat",
-      "marque": "passat",
-      "puissance": " LM",
-      "kilometrage": "250/klm",
-      "prix": "60500000"
+      "matricule": "123-tunis-8201",
+      "modele": "clio",
+      "marque": "clio",
+      "puissance": " LMB",
+      "kilometrage": "200/klm",
+      "prix": "200000000"
+    },
+    {
+      "id": 6,
+      "matricule": "123-tunis-8010",
+      "modele": "clio x5l1",
+      "marque": "clio x5l1",
+      "puissance": "clio x5l1",
+      "kilometrage": "clio x5l1",
+      "prix": "2365789"
     }
   ]
 }

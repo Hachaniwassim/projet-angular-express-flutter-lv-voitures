@@ -1,110 +1,104 @@
-
-    
-
-	  <!-- backtotop - start -->
-		<div id="thetop"></div>
-		<div class="backtotop">
-			<a href="#" class="scroll">
-				<i class="fa fa-arrow-up"></i>
-			</a>
-		</div>
-		<!-- backtotop - end -->                  
-   
-     <!-- preloader - start -->
-  <div class="preloader">
-    <div class="animation_preloader">
-      <div class="spinner"></div>
-      <p class="text-center">Loading</p>
-    </div>
-    <div class="loader">
-      <div class="row vh-100">
-        <div class="col-3 loader_section section-left">
-          <div class="bg"></div>
-        </div>
-        <div class="col-3 loader_section section-left">
-          <div class="bg"></div>
-        </div>
-        <div class="col-3 loader_section section-right">
-          <div class="bg"></div>
-        </div>
-        <div class="col-3 loader_section section-right">
-          <div class="bg"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- preloader - end -->
-  
-  
-    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('assets/images/plan19.jpg')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h1 style="color:rgb(232, 232, 232)">Our Blog </h1>
-            <h3 align="center"  style="color:rgb(232, 232, 232)">Feel The Difference
-              ,Going Beyon</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<br><br><br><br><br>
 <div class="container">
-    <h1></h1>
-<div class="search-div">
- <button mat-fab color="gray" >
-   <mat-icon >add</mat-icon>
- </button>
- <mat-form-field class="search-form-field" floatLabel="never">
-   <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
-   <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey"  (click)="onSearchClear()">
-     <mat-icon>close</mat-icon>
-   </button>
- </mat-form-field>
-</div>   
-                       
-<div class="mat-elevation-z8">
- <mat-table [dataSource]="datasource" matSort>
-   <ng-container matColumnDef="id">
-     <mat-header-cell *matHeaderCellDef  mat-sort-header> id# </mat-header-cell>
-     <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.id}}   </mat-cell>
-   </ng-container>
-   <ng-container matColumnDef="matricule">
-    <mat-header-cell *matHeaderCellDef  mat-sort-header> Matricule </mat-header-cell>
-    <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.matricule}}   </mat-cell>
-  </ng-container>
-   <ng-container matColumnDef="modele">
-     <mat-header-cell *matHeaderCellDef  mat-sort-header>Modele </mat-header-cell>
-     <mat-cell *matCellDef="let element">  {{element.modele}}   </mat-cell>
-   </ng-container>
-   <ng-container matColumnDef="marque">
-     <mat-header-cell *matHeaderCellDef mat-sort-header> Marque </mat-header-cell>
-     <mat-cell *matCellDef="let element">     {{element.marque}}   </mat-cell>
-   </ng-container> 
-   <ng-container matColumnDef="puissance">
-     <mat-header-cell *matHeaderCellDef mat-sort-header>  Puissance </mat-header-cell>
-     <mat-cell *matCellDef="let element">{{element.puissance}}</mat-cell>
-   </ng-container>
-   <ng-container matColumnDef="kilometrage">
-     <mat-header-cell *matHeaderCellDef mat-sort-header> Kilometrage </mat-header-cell>
-     <mat-cell *matCellDef="let element">{{element.kilometrage}  </mat-cell>
-   </ng-container>
-   <ng-container matColumnDef="prix">
-     <mat-header-cell *matHeaderCellDef mat-sort-header> Price</mat-header-cell>
-     <mat-cell *matCellDef="let element">{{element.prix}}</mat-cell>
-   </ng-container> 
-   <ng-container matColumnDef="actions">
-     <mat-header-cell *matHeaderCellDef></mat-header-cell>
-     <mat-cell *matCellDef="let element">
-       <button mat-icon-button ><mat-icon>edit_outline</mat-icon></button>
-       <button mat-icon-button color="warn" (click)="onDelete(element.id)"><mat-icon>delete_outline</mat-icon></button>
-    </mat-cell>
-   </ng-container>
-   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
- </mat-table>
- <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
-</div>
+  <br><br><br><br><br><br>
+  <h1></h1>
+  <div class="search-div">
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
+  <!--******************************************* ladd  cars *****************************************************--->
+  <form [formGroup]="httpDataService.form" class="normal-form" (submit)="onSubmit()" >
+    <input type="hidden" formControlName="id">
+    <mat-form-field>
+      <input formControlName="matricule" matInput placeholder="matricule">
+      <mat-error *ngIf="httpDataService.form.controls['matricule'].errors?.required">this field is mandatory.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="modele" matInput placeholder="Modele">
+      <mat-error *ngIf="httpDataService.form.controls['modele'].errors?.required">this field is mandatory.</mat-error>
+      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 8 charactors needed.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="marque" matInput placeholder="Marque">
+      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.required">This field is mandatory.</mat-error>
+      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 8 charactors needed.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="puissance" matInput placeholder="Puissance">
+      <mat-error>this field is mandatory.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="kilometrage" matInput placeholder="kilometrage">
+      <mat-error>Invalid kilometrage.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="prix" matInput placeholder="Price">
+      <mat-error>this field is mandatory</mat-error>
+    </mat-form-field>
+      <button  mat-raised-button color="primary"  type="submit" style="margin-left: 30px;">
+        add</button>&nbsp;
+      <button mat-raised-button color="warn" (click)="onClear()">Clear</button>&nbsp;
+  
+  </form>
+  <!--******************************************* list cars *****************************************************--->
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="datasource" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> id# </mat-header-cell>
+        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.id}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="matricule">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Matricule </mat-header-cell>
+        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.matricule}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="modele">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Modele </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.modele}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="marque">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Marque </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.marque}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="puissance">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Puissance </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.puissance}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="kilometrage">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Kilometrage </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.kilometrage} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="prix">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Price</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.prix}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="Edit(element)">
+            <mat-icon>edit_outline</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="onDelete(element.id)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Loading data...
+        </mat-footer-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':datasource!=null}"></mat-footer-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
 </div>
 <br>
