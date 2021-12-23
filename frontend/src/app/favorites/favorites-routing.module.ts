@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 const routes: Routes = [
   
   { path: '', component: FavoritesComponent },
-  { path: 'rent-favourites', component: FavoritesRentComponent }
+  { path: 'favorites-rent', component: FavoritesRentComponent }
 
 ];
 
