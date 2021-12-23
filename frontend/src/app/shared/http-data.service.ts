@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { Voiture } from '../models/listvoiture';
 import { retry, catchError } from 'rxjs/operators'; 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import * as _ from 'lodash';
 
 
 
@@ -58,8 +59,8 @@ create(car : Voiture):Observable<any>{
   }
 
    // update cars by Id the
-   update(id: string , item :any){
-     return this.http.put<Voiture>(this.base_url + '/' +id,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError));
+   update(item :any){
+     return this.http.put<Voiture>(this.base_url + '/' +item.id,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError));
    }
 
     // delete cars
@@ -90,6 +91,11 @@ initializeFormGroup() {
     kilometrage: '',
     prix: '',
   });
+}
+
+
+populateForm(voiture: any) {
+  this.form.patchValue(_.omit(voiture));
 }
 
 }

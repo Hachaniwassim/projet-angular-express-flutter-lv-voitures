@@ -42,8 +42,10 @@
       <input formControlName="prix" matInput placeholder="Price">
       <mat-error>this field is mandatory</mat-error>
     </mat-form-field>
-      <button  mat-raised-button color="primary"  type="submit" style="margin-left: 30px;">
+      <button *ngIf="!isEditeMode" mat-raised-button color="primary"  type="submit" style="margin-left: 30px;">
         add</button>&nbsp;
+        <button *ngIf="isEditeMode" mat-raised-button color="primary" (click)="updatee()" type="submit" style="margin-left: 30px;">
+          Edit</button>&nbsp;
       <button mat-raised-button color="warn" (click)="onClear()">Clear</button>&nbsp;
   
   </form>
@@ -80,11 +82,11 @@
       </ng-container>
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <button mat-icon-button (click)="Edit(element)">
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="onEdit(row)">
             <mat-icon>edit_outline</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="onDelete(element.id)">
+          <button mat-icon-button color="warn" (click)="onDelete(row.id)">
             <mat-icon>delete_outline</mat-icon>
           </button>
         </mat-cell>
