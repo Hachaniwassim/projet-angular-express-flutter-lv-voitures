@@ -20,7 +20,7 @@ export class FavService {
   add(productID?: string) {
 
     if(!this.favContent.filter((elem: voiture) => elem.id === productID)[0]) {
-      this.favContent.push({id: productID, quantity: 1})
+      this.favContent.push({id: productID})
     }
 
     this.localStorageService.set('fav', this.favContent);
@@ -28,6 +28,10 @@ export class FavService {
 
   load() {
     return this.localStorageService.get('fav')
+  }
+  clear() {
+    this.favContent = [];
+    this.localStorageService.set('fav', this.favContent);
   }
 
 
