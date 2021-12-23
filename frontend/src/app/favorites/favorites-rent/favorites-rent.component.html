@@ -1,35 +1,97 @@
 
-  <main>
-
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-
-          <h1 class="fw-light">Rent favourites </h1>
-
-          <div class="container ">    
-            <div class="product-details mr-2"><button class="btn btn-outline-danger" (click)="clearFavourites()"></button>
-              <hr>
-            <div class="d-flex justify-content-between"><span>You have  items in your list</span>
-
-            </div>
-            <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded" *ngFor="let fav of favContent;index as i">
-                <div class="d-flex flex-row"><img class="rounded" src={{fav.image}} width="60">
-                    <div class="ml-2"><span class="font-weight-bold d-block">{{ fav.title }}</span><span class="spec">{{ fav.price}}</span></div>
-                </div>
-            </div>
-
-        </div>
-     </div>
+  
+  
+    <!-- backtotop - start -->
+    <div id="thetop"></div>
+    <div class="backtotop">
+      <a href="#" class="scroll">
+        <i class="fa fa-arrow-up"></i>
+      </a>
     </div>
+    <!-- backtotop - end -->
+    
+    <!-- preloader - start -->
+    <div class="preloader">
+      <div class="animation_preloader">
+        <div class="spinner"></div>
+        <p class="text-center">Loading</p>
+      </div>
+      <div class="loader">
+        <div class="row vh-100">
+          <div class="col-3 loader_section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader_section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader_section section-right">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader_section section-right">
+            <div class="bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- preloader - end -->
+    <div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay innerpage" style="background-image: url('assets/images/plan5.jpg')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1>Rent favorites</h1>
+              <h3 align="center" style="color:rgb(247, 247, 247)">Your favorites rent and buy cars</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container ">    
+      <div class="product-details mr-2"><button class="btn btn-outline-danger" (click)="clearFavourites()">Clear All</button>
+ 
 
-
-
-
-
+    <section class="breadcrumb_section text-center clearfix">
+      <div class="overlay"></div>
+      <div class="page_title_area has_overlay d-flex align-items-center clearfix">
+        <div class="container " data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg- mr-auto">
+            <h2>You have  items in your list</h2>
+            <br>
+            <hr>
+            <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded" *ngFor="let fav of favContent;index as i">
+              <div class="d-flex flex-row"><img class="rounded" src={{fav.image}} width="60">
+                  <div class="ml-2"><span class="font-weight-bold d-block">{{ fav.title }}</span><span class="spec">{{ fav.price}}</span></div>
+              </div>
+          </div>
+       <hr>
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
+   
 
 
-
-
-
-  </main>
+<!--<section class="breadcrumb_section text-center clearfix">
+  <div class="overlay"></div>
+  <div class="page_title_area has_overlay d-flex align-items-center clearfix">
+    <div class="container"data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-6 mb-5 mb-lg-0" *ngFor="let agency of agencyList">
+          <img [src]="agency.image" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-lg-4 ml-auto">
+          <h2 class="mb-4">Welcome To RentalCar Agency  {{agency.location}}</h2>
+          <br>
+          <hr>
+          <p>{{agency.description}}</p>
+          <hr>
+          
+        <p><a  routerLink="/about/{{agency.id}}" class="btn btn-primary">More details</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>-->
