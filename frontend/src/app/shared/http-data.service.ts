@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHandler, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { Voiture } from '../models/listvoiture';
+import { Voiture } from '../models/voiture';
 import { retry, catchError } from 'rxjs/operators'; 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as _ from 'lodash';

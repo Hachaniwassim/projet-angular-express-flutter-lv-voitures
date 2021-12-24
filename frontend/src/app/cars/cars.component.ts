@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import * as _ from 'lodash'
 import { NgForm } from '@angular/forms';
 import { HttpDataService } from '../shared/http-data.service';
-import { Voiture } from '../models/listvoiture';
+import { Voiture } from '../models/voiture';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';

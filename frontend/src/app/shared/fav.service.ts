@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { LocalStorageService } from "src/app/services/local-storage.service";
+import { LocalStorageService } from "src/app/shared/local-storage.service";
 
 import { voiture } from "src/app/voiture.model";
 

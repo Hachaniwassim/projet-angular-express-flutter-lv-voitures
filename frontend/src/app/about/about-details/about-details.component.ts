@@ -9,13 +9,14 @@ import { Agencys } from 'src/app/about-list';
   styleUrls: ['./about-details.component.css']
 })
 export class AboutDetailsComponent implements OnInit {
-  public agency?:Agency;
+  public Agency?:Agency;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const agencyId = params.get("id");
-      this.agency = Agencys.filter(agency => agency.id === agencyId)[0];
+      this.Agency = Agencys.filter(agency => agency.id === agencyId)[0];
   });
 
 }
