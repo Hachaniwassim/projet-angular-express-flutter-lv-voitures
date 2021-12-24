@@ -3,10 +3,6 @@ export interface voiture {
     title: string;
     description: string;
     image: string;
-    last_update: string;
-    instructor: string;
-    language: string;
+    Kilometrage: number;
     price: number;
-    goals: string[];
-    requirements: string[];
   }
