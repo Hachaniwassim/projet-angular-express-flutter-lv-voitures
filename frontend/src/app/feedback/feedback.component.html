@@ -59,90 +59,27 @@
           <h2 class="mb-4">Our Happy Clients</h2>
         </div>
       </div>
-      <div class="row align-items-stretch">
-
-        <div class="col-lg-4 col-md-6 mb-5">
+      
+ <div class="row align-items-stretch">
+        <div class="col-lg-4 col-md-6 mb-5"  *ngFor="let client of clientsList">
+          <div class="row align-items-stretch">
           <div class="post-entry-1 h-100 person-1">
-            
-              <img src="assets/images/person_1.jpg" alt="Image"
-               class="img-fluid">
-          
-            <div class="post-entry-1-contents">
-              <span class="meta">Client</span>
-              <h2>James Doe</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
+          <img [src]="client.image" alt="Image"class="img-fluid">
+           <div class="post-entry-1-contents">
+              <span class="meta">{{client.job}}</span>
+              <h2>{{client.name}}</h2>
+              <p> {{client.description}}
+              </p>
             </div>
+            <br>
+            <button routerLink="/feedback/{{ client.id }}" class="btn btn-sm btn-outline-primary">Details</button>&nbsp; &nbsp;
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-5">
-          <div class="post-entry-1 h-100 person-1">
-            
-              <img src="assets/images/person_2.jpg" alt="Image"
-               class="img-fluid">
-          
-            <div class="post-entry-1-contents">
-              <span class="meta">client</span>
-              <h2>James Doe</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-            </div>
-          </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 mb-5">
-          <div class="post-entry-1 h-100 person-1">
-            
-              <img src="assets/images/person_3.jpg" alt="Image"
-               class="img-fluid">
-          
-            <div class="post-entry-1-contents">
-              <span class="meta">client</span>
-              <h2>James Doe</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-5">
-          <div class="post-entry-1 h-100 person-1">
-            
-              <img src="assets/images/person_4.jpg" alt="Image"
-               class="img-fluid">
-          
-            <div class="post-entry-1-contents">
-              <span class="meta">client</span>
-              <h2>James Doe</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-5">
-          <div class="post-entry-1 h-100 person-1">
-            
-              <img src="assets/images/person_5.jpg" alt="Image"
-               class="img-fluid">
-          
-            <div class="post-entry-1-contents">
-              <span class="meta">client</span>
-              <h2>James Doe</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-5">
-          <div class="post-entry-1 h-100 person-1">
-            
-              <img src="assets/images/person_1.jpg" alt="Image"
-               class="img-fluid">
-          
-            <div class="post-entry-1-contents">
-              <span class="meta">client</span>
-              <h2>James Doe</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+ </div>
+ </div>
     </div>
   </div>
+</div>
+</section>

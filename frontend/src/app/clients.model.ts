@@ -5,4 +5,5 @@ export interface Clients {
     image: string;
     city: string; 
     description: string;
+    job : string;
 }
