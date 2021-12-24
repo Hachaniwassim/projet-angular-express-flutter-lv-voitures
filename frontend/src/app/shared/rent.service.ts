@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RentService {
-  private apiUrl='https://my-json-server.typicode.com';
+  private apiUrl='https://my-json-server.typicode.com/Hachaniwassim/fakeapiwassim/voitures';
 
 constructor(private http: HttpClient) {}
 /**

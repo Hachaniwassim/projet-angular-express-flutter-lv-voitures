@@ -5,6 +5,7 @@ import { voiture } from 'src/app/voiture.model';
 import { voitures } from "src/app/voiture-list";
 import { FavService } from 'src/app/shared/fav.service';
 import { NotificationService } from 'src/app/shared/notification.service';
+import { RentService } from 'src/app/shared/rent.service';
 @Component({
   selector: 'app-car-details',
   templateUrl: './car-details.component.html',
@@ -14,7 +15,7 @@ export class CarDetailsComponent implements OnInit {
 
   public voiture?: voiture;
 
-  constructor(private route: ActivatedRoute ,   private favService: FavService, private notificationService :NotificationService) { }
+  constructor(private route: ActivatedRoute ,   private favService: FavService, private notificationService :NotificationService , private rentService: RentService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
