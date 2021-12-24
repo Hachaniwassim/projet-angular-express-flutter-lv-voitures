@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 
 import { voiture } from 'src/app/voiture.model';
 import { voitures } from "src/app/voiture-list";
-import { FavService } from 'src/app/services/fav.service';
+import { FavService } from 'src/app/shared/fav.service';
 @Component({
   selector: 'app-car-details',
   templateUrl: './car-details.component.html',

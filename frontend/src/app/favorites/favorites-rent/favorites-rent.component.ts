@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FavService } from "src/app/services/fav.service";
+import { FavService } from "src/app/shared/fav.service";
 import { voitures } from "src/app/voiture-list";
 import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common';

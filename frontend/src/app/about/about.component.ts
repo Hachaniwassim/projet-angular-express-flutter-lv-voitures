@@ -9,7 +9,7 @@ import { Agency } from '../about.model';
 })
 export class AboutComponent implements OnInit {
 
-   public agencyList: Agency[] = Agencys;
+   public agencyList : Agency[] = Agencys ;
 
   constructor() { }
 

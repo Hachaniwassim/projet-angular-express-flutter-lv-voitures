@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {voitures} from "./../voiture-list";
 import { voiture } from "./../voiture.model";
 
-import { LocalStorageService } from "src/app/services/local-storage.service";
-import { FavService } from 'src/app/services/fav.service';
+import { LocalStorageService } from "src/app/shared/local-storage.service";
+import { FavService } from 'src/app/shared/fav.service';
 
 @Component({
   selector: 'app-cars-rent',
