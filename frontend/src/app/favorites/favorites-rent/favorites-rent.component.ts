@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common';
 import { CarsRentModule } from 'src/app/cars-rent/cars-rent.module';
 import { NgModule } from '@angular/core';
+import { NotificationService } from 'src/app/shared/notification.service';
 @Component({
   selector: 'app-favorites-rent',
   templateUrl: './favorites-rent.component.html',
@@ -15,7 +16,7 @@ export class FavoritesRentComponent implements OnInit {
 
   public favContent: any = [];
 
-  constructor( private favService: FavService) { }
+  constructor( private favService: FavService, private notificationService : NotificationService) { }
 
   ngOnInit(): void {
     this.getfavDetails();
@@ -37,6 +38,7 @@ export class FavoritesRentComponent implements OnInit {
   clearFavourites() {
     this.favService.clear();
     this.ngOnInit();
+    this.notificationService.warn('!! Deleted successfully');
   }
 
 }
