@@ -3,6 +3,7 @@ const rentRouter = require('./routes/rents');
 const agencyRouter = require('./routes/agencys');
 const clientRouter = require('./routes/clients');
 const teamRouter = require('./routes/teams');
+const voitureRouter = require('./routes/voitures');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -27,5 +28,6 @@ mongoose.connect('mongodb://localhost:27017/final-project',
   app.use('/api/agencys', agencyRouter);
   app.use('/api/clients', clientRouter);
   app.use('/api/teams', teamRouter);
+  app.use('/api/voitures', voitureRouter);
 
 module.exports = app;
