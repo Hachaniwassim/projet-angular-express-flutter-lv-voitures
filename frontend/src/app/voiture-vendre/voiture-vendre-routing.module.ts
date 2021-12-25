@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VoitureVendreComponent } from './voiture-vendre.component';
 import { VoitureVendreDetailsComponent } from './voiture-vendre-details/voiture-vendre-details.component';
 import { MaterialModule } from '../material/material.module';
+import { CommonModule } from '@angular/common';
 
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes),MaterialModule],
+  imports: [RouterModule.forChild(routes),MaterialModule,CommonModule],
   exports: [RouterModule,MaterialModule]
 })
 export class VoitureVendreRoutingModule { }
