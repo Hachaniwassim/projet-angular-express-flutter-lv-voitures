@@ -1,4 +1,6 @@
 const express = require('express');
+const rentRouter = require('./routes/rent_voiture');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -9,12 +11,15 @@ mongoose.connect('mongodb://localhost:27017/final-project',
   .catch(() => console.log('Connection failed to MongoDB !'));
 
 
-  app.use((req, res, next) => {
+  app.use(express.json());
+
+  app.use((req, res, next) => { 
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
   });
   
-  
+  app.use('/api/voiture_rent', rentRouter);
+
 module.exports = app;
