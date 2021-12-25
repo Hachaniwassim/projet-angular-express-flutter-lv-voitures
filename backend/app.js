@@ -1,5 +1,5 @@
 const express = require('express');
-const rentRouter = require('./routes/rent_voiture');
+const rentRouter = require('./routes/rents');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -20,6 +20,6 @@ mongoose.connect('mongodb://localhost:27017/final-project',
     next();
   });
   
-  app.use('/api/voiture_rent', rentRouter);
+  app.use('/api/rents', rentRouter);
 
 module.exports = app;
