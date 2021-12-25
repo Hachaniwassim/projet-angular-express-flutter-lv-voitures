@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http'
 export class teamService {
   private apiUrl='http://localhost:3000/Teams';
 
+  // API BACKEND
+  //private apiUrl='http://localhost:3000/api/teams';
+
   constructor(private http: HttpClient) {}
   /**
    *Get all teams

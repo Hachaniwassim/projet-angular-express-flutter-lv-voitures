@@ -14,6 +14,10 @@ import * as _ from 'lodash';
 export class HttpDataService {
   base_url ="http://localhost:3000/voiture";
 
+  // API BACKEND
+  //private base_url='http://localhost:3000/api/voitures';
+
+
   constructor(private http :HttpClient) { }
 
   //http opttion
