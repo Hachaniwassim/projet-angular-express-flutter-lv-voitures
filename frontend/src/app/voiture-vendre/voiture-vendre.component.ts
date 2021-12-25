@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VendreService } from '../shared/vendre.service';
 import { voitures_vendre } from '../voiture-vendre';
 import { voiture_vendre } from '../voiture-vendre-model';
 
@@ -8,11 +9,14 @@ import { voiture_vendre } from '../voiture-vendre-model';
   styleUrls: ['./voiture-vendre.component.css']
 })
 export class VoitureVendreComponent implements OnInit {
-  public voituresvendreList: voiture_vendre[] = voitures_vendre;
+  public voituresvendreList: any = [];
 
-  constructor() { }
+  constructor(private vendreService: VendreService ) { }
 
   ngOnInit(): void {
+    this.vendreService.all().subscribe(
+      res => this.voituresvendreList = res
+    );
   }
 
 }

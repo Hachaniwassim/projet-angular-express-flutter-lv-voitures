@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { VendreService } from 'src/app/shared/vendre.service';
 import { voitures_vendre } from '../../voiture-vendre';
 import { voiture_vendre } from '../../voiture-vendre-model';
 
@@ -14,7 +15,7 @@ export class VoitureVendreDetailsComponent implements OnInit {
   
   public voiturevendre?: voiture_vendre;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute , private vendreService: VendreService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
