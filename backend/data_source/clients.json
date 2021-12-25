@@ -1,8 +1,7 @@
-{ 
-"Clients" :[
+[
   
   {
-   "id": "1",
+  
    "name": "Alexandra Jae",
     "mail": "alex.8@gmail.com",
    "description": "is top notch. The customer service I receive is the best in the industry. I highly recommend them!,This agency does a fantastic job.",
@@ -10,7 +9,7 @@
     "city": "sousse",
     "job" :"Technicien"
   },{
-   "id": "2",
+  
     "name": " Same Die",
     "mail": "same@gmail.com",
     "description": "This agency does a fantastic job finding me the right coverage and insurance company at a very competitive price every time my insurance renews.",
@@ -18,7 +17,7 @@
     "city": "italie",
     "job" :"Assistance"
   },{
-    "id": "3",
+
     "name": " Jihen Je",
     "mail": "johen@gmail.com",
     "description": "is the most helpful insurance agent I have ever dealt with. She is honest and up front with everything.This agency does a fantastic job.",
@@ -26,7 +25,7 @@
     "city": "tunis",
      "job" :" Developper"
   },{
-    "id": "4",
+  
     "name": "Jame Doe",
    "mail": "jameJoe@gmail.com",
     "description": "is top notch. The customer service I receive is the best in the industry. I highly recommend them!,This agency does a fantastic job.",
@@ -36,7 +35,7 @@
     
   },
   {
-    "id": "5",
+  
     "name": "Hamo Di",
     "mail": "hamo@gmail.com",
     "description": "Great local insurance company for personal and business related insurance. Get immediate insurance proof and easy payment options.",
@@ -44,7 +43,7 @@
     "city": "tunis",
     "job ":" Developper Full Stack"
   },{
-    "id": "6",
+    
     "name": "Ahmed Ben ",
     "mail": "ahmedBen@gmail.com",
     "description": "This agency does a fantastic job finding me the right coverage and insurance company at a very competitive price every time my insurance renews.",
@@ -54,4 +53,3 @@
     
   }
 ]
-}

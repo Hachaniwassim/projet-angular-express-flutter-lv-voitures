@@ -1,8 +1,6 @@
-{
-    
-"Teams": [
+ [
     {
-      "id": 1,
+     
       "name": "Abir Tarchoun",
       "mail": "abirtarchoun.8@gmail.com",
       "phone": "+21628097322",
@@ -10,7 +8,7 @@
       "city": "bizerte"
     },
     {
-      "id": 2,
+     
       "name": "Wassim Hachani",
       "mail": "WassimHachani@gmail.com",
       "phone": "+21612345678",
@@ -18,7 +16,7 @@
       "city": "bizerte"
     },
     {
-      "id": 3,
+      
       "name": "Nour Trigui",
       "mail": "NourTrigui@gmail.com",
       "phone": "+21678563412",
@@ -26,7 +24,7 @@
       "city": "tunis"
     },
     {
-      "id": 4,
+  
       "name": "Rayen Nafouti",
       "mail": "rayennafouti@gmail.com",
       "phone": "+21621436587",
@@ -34,4 +32,3 @@
       "city": "tunis"
     }
   ]
-}
