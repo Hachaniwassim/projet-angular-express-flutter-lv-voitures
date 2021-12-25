@@ -1,8 +1,6 @@
-{
- 
-  "Agency" : [
-    {
-      "id": "1",
+ [
+     {
+    
      "owner":"abir",
       "description":"As consumers, we often take for granted all the hard work that goes into building a great company. We see them around but we dont know what goes on behind the scenes.Finally, we can read about how these great companies came about with Company Histories.",
       "image": "assets/images/v1.jpg", 
@@ -10,7 +8,7 @@
      "date_creation":"Fri Dec 24 2021 2:14:26 GMT+0100"
     },
     {
-      "id": "2",
+     
       "owner":"wassim",
       "description":"As consumers, we often take for granted all the hard work that goes into building a great company. We see them around but we dont know what goes on behind the scenes.Finally, we can read about how these great companies came about with Company Histories.",
      "image": "assets/images/v5.jpg", 
@@ -18,7 +16,7 @@
       "date_creation" :"Fri Dec 24 2021 2:14:26 GMT+0100"
     },
     {
-     "id": "3",   
+       
       "owner":"rayen",
       "description":"As consumers, we often take for granted all the hard work that goes into building a great company. We see them around but we dont know what goes on behind the scenes.Finally, we can read about how these great companies came about with Company Histories.",
       "image": "assets/images/v6.jpg", 
@@ -30,4 +28,3 @@
   ]
   
   
-}

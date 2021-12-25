@@ -20,12 +20,12 @@ exports.create = (req, res, next) => {
   const voiture = new  Voiture({
     ...req.body
   });
-  Voiture.save()
+  voiture.save()
     .then(() => res.status(201).json({ message: 'Voiture  created  !'}))
     .catch(error => res.status(400).json({ error }));
 };
 
-// update a course by id
+// update 
 exports.update = (req, res, next) => {
   Voiture.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
     .then(() => res.status(200).json({ message: 'Voiture updated !'}))
