@@ -12,10 +12,10 @@ import * as _ from 'lodash';
   providedIn: 'root'
 })
 export class HttpDataService {
-  base_url ="http://localhost:3000/voiture";
+  //base_url ="http://localhost:3000/voiture";
 
   // API BACKEND
-  //private base_url='http://localhost:3000/api/voitures';
+  private base_url='http://localhost:3000/api/voitures';
 
 
   constructor(private http :HttpClient) { }
@@ -57,25 +57,25 @@ create(car : Voiture):Observable<any>{
 
 
   // get carq by id
-  getByid(id:number):Observable<Voiture>{
-    return this.http.get<Voiture>(this.base_url + '/' +id).pipe(retry(2),catchError(this.handleError));
+  getByid(_id:number):Observable<Voiture>{
+    return this.http.get<Voiture>(this.base_url + '/' +_id).pipe(retry(2),catchError(this.handleError));
 
   }
 
    // update cars by Id the
    update(item :any){
-     return this.http.put<Voiture>(this.base_url + '/' +item.id,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError));
+     return this.http.put<Voiture>(this.base_url + '/' +item._id,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError));
    }
 
     // delete cars
-    delete(id:number){
-      return this.http.delete<Voiture>(this.base_url + '/' +id,this.httpOptions).pipe(retry(2),catchError(this.handleError));
+    delete(_id:number){
+      return this.http.delete<Voiture>(this.base_url + '/' +_id,this.httpOptions).pipe(retry(2),catchError(this.handleError));
 
 }
 
 //validation formulaire
   form : FormGroup= new FormGroup({
-  id : new FormControl(null),
+  _id : new FormControl(null),
   matricule: new FormControl('',Validators.required),
   modele : new FormControl('',[ Validators.required,Validators.minLength(3)]),
   marque: new FormControl('',[Validators.required,Validators.minLength(3)]),
@@ -87,7 +87,7 @@ create(car : Voiture):Observable<any>{
 // inialisation formulaire 
 initializeFormGroup() {
   this.form.setValue({
-    id: null,
+    _id: null,
     matricule: '',
     modele: '',
     marque: '',

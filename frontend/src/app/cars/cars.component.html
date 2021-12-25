@@ -12,7 +12,7 @@
   
   <!--******************************************* ladd  cars *****************************************************--->
   <form [formGroup]="httpDataService.form" class="normal-form" (submit)="onSubmit()" >
-    <input type="hidden" formControlName="id">
+    <input type="hidden" formControlName="_id">
     <mat-form-field>
       <input formControlName="matricule" matInput placeholder="matricule">
       <mat-error *ngIf="httpDataService.form.controls['matricule'].errors?.required">this field is mandatory.
@@ -50,13 +50,13 @@
   
   </form>
   <!--******************************************* list cars *****************************************************--->
-  <div class="mat-elevation-z8">
-    <mat-table [dataSource]="datasource" matSort>
-      <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> id# </mat-header-cell>
-        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.id}} </mat-cell>
+  <div class="mat-elevation-z8 ">
+    <mat-table [dataSource]="datasource" matSort >
+      <ng-container matColumnDef="_id" style="margin-right: 100px;" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header > id# </mat-header-cell>
+        <mat-cell *matCellDef="let element" style="border-spacing: 250px;"  > {{element._id}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="matricule">
+      <ng-container matColumnDef="matricule"  >
         <mat-header-cell *matHeaderCellDef mat-sort-header> Matricule </mat-header-cell>
         <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.matricule}} </mat-cell>
       </ng-container>
@@ -86,7 +86,7 @@
           <button mat-icon-button (click)="onEdit(row)">
             <mat-icon>edit_outline</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="onDelete(row.id)">
+          <button mat-icon-button color="warn" (click)="onDelete(row._id)">
             <mat-icon>delete_outline</mat-icon>
           </button>
         </mat-cell>
