@@ -13,7 +13,7 @@ export class VoitureVendreDetailsComponent implements OnInit {
 
  public voiturevendre?: voiture_vendre;
 
-  constructor(private route: ActivatedRoute, ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
