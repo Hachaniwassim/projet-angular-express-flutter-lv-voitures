@@ -29,7 +29,7 @@ export class AboutDetailsComponent implements OnInit {
 }
 
 getone(){
-  // status 304 ok , mais mayaffichilish , just f console y kharajli les donnés .. ! ? 
+  // status 304 ok  
    this.agencyService.get(this._id).subscribe((data)=>
    { this.list=data;
     this.Agency=this.list;
