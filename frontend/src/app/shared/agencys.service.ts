@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class AgencyService {
-  private apiUrl='http://localhost:3000/Agency';
+  //private apiUrl='http://localhost:3000/Agency';
   
   //api backend
-  //private apiUrl="http://localhost:3000/api/agencys"
+  private apiUrl="http://localhost:3000/api/agencys"
 
   constructor(private http: HttpClient) {}
   /**
