@@ -15,7 +15,7 @@ export class FeedbackDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const userId = params.get("id");
-      this.client = clients.filter(clients => clients.id === userId)[0];
+      this.client = clients.filter(clients => clients._id === userId)[0];
     });
   }
 

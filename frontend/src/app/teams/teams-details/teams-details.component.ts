@@ -17,7 +17,7 @@ export class TeamsDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const userId = params.get("id");
-      this.team = teams.filter(teams => teams.id === userId)[0];
+      this.team = teams.filter(teams => teams._id === userId)[0];
     });
   }
 

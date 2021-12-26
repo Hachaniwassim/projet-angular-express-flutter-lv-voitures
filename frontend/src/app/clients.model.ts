@@ -1,5 +1,5 @@
 export interface Clients {
-    id: string;
+    _id: string;
     name: string;
     mail: string;
     image: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as _ from 'lodash'
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { HttpDataService } from '../shared/http-data.service';
 import { Voiture } from '../models/voiture';
 import { MatTableDataSource } from '@angular/material/table';
@@ -19,11 +19,12 @@ import { first } from 'rxjs/operators';
 })
 export class CarsComponent implements OnInit {
   @ViewChild('carsForm', { static: false })
-  carsForm!: NgForm;
+  carsForm!: FormGroup;
   carsData !: Voiture;
   voiture !: Voiture[];
   isEditeMode = false;
   searchKey!: string;
+  submitted = false ;
 
   base_url = "http://localhost:3000/voiture";
 
@@ -99,16 +100,18 @@ export class CarsComponent implements OnInit {
   //}
 
 
-  // ki namel subscribe status 400 , megir subscribe ytalali l id NULL , !! 
+  // status 400 , backend yraja object object  , !! fel json-server ca fonctionne correctememnt 
   onSubmit() {
     if (this.httpDataService.form.valid) {
-        this.httpDataService.create(this.httpDataService.form.value)
-          console.log(this.httpDataService.form.value);
-      this.notificationService.success(':: Submitted successfully');
-      this.getAllCars();
+      
+         this.httpDataService.create(this.httpDataService.form.value).subscribe(()=>{
+          console.log();
+          this.getAllCars();
+         })
+         this.notificationService.success(':: Submitted successfully');
+         
         }
-       
-  }
+        }
 
 
 

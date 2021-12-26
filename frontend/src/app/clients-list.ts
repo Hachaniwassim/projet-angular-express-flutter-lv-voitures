@@ -3,7 +3,7 @@ import { Clients } from "./clients.model";
 export const clients :Clients[] = [
     
   {
-    id: '1',
+    _id: '1',
     name: 'Alexandra Jae',
     mail: 'alex.8@gmail.com',
     description: 'is top notch. The customer service I receive is the best in the industry. I highly recommend them!,This agency does a fantastic job.',
@@ -13,7 +13,7 @@ export const clients :Clients[] = [
   
     
   },{
-    id: '2',
+    _id: '2',
     name: ' Same Die',
     mail: 'same@gmail.com',
     description: 'This agency does a fantastic job finding me the right coverage and insurance company at a very competitive price every time my insurance renews.',
@@ -21,7 +21,7 @@ export const clients :Clients[] = [
     city: 'italie',
     job :' Developper',
   },{
-    id: '3',
+    _id: '3',
     name: ' Jihen Je',
     mail: 'johen@gmail.com',
     description: 'is the most helpful insurance agent I have ever dealt with. She is honest and up front with everything.This agency does a fantastic job.',
@@ -29,7 +29,7 @@ export const clients :Clients[] = [
     city: 'tunis',
      job :' Developper',
   },{
-    id: '4',
+    _id: '4',
     name: 'Jame Doe',
     mail: 'jameJoe@gmail.com',
     description: 'is top notch. The customer service I receive is the best in the industry. I highly recommend them!,This agency does a fantastic job.',
@@ -39,7 +39,7 @@ export const clients :Clients[] = [
     
   },
   {
-    id: '5',
+    _id: '5',
     name: 'Hamo Di',
     mail: 'hamo@gmail.com',
     description: 'Great local insurance company for personal and business related insurance. Get immediate insurance proof and easy payment options.',
@@ -47,7 +47,7 @@ export const clients :Clients[] = [
     city: 'tunis',
     job :' Developper',
   },{
-    id: '6',
+    _id: '6',
     name: 'Ahmed Ben ',
     mail: 'ahmedBen@gmail.com',
     description: 'This agency does a fantastic job finding me the right coverage and insurance company at a very competitive price every time my insurance renews.',

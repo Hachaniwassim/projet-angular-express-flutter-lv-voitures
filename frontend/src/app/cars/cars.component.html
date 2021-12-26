@@ -42,7 +42,7 @@
       <input formControlName="prix" matInput placeholder="Price">
       <mat-error>this field is mandatory</mat-error>
     </mat-form-field>
-      <button *ngIf="!isEditeMode" mat-raised-button color="primary"  type="submit" style="margin-left: 30px;">
+      <button *ngIf="!isEditeMode" mat-raised-button color="primary"  type="submit" style="margin-left: 30px;" [disabled]="httpDataService.form.invalid">
         add</button>&nbsp;
         <button *ngIf="isEditeMode" mat-raised-button color="primary" (click)="updatee()" type="submit" style="margin-left: 30px;">
           Edit</button>&nbsp;

@@ -32,7 +32,8 @@ const routes : Routes =[
   { path: 'cars', loadChildren: () => import('./cars/cars.module').then(m => m.CarsModule) },
 
   { path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule) },
- 
+
+  { path: 'layout', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
 
  //notfound
 

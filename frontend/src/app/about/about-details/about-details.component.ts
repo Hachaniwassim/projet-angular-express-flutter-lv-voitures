@@ -10,16 +10,31 @@ import { AgencyService } from 'src/app/shared/agencys.service';
   styleUrls: ['./about-details.component.css']
 })
 export class AboutDetailsComponent implements OnInit {
-  public Agency?:Agency;
+  //public Agency?:Agency;
+  Agency ={    
+    owner: "",
+    description: "",
+    image: "",
+    location: "",
+    date_creation:"",} ;
+     list : any ;
+     _id=this.route.snapshot.params['id'];
 
   constructor(private route: ActivatedRoute, private agencyService : AgencyService) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const agencyId = params.get("id");
-      this.Agency = Agencys.filter(agency => agency.id === agencyId)[0];
-  });
   
-
+    this.getone();
+  
 }
+
+getone(){
+  // status 304 ok , mais mayaffichilish , just f console y kharajli les donnés .. ! ? 
+   this.agencyService.get(this._id).subscribe((data)=>
+   { this.list=data;
+    this.Agency=this.list;
+    console.log(this.Agency);
+  })
+ }
+
 }

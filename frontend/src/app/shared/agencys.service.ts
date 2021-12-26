@@ -4,9 +4,10 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class AgencyService {
-  //private apiUrl='http://localhost:3000/Agency';
+  private apiUrl='http://localhost:3000/Agency';
   
-  private apiUrl="http://localhost:3000/api/agencys"
+  //api backend
+  //private apiUrl="http://localhost:3000/api/agencys"
 
   constructor(private http: HttpClient) {}
   /**
@@ -37,7 +38,7 @@ export class AgencyService {
   /**
    * Update agency with the given id
    * @param id agency id to update
-   * @paramagency newagency data
+   * @paramagency new agency data
    */
   update(id: string,agency: any) {
     return this.http.put(this.apiUrl + '/' + id,agency);

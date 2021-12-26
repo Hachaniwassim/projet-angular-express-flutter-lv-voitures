@@ -1,5 +1,5 @@
 export interface Agency {
-    id: string;
+    _id: string;
     owner: string;
     description: string;
     image: string;
