@@ -11,17 +11,18 @@ import { voiture_vendre } from '../../voiture-vendre-model';
 })
 export class VoitureVendreDetailsComponent implements OnInit {
   
-  
-  
-  public voiturevendre?: voiture_vendre;
+
+ public voiturevendre?: voiture_vendre;
 
   constructor(private route: ActivatedRoute , private vendreService: VendreService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const userId = params.get("id");
+     const userId = params.get("id");
       this.voiturevendre = voitures_vendre.filter(voitures_vendre => voitures_vendre.id === userId)[0];
-    });
+    })
   }
 
+
 }
+ 

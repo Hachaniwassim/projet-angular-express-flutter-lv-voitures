@@ -19,7 +19,7 @@ export class FavService {
 
   add(productID?: string) {
 
-    if(!this.favContent.filter((elem: voiture) => elem.id === productID)[0]) {
+    if(!this.favContent.filter((elem: voiture) => elem._id === productID)[0]) {
       this.favContent.push({id: productID})
     }
 
