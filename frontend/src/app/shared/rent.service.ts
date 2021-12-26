@@ -4,7 +4,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RentService {
-  private apiUrl='https://my-json-server.typicode.com/Hachaniwassim/fakeapiwassim/voitures';
+  //private apiUrl='https://my-json-server.typicode.com/Hachaniwassim/fakeapiwassim/voitures';
+
+
+  //api backend 
+  private apiUrl='http://localhost:3000/api/rents';
 
 constructor(private http: HttpClient) {}
 /**
@@ -20,8 +24,8 @@ all() {
  * @param id : buy id
  * @returns Observable<Buy>
  */
-get(id: string) {
-  return this.http.get(this.apiUrl + '/' + id);
+get(_id: string) {
+  return this.http.get(this.apiUrl + '/' + _id);
 }
 
 /**
@@ -34,18 +38,18 @@ create(rent: any) {
 
 /**
  * Update a buy with the given id
- * @param id buy id to update
+ * @param _id buy id to update
  * @param rent new course data
  */
-update(id: string, rent: any) {
-  return this.http.put(this.apiUrl + '/' + id, rent);
+update(_id: string, rent: any) {
+  return this.http.put(this.apiUrl + '/' + _id, rent);
 }
 
 /**
  * Delete a buy with the given id
- * @param id buy id to delete
+ * @param _id buy id to delete
  */
-delete(id: string) {
-  return this.http.delete(this.apiUrl + '/' + id);
+delete(_id: string) {
+  return this.http.delete(this.apiUrl + '/' + _id);
 }
 }
