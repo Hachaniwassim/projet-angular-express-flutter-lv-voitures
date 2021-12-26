@@ -1,5 +1,5 @@
 export interface Teams {
-    id: string;
+    _id: string;
     name: string;
     mail: string;
     phone: string;

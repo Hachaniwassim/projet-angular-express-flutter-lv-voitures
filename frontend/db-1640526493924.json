@@ -1,0 +1,165 @@
+{
+  "voiture": [
+    {
+      "id": 1,
+      "matricule": "123-tunis-8200",
+      "modele": "BMW",
+      "marque": "bmw",
+      "puissance": " x5",
+      "kilometrage": "200/klm",
+      "prix": "50000000"
+    },
+    {
+      "id": 2,
+      "matricule": "123-tunis-8201",
+      "modele": "lamborghini",
+      "marque": "lamburghini",
+      "puissance": " LMB",
+      "kilometrage": "200/klm",
+      "prix": "600000000"
+    },
+    {
+      "id": 3,
+      "matricule": "123-tunis-8200",
+      "modele": "BMW x5",
+      "marque": "bmw",
+      "puissance": " x5",
+      "kilometrage": "200/klm",
+      "prix": "10000000"
+    },
+    {
+      "id": 4,
+      "matricule": "123-tunis-8201",
+      "modele": "clio",
+      "marque": "clio",
+      "puissance": " LMB",
+      "kilometrage": "200/klm",
+      "prix": "200000000"
+    },
+    {
+      "id": 6,
+      "matricule": "123-tunis-8010",
+      "modele": "clio x5l1",
+      "marque": "clio x5l1",
+      "puissance": "kkkkk",
+      "kilometrage": "clio x5l1",
+      "prix": "888888888888888"
+    }
+  ],
+  "Teams": [
+    {
+      "id": 1,
+      "name": "Abir Tarchoun",
+      "mail": "abirtarchoun.8@gmail.com",
+      "phone": "+21628097322",
+      "image": "assets/images/abir.jpg",
+      "city": "bizerte"
+    },
+    {
+      "id": 2,
+      "name": "Wassim Hachani",
+      "mail": "WassimHachani@gmail.com",
+      "phone": "+21612345678",
+      "image": "assets/images/wassim.jpg",
+      "city": "bizerte"
+    },
+    {
+      "id": 3,
+      "name": "Nour Trigui",
+      "mail": "NourTrigui@gmail.com",
+      "phone": "+21678563412",
+      "image": "assets/images/nour.jpg",
+      "city": "tunis"
+    },
+    {
+      "id": 4,
+      "name": "Rayen Nafouti",
+      "mail": "rayennafouti@gmail.com",
+      "phone": "+21621436587",
+      "image": "assets/images/rayen.jpg",
+      "city": "tunis"
+    }
+  ],
+  "Agency": [
+    {
+      "id": "1",
+      "owner": "abir",
+      "description": "As consumers, we often take for granted all the hard work that goes into building a great company. We see them around but we dont know what goes on behind the scenes.Finally, we can read about how these great companies came about with Company Histories.",
+      "image": "assets/images/v1.jpg",
+      "location": "Bizerte",
+      "date_creation": "Fri Dec 24 2021 2:14:26 GMT+0100"
+    },
+    {
+      "id": "2",
+      "owner": "wassim",
+      "description": "As consumers, we often take for granted all the hard work that goes into building a great company. We see them around but we dont know what goes on behind the scenes.Finally, we can read about how these great companies came about with Company Histories.",
+      "image": "assets/images/v5.jpg",
+      "location": "Tunis",
+      "date_creation": "Fri Dec 24 2021 2:14:26 GMT+0100"
+    },
+    {
+      "id": "3",
+      "owner": "rayen",
+      "description": "As consumers, we often take for granted all the hard work that goes into building a great company. We see them around but we dont know what goes on behind the scenes.Finally, we can read about how these great companies came about with Company Histories.",
+      "image": "assets/images/v6.jpg",
+      "location": "Sousse",
+      "date_creation": "Fri Dec 24 2021 2:14:26 GMT+0100"
+    }
+  ],
+  "Clients": [
+    {
+      "id": "1",
+      "name": "Alexandra Jae",
+      "mail": "alex.8@gmail.com",
+      "description": "is top notch. The customer service I receive is the best in the industry. I highly recommend them!,This agency does a fantastic job.",
+      "image": "assets/images/person_2.jpg",
+      "city": "sousse",
+      "job": "Technicien"
+    },
+    {
+      "id": "2",
+      "name": " Same Die",
+      "mail": "same@gmail.com",
+      "description": "This agency does a fantastic job finding me the right coverage and insurance company at a very competitive price every time my insurance renews.",
+      "image": "assets/images/person_3.jpg",
+      "city": "italie",
+      "job": "Assistance"
+    },
+    {
+      "id": "3",
+      "name": " Jihen Je",
+      "mail": "johen@gmail.com",
+      "description": "is the most helpful insurance agent I have ever dealt with. She is honest and up front with everything.This agency does a fantastic job.",
+      "image": "assets/images/person_5.jpg",
+      "city": "tunis",
+      "job": " Developper"
+    },
+    {
+      "id": "4",
+      "name": "Jame Doe",
+      "mail": "jameJoe@gmail.com",
+      "description": "is top notch. The customer service I receive is the best in the industry. I highly recommend them!,This agency does a fantastic job.",
+      "image": "assets/images/person_1.jpg",
+      "city": "France",
+      "job": "Ingenieur"
+    },
+    {
+      "id": "5",
+      "name": "Hamo Di",
+      "mail": "hamo@gmail.com",
+      "description": "Great local insurance company for personal and business related insurance. Get immediate insurance proof and easy payment options.",
+      "image": "assets/images/person_1.jpg",
+      "city": "tunis",
+      "job ": " Developper Full Stack"
+    },
+    {
+      "id": "6",
+      "name": "Ahmed Ben ",
+      "mail": "ahmedBen@gmail.com",
+      "description": "This agency does a fantastic job finding me the right coverage and insurance company at a very competitive price every time my insurance renews.",
+      "image": "assets/images/person_4.jpg",
+      "city": "France",
+      "job": "Technicien"
+    }
+  ]
+}

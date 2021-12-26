@@ -12,10 +12,10 @@ import * as _ from 'lodash';
   providedIn: 'root'
 })
 export class HttpDataService {
-  //base_url ="http://localhost:3000/voiture";
+  base_url ="http://localhost:3000/voiture";
 
   // API BACKEND
-  private base_url='http://localhost:3000/api/voitures';
+ // private base_url='http://localhost:3000/api/voitures';
 
 
   constructor(private http :HttpClient) { }
@@ -75,7 +75,7 @@ create(car : Voiture):Observable<any>{
 
 //validation formulaire
   form : FormGroup= new FormGroup({
-  _id : new FormControl(null),
+  _id : new FormControl(''),
   matricule: new FormControl('',Validators.required),
   modele : new FormControl('',[ Validators.required,Validators.minLength(3)]),
   marque: new FormControl('',[Validators.required,Validators.minLength(3)]),
@@ -87,7 +87,7 @@ create(car : Voiture):Observable<any>{
 // inialisation formulaire 
 initializeFormGroup() {
   this.form.setValue({
-    _id: null,
+    _id: '',
     matricule: '',
     modele: '',
     marque: '',
