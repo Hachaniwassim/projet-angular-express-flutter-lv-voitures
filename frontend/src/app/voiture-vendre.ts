@@ -2,7 +2,7 @@ import { voiture_vendre } from "./voiture-vendre-model";
 
 export const voitures_vendre: voiture_vendre[] = [
     {
-      _id: '1',
+      id: '1',
       title: 'Range Rover S64 Coupe',
       description:
         'La Hyundai i10 est une automobile du constructeur automobile coréen Hyundai produite depuis 2008. cest une citadine 5 portes, elle a remplacé la Hyundai Atos Prime en 2008 sur le marché européen, mais pas en Inde, où Atos Prime, appelée Santro, continue à être produite et coûte moins cher',
@@ -28,7 +28,7 @@ export const voitures_vendre: voiture_vendre[] = [
       age: 2,
     },
     {
-      _id: '2',
+      id: '2',
       title: 'Range Rover S64 Coupe',
       description:'La Golf VIII est une berline compacte qui est la 8e génération de Volkswagen Golf produite à plus de 35 millions exemplaires depuis 1974 par le constructeur automobile allemand Volkswagen, et commercialisée à partir de mars 2020. Elle succède à la Golf VII produite de 2012 à 2019.',
       image:
@@ -52,7 +52,7 @@ export const voitures_vendre: voiture_vendre[] = [
       age: 2,
     },
     {
-      _id: '3',
+      id: '3',
       title: 'Range Rover S64 Coupe',
       description:
         'La sixième génération de Volkswagen Polo est présentée le 16 juin 20171. Conçue par le designer allemand Klaus Bischoff, elle est dessinée par Marco Pavone dans le centre de design de Volkswagen.',
@@ -77,7 +77,7 @@ export const voitures_vendre: voiture_vendre[] = [
       age: 2,
     },
     {
-      _id: '4',
+      id: '4',
       title: 'Range Rover S64 Coupe',
       description:
         'La sixième génération de Volkswagen Polo est présentée le 16 juin 20171. Conçue par le designer allemand Klaus Bischoff, elle est dessinée par Marco Pavone dans le centre de design de Volkswagen.',
@@ -102,7 +102,7 @@ export const voitures_vendre: voiture_vendre[] = [
       age: 2,
     },
     {
-     _id: '5',
+      id: '5',
       title: 'Range Rover S64 Coupe',
       description:
         'La sixième génération de Volkswagen Polo est présentée le 16 juin 20171. Conçue par le designer allemand Klaus Bischoff, elle est dessinée par Marco Pavone dans le centre de design de Volkswagen.',
@@ -127,7 +127,7 @@ export const voitures_vendre: voiture_vendre[] = [
       age: 2,
     },
     {
-      _id: '6',
+      id: '6',
       title: 'Range Rover S64 Coupe',
       description:
         'La Hyundai i10 est une automobile du constructeur automobile coréen Hyundai produite depuis 2008. cest une citadine 5 portes, elle a remplacé la Hyundai Atos Prime en 2008 sur le marché européen, mais pas en Inde, où Atos Prime, appelée Santro, continue à être produite et coûte moins cher',
