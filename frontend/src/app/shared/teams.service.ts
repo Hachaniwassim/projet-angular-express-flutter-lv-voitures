@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class teamService {
-  private apiUrl='http://localhost:3000/Teams';
+ // private apiUrl='http://localhost:3000/Teams';
 
   // API BACKEND
-  //private apiUrl='http://localhost:3000/api/teams';
+  private apiUrl='http://localhost:3000/api/teams';
 
   constructor(private http: HttpClient) {}
   /**
@@ -20,11 +20,11 @@ export class teamService {
   
   /**
    * Get a team with the given id
-   * @param id : team id
+   * @param _id : team id
    * @returns Observable<Team>
    */
-  get(id: string) {
-    return this.http.get(this.apiUrl + '/' + id);
+  get(_id: string) {
+    return this.http.get(this.apiUrl + '/' + _id);
   }
   
   /**
@@ -40,15 +40,15 @@ export class teamService {
    * @param id team id to update
    * @param team new team data
    */
-  update(id: string, team: any) {
-    return this.http.put(this.apiUrl + '/' + id, team);
+  update(_id: string, team: any) {
+    return this.http.put(this.apiUrl + '/' + _id, team);
   }
   
   /**
    * Delete a team with the given id
-   * @param id team id to delete
+   * @param _id team id to delete
    */
-  delete(id: string) {
-    return this.http.delete(this.apiUrl + '/' + id);
+  delete(_id: string) {
+    return this.http.delete(this.apiUrl + '/' + _id);
   }
 }

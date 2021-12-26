@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class AgencyService {
-  private apiUrl='http://localhost:3000/Agency';
+  //private apiUrl='http://localhost:3000/Agency';
   
   //api backend
-  //private apiUrl="http://localhost:3000/api/agencys"
+  private apiUrl="http://localhost:3000/api/agencys"
 
   constructor(private http: HttpClient) {}
   /**
@@ -20,11 +20,11 @@ export class AgencyService {
   
   /**
    * Get a agency with the given id
-   * @param id :agency id
+   * @param _id :agency id
    * @returns Observable<Agency>
    */
-  get(id: string) {
-    return this.http.get(this.apiUrl + '/' + id);
+  get(_id: string) {
+    return this.http.get(this.apiUrl + '/' + _id);
   }
   
   /**
@@ -37,18 +37,18 @@ export class AgencyService {
   
   /**
    * Update agency with the given id
-   * @param id agency id to update
+   * @param _id agency id to update
    * @paramagency new agency data
    */
-  update(id: string,agency: any) {
-    return this.http.put(this.apiUrl + '/' + id,agency);
+  update(_id: string,agency: any) {
+    return this.http.put(this.apiUrl + '/' + _id,agency);
   }
   
   /**
    * Delete agency with the given id
    * @param idagency id to delete
    */
-  delete(id: string) {
-    return this.http.delete(this.apiUrl + '/' + id);
+  delete(_id: string) {
+    return this.http.delete(this.apiUrl + '/' + _id);
   }
 }
