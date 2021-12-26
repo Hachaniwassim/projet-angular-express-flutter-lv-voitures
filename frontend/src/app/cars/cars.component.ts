@@ -28,7 +28,7 @@ export class CarsComponent implements OnInit {
   base_url = "http://localhost:3000/voiture";
 
   datasource = new MatTableDataSource(this.voiture)
-  displayedColumns: string[] = ['id', 'matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
+  displayedColumns: string[] = [ '_id','matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort, {}) sort!: MatSort;
 
@@ -66,13 +66,13 @@ export class CarsComponent implements OnInit {
     this.datasource.filter = this.searchKey.trim().toLowerCase();
   }
 
-  onDelete(id: number) {
+  onDelete(_id: number) {
     this.dialogService.openConfirmDialog('Are you sure to delete this record ?')
       .afterClosed().subscribe((res: any) => {
         if (res) {
-          this.httpDataService.delete(id).subscribe((response: any) => {
+          this.httpDataService.delete(_id).subscribe((response: any) => {
             this.datasource.data = this.datasource.data.filter((o: any) => {
-              return o.id !== id ? o : false;
+              return o._id !== _id ? o : false;
             })
             console.log(this.datasource.data);
           })
@@ -98,14 +98,16 @@ export class CarsComponent implements OnInit {
   //  this.carsForm.resetForm();
   //}
 
+
+  // ki namel subscribe status 400 , megir subscribe ytalali l id NULL , !! 
   onSubmit() {
     if (this.httpDataService.form.valid) {
-      this.httpDataService.create(this.httpDataService.form.value).subscribe((response) => {
-        console.log();
-        this.notificationService.success(':: Submitted successfully');
-        this.getAllCars();
-      })
-    }
+        this.httpDataService.create(this.httpDataService.form.value)
+          console.log(this.httpDataService.form.value);
+      this.notificationService.success(':: Submitted successfully');
+      this.getAllCars();
+        }
+       
   }
 
 
