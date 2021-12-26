@@ -27,7 +27,7 @@ export class FavoritesRentComponent implements OnInit {
   getfavDetails() {
     this.favContent = this.favService.favContent;
     for (let index = 0; index < this.favContent.length; index++) {
-      const rent = voitures.filter(rent => rent.id == this.favContent[index].id)[0];
+      const rent = voitures.filter(rent => rent._id == this.favContent[index].id)[0];
      this.favContent[index].title = rent.title;
       this.favContent[index].price = rent.price;
       this.favContent[index].image = rent.image;

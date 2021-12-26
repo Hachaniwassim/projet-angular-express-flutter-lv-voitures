@@ -13,16 +13,36 @@ import { RentService } from 'src/app/shared/rent.service';
 })
 export class CarDetailsComponent implements OnInit {
 
-  public voiture?: voiture;
+  //public voiture?: voiture;
+  voiture={
+      id: "",
+      title: "",
+      description:"",
+      image:"",
+      Kilometrage: "",
+      price :"",
+
+  }
+  list : any ;
+  _id=this.route.snapshot.params['id'];
 
   constructor(private route: ActivatedRoute ,   private favService: FavService, private notificationService :NotificationService , private rentService: RentService) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const voitureId = params.get("id");
-      this.voiture = voitures.filter(voiture => voiture.id === voitureId)[0];
-    });
+    this.getone();
+   // this.route.paramMap.subscribe(params => {
+    //  const voitureId = params.get("id");
+    //  this.voiture = voitures.filter(voiture => voiture._id === voitureId)[0];
+   // });
   }
+  getone(){
+    // status 304 ok  
+     this.rentService.get(this._id).subscribe((data)=>
+     { this.list=data;
+      this.voiture=this.list;
+      console.log(this.voiture);
+    })
+   }
 
   public addTofav():void {
     this.favService.add(this.voiture?.id);  
