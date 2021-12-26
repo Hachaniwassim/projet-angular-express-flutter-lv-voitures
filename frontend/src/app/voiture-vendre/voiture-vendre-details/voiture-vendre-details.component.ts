@@ -10,9 +10,7 @@ import { voiture_vendre } from '../../voiture-vendre-model';
 })
 export class VoitureVendreDetailsComponent implements OnInit {
   
-  //_id=this.route.snapshot.params['id'];
- // list : any ;
-  
+
  public voiturevendre?: voiture_vendre;
 
   constructor(private route: ActivatedRoute, ) { }
