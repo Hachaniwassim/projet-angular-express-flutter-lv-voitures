@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/pages/buycar_page.dart';
+import 'package:mobile/pages/contact.dart';
 import 'package:mobile/pages/rentcars.dart';
 import 'package:mobile/pages/about.dart';
 import 'package:mobile/pages/services.dart';
@@ -129,6 +130,11 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 3:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const Servives(),
+        ));
+        break;
+      case 5:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const Mycontactpage(),
         ));
         break;
     }
