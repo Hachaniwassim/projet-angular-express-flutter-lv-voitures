@@ -12,16 +12,49 @@ import { voiture_vendre } from '../../voiture-vendre-model';
 export class VoitureVendreDetailsComponent implements OnInit {
   
 
- public voiturevendre?: voiture_vendre;
+//  public voiturevendre?: voiture_vendre;
 
-  constructor(private route: ActivatedRoute , private vendreService: VendreService) { }
+//   constructor(private route: ActivatedRoute , private vendreService: VendreService) { }
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-     const userId = params.get("id");
-      this.voiturevendre = voitures_vendre.filter(voitures_vendre => voitures_vendre.id === userId)[0];
-    })
-  }
+//   ngOnInit(): void {
+//     this.route.paramMap.subscribe(params => {
+//      const userId = params.get("id");
+//       this.voiturevendre = voitures_vendre.filter(voitures_vendre => voitures_vendre.id === userId)[0];
+//     })
+//   }
+
+//public team?: Teams;
+_id=this.route.snapshot.params['id'];
+list : any ;
+voiturevendre ={
+  id: "",
+  title: "",
+  description:"",
+  image:"",
+  Kilometrage: "",
+  price :"",
+
+}
+
+
+constructor(private route: ActivatedRoute ,private vendreService : VendreService) { }
+
+ngOnInit(): void {
+ // this.route.paramMap.subscribe(params => {
+  //  const userId = params.get("id");
+   // this.team = teams.filter(teams => teams._id === userId)[0];
+ // });
+ this.getone();
+}
+
+getone(){
+  // status 304 ok  
+   this.vendreService.get(this._id).subscribe((data)=>
+   { this.list=data;
+    this.voiturevendre=this.list;
+    console.log(this.voiturevendre);
+  })
+ }
 
 
 }

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class VendreService {
 
-   private apiUrl='https://my-json-server.typicode.com/Hachaniwassim/fakeapiwassim/voitures';
+   private apiUrl='http://localhost:3000/api/vendres';
 
 constructor(private http: HttpClient) {}
 /**
@@ -22,8 +22,8 @@ all() {
  * @param id : buy id
  * @returns Observable<Buy>
  */
-get(id: string) {
-  return this.http.get(this.apiUrl + '/' + id);
+get(_id: string) {
+  return this.http.get(this.apiUrl + '/' + _id);
 }
 
 /**
@@ -39,16 +39,16 @@ create(vendre: any) {
  * @param id buy id to update
  * @param vendre new course data
  */
-update(id: string, vendre: any) {
-  return this.http.put(this.apiUrl + '/' + id, vendre);
+update(_id: string, vendre: any) {
+  return this.http.put(this.apiUrl + '/' + _id, vendre);
 }
 
 /**
  * Delete a buy with the given id
  * @param id buy id to delete
  */
-delete(id: string) {
-  return this.http.delete(this.apiUrl + '/' + id);
+delete(_id: string) {
+  return this.http.delete(this.apiUrl + '/' + _id);
 }
 }
 
