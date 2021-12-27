@@ -44,7 +44,7 @@ class _BuyPageState extends State<BuycarPage>  {
                       textAlign: TextAlign.start,
                     ),
                     subtitle: Text(
-                      "price: ${buy.price}£",
+                      "Coût: ${buy.price}  DNT/Jour",
                       style: const TextStyle(color: Colors.grey,fontSize: 11),
                     ),
                     onTap:  () {
@@ -58,8 +58,8 @@ class _BuyPageState extends State<BuycarPage>  {
                                     "Model : ${buy.model}\n"
                                     "Etat : ${buy.etat}\n"
                                     "Description : ${buy.description} \n"
-                                    "\n Location: ${buy.location} \n",
-                                    semanticsLabel: " Price: ${buy.price}£",
+                                    "\n Localisation: ${buy.location} \n",
+                                    semanticsLabel: " Coût: ${buy.price}  DNT/Jour",
                                 style: const TextStyle(
                                     fontSize: 15,
                                     color: Colors.grey),
