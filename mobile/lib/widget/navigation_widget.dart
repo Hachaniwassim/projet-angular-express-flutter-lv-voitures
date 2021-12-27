@@ -123,7 +123,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         break;
       case 2:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const Myrentpage(title: 'RentCars',),
+          builder: (context) =>  Myrentpage(),
         ));
         break;
       case 3:
