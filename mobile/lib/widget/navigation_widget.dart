@@ -57,7 +57,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildMenuItem(
                     text: 'Contact US',
                     icon: Icons.contacts,
-                    onClicked: () => {},
+                    onClicked: () => selectedItem(context,4 ),
                   ),
                 ],
               ),
@@ -132,9 +132,9 @@ class NavigationDrawerWidget extends StatelessWidget {
           builder: (context) => const Servives(),
         ));
         break;
-      case 5:
+      case 4:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const Mycontactpage(),
+          builder: (context) => const Mycontactpage(title: 'contact',),
         ));
         break;
     }
