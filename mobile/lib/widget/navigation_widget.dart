@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/pages/buycar_page.dart';
+import 'package:mobile/pages/choiix.dart';
 import 'package:mobile/pages/contact.dart';
 import 'package:mobile/pages/rentcars.dart';
 import 'package:mobile/pages/about.dart';
@@ -27,13 +28,13 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildMenuItem(
                     text: 'Home',
                     icon: Icons.home,
-                    onClicked: () => {},
+                    onClicked: () => selectedItem(context, 1),
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'Buy',
                     icon: Icons.monetization_on_outlined,
-                    onClicked: () => selectedItem(context, 1),
+                    onClicked: () => selectedItem(context, 5),
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
@@ -114,7 +115,7 @@ class NavigationDrawerWidget extends StatelessWidget {
     switch (index) {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const Myaboutcreen(title: 'about',),
+          builder: (context) => choiix(back: () { "choix"; },),
         ));
         break;
       case 1:

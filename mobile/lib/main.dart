@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/pages/LoginPage.dart';
+import 'package:mobile/pages/signup.dart';
+import 'package:mobile/pages/start.dart';
 import 'package:mobile/widget/navigation_widget.dart';
 
 void main() {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
-      home: const MyHomePage(title: 'RentCars'),
+      home: start(),
     );
   }
 }
@@ -76,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       switch (index) {
         case 0:
-          _displayed = 'home';
+          _displayed = 'choiix';
           $_currentindex = 0;
           break;
         case 1:
