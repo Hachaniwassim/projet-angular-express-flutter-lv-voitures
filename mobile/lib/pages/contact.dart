@@ -15,7 +15,7 @@ class Mycontactpage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(

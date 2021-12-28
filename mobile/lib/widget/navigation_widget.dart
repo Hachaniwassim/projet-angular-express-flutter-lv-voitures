@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/pages/agency_page.dart';
 import 'package:mobile/pages/buycar_page.dart';
 import 'package:mobile/pages/contact.dart';
 import 'package:mobile/pages/rentcars.dart';
 import 'package:mobile/pages/about.dart';
 import 'package:mobile/pages/services.dart';
+import 'package:mobile/pages/team_page.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20);
@@ -15,7 +17,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return Drawer(
       child: Material(
-        color: const Color.fromRGBO(246, 164, 78, 1.0),
+        color: const Color.fromRGBO(48, 100, 217, 1.0),
         child: ListView(
           children: <Widget>[
             Container(
@@ -51,13 +53,19 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildMenuItem(
                     text: 'About Us',
                     icon: Icons.help,
-                    onClicked: () =>{},
+                    onClicked: () =>{selectedItem(context,5)},
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Contact US',
                     icon: Icons.contacts,
                     onClicked: () => selectedItem(context,4 ),
+                  ),
+                  const SizedBox(height: 16),
+                  buildMenuItem(
+                    text: 'Teams',
+                    icon: Icons.contacts,
+                    onClicked: () => selectedItem(context,6 ),
                   ),
                 ],
               ),
@@ -128,6 +136,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         ));
         break;
       case 3:
+
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const Servives(),
         ));
@@ -137,6 +146,17 @@ class NavigationDrawerWidget extends StatelessWidget {
           builder: (context) => const Mycontactpage(title: 'contact',),
         ));
         break;
-    }
+      case 5:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => AgencyPage(),
+        ));
+        break;
+        case 6:
+    Navigator.of(context).push(MaterialPageRoute(
+    builder: (context) => TeamPage(),
+    ));
+    break;
+  }
+
   }
 }
