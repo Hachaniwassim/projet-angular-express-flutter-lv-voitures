@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/pages/start.dart';
 import 'package:mobile/widget/navigation_widget.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
-      home: const MyHomePage(title: 'RentCars'),
+      home: start(),
     );
   }
 }
@@ -98,6 +99,10 @@ class _MyHomePageState extends State<MyHomePage> {
         case 5:
           _displayed = 'OurBlog';
           $_currentindex = 5;
+          break;
+        case 6:
+          _displayed = 'login';
+          $_currentindex = 6;
           break;
       }
     });

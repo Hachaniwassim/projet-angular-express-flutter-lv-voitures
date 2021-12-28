@@ -15,7 +15,7 @@ class _MyrentPageState extends State<Myrentpage> {
     appBar: AppBar(
       title: Text('RentCars'),
       centerTitle: true,
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.red,
     ),
     body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
@@ -43,7 +43,7 @@ class _MyrentPageState extends State<Myrentpage> {
                     ),
                     subtitle: Text(
                       "Coût: ${rent.price}   DNT/Jour",
-                      style: const TextStyle(color: Colors.grey,fontSize: 11),
+                      style: const TextStyle(color: Colors.black45,fontSize: 11),
                     ),
                     onTap:  () {
                       showDialog(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/pages/buycar_page.dart';
+import 'package:mobile/pages/login.dart';
 import 'package:mobile/pages/rentcars.dart';
 import 'package:mobile/pages/about.dart';
 import 'package:mobile/pages/services.dart';
@@ -55,6 +56,12 @@ class NavigationDrawerWidget extends StatelessWidget {
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Contact US',
+                    icon: Icons.contacts,
+                    onClicked: () => {},
+                  ),
+                  const SizedBox(height: 16),
+                  buildMenuItem(
+                    text: 'login',
                     icon: Icons.contacts,
                     onClicked: () => {},
                   ),
@@ -129,6 +136,11 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 3:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const Servives(),
+        ));
+        break;
+      case 4:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => login(),
         ));
         break;
     }
