@@ -17,7 +17,7 @@ class _BuyPageState extends State<BuycarPage>  {
     appBar: AppBar(
       title: Text('BuyCars'),
       centerTitle: true,
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.redAccent,
     ),
     body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),

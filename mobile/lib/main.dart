@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/pages/LoginPage.dart';
-import 'package:mobile/pages/signup.dart';
 import 'package:mobile/pages/start.dart';
 import 'package:mobile/widget/navigation_widget.dart';
+
+import 'auth/sign_in.dart';
+import 'auth/sign_up.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
-      home: start(),
+      home: SignUpPage(),
+     routes: {
+
+        '/signup': (BuildContext context)=>const SignUpPage(),
+        '/signin': (BuildContext context)=>const SignInPage(),
+     },
     );
   }
 }

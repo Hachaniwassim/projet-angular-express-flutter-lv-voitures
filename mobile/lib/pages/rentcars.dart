@@ -15,7 +15,7 @@ class _MyrentPageState extends State<Myrentpage> {
     appBar: AppBar(
       title: Text('RentCars'),
       centerTitle: true,
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.redAccent,
     ),
     body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
