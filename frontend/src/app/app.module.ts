@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
-import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +22,6 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     HomeComponent,
     FooterComponent,
     ServicesComponent,
-    BlogComponent,
     ContactComponent,
     MatConfirmDialogComponent,
 

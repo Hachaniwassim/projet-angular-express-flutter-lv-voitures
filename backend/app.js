@@ -5,6 +5,8 @@ const clientRouter = require('./routes/clients');
 const teamRouter = require('./routes/teams');
 const voitureRouter = require('./routes/voitures');
 const vendreRouter = require('./routes/vendres');
+const blogRouter = require('./routes/blogs');
+
 const mongoose = require('mongoose');
 
 const app = express();
@@ -14,9 +16,7 @@ mongoose.connect('mongodb://localhost:27017/final-project',
     useUnifiedTopology: true })
   .then(() => console.log('Connected successfully to MongoDB !'))
   .catch(() => console.log('Connection failed to MongoDB !'));
-
-
-  app.use(express.json());
+ app.use(express.json());
 
   app.use((req, res, next) => { 
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -31,5 +31,6 @@ mongoose.connect('mongodb://localhost:27017/final-project',
   app.use('/api/teams', teamRouter);
   app.use('/api/voitures', voitureRouter);
   app.use('/api/vendres', vendreRouter);
+  app.use('/api/blogs', blogRouter);
 
 module.exports = app;
