@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../model/cars_rent.dart';
 
-List<Car> cars = [
+/*List<Car> cars = [
   Car(matricule: '1', brand: 'Audi',model: 'R8', description: 'Audi enlisted the help of Porsche to develop the RS2 Avant', image: Image.asset('images/hyundai.jpg'), etat: 'avaible', location: 'tunis', price: 60000000),
   Car(matricule: '2', brand: 'Aston Martin',model: 'Virage', description: 'Audi enlisted the help of Porsche to develop the RS2 Avant', image: Image.asset('images/hyundai.jpg'), etat: 'avaible', location: 'tunis', price: 60000000),
   Car(matricule: '3', brand: 'Mercedes',model: 'SLS', description: 'Audi enlisted the help of Porsche to develop the RS2 Avant', image: Image.asset('images/hyundai.jpg'), etat: 'avaible', location: 'tunis', price: 80000000),
@@ -16,4 +16,4 @@ List<Car> cars = [
   Car(matricule: '12', brand: 'Lamborghini',model: 'Huracan', description: 'Audi enlisted the help of Porsche to develop the RS2 Avant', image: Image.asset('images/hyundai.jpg'), etat: 'avaible', location: 'tunis', price: 60000000),
 
 
-];
+];*/
