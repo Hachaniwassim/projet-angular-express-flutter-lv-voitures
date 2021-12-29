@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { CarsRentModule } from 'src/app/cars-rent/cars-rent.module';
 import { NgModule } from '@angular/core';
 import { NotificationService } from 'src/app/shared/notification.service';
+import { RentService } from 'src/app/shared/rent.service';
 @Component({
   selector: 'app-favorites-rent',
   templateUrl: './favorites-rent.component.html',
@@ -16,8 +17,12 @@ export class FavoritesRentComponent implements OnInit {
 
   public favContent: any = [];
 
-  constructor( private favService: FavService, private notificationService : NotificationService) { }
 
+  constructor(
+    private favService: FavService,
+    private notificationService : NotificationService
+  ) {}
+  
   ngOnInit(): void {
     this.getfavDetails();
     console.log(this.favContent);
@@ -27,8 +32,8 @@ export class FavoritesRentComponent implements OnInit {
   getfavDetails() {
     this.favContent = this.favService.favContent;
     for (let index = 0; index < this.favContent.length; index++) {
-      const rent = voitures.filter(rent => rent._id == this.favContent[index].id)[0];
-     this.favContent[index].title = rent.title;
+      const rent = voitures.filter((rent: any) => rent.id == this.favContent[index].id)[0];
+      this.favContent[index].title = rent.title;
       this.favContent[index].price = rent.price;
       this.favContent[index].image = rent.image;
 
