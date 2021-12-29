@@ -20,6 +20,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -47,7 +48,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatDialogModule,
     MatListModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+   MatProgressSpinnerModule
   ],
   exports:[
     MatToolbarModule,
@@ -69,7 +71,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatDialogModule,
     MatListModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+     MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }
