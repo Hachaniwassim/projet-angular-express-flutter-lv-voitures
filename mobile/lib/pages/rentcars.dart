@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/cars_rent.dart';
@@ -97,10 +96,10 @@ class _MyrentPageState extends State<Myrentpage>  {
                                     "modele : ${rent.modele}\n"
                                     "Puissance : ${rent.puissance}\n"
                                     "Kilometrage : ${rent.Kilometrage} \n"
-                                    //"Description :\n"
-                                   // " ${rent.description}",
+                                //"Description :\n"
+                                // " ${rent.description}",
                                 ,style: const TextStyle(
-                                    fontSize: 18, color: Colors.grey),
+                                  fontSize: 18, color: Colors.grey),
                               ),
 
                               content: Image.network(rent.image),
@@ -116,4 +115,3 @@ class _MyrentPageState extends State<Myrentpage>  {
         });
   }
 }
-

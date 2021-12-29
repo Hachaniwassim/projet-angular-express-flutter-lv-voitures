@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/buycar.dart';
@@ -97,10 +96,10 @@ class _BuyPageState extends State<BuycarPage>  {
                                     "modele : ${buy.modele}\n"
                                     "Puissance : ${buy.puissance}\n"
                                     "Kilometrage : ${buy.Kilometrage} \n"
-                                    //"Description :\n"
-                                   // " ${buy.description}",
+                                //"Description :\n"
+                                // " ${buy.description}",
                                 ,style: const TextStyle(
-                                    fontSize: 18, color: Colors.grey),
+                                  fontSize: 18, color: Colors.grey),
                               ),
 
                               content: Image.network(buy.image),
