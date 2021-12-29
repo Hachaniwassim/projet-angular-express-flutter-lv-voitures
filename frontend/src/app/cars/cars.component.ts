@@ -25,15 +25,22 @@ export class CarsComponent implements OnInit {
   isEditeMode = false;
   searchKey!: string;
   submitted = false ;
+  res : any ;
+  element = {
+    matricue: "",
+     modele: "",
+     marque: "",
+     prix: "",
+     kilometrage: "" };
+   list: any;
+   showspinner=false;
 
   base_url = "http://localhost:3000/voiture";
 
   datasource = new MatTableDataSource(this.voiture)
-  displayedColumns: string[] = [ '_id','matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
+  displayedColumns: string[] = ['matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort, {}) sort!: MatSort;
-
-
 
   constructor(public httpDataService: HttpDataService, private dialog: MatDialog, private dialogService: DialogService,
     private notificationService: NotificationService) {
@@ -53,6 +60,7 @@ export class CarsComponent implements OnInit {
 
 
   getAllCars() {
+    this.spinner()
     this.httpDataService.getcars().subscribe((response: any) => {
       this.datasource.data = response;
     });
@@ -91,7 +99,7 @@ export class CarsComponent implements OnInit {
     this.httpDataService.form.reset();
     this.httpDataService.initializeFormGroup();
     this.notificationService.success(':: Submitted successfully');
-    window.location.reload();
+    this.reloadPage();
   }
 
   // cancelEdit() {
@@ -102,16 +110,20 @@ export class CarsComponent implements OnInit {
 
   // status 400 , backend yraja object object  , !! fel json-server ca fonctionne correctememnt 
   onSubmit() {
+  
     if (this.httpDataService.form.valid) {
+       this.httpDataService.create(this.httpDataService.form.value);
       
-         this.httpDataService.create(this.httpDataService.form.value).subscribe(()=>{
-          console.log();
-          this.getAllCars();
-         })
-         this.notificationService.success(':: Submitted successfully');
-         
-        }
-        }
+  
+    }
+    this.httpDataService.form.reset();
+    this.httpDataService.initializeFormGroup();
+    this.notificationService.success(' :: Add successfully ')
+    this.getAllCars();
+    this.reloadPage();
+  }
+  
+
 
 
 
@@ -124,6 +136,18 @@ export class CarsComponent implements OnInit {
   onClear() {
     this.httpDataService.form.reset();
     this.httpDataService.initializeFormGroup();
+  }
+
+
+  reloadPage() {
+    setTimeout(()=>{
+        window.location.reload();
+      }, 1000);  
+  }
+
+  spinner(){ 
+    this.showspinner=true;
+    setTimeout(() => {this.showspinner=false;},2000)
   }
 }
 

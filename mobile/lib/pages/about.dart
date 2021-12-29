@@ -11,7 +11,7 @@ class Myaboutcreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.red
       ),
       body: Center(
         child: Column(
@@ -22,13 +22,13 @@ class Myaboutcreen extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
-                color: Colors.amber
+                color: Colors.white
               ),
             ),
             const Padding(padding: EdgeInsets.only(bottom: 20)),
             RaisedButton(
               child: const Text("Rent a car"),
-                color: Colors.amber,
+                color: Colors.lightBlue,
                 textColor: Colors.white,
                 onPressed: () {
                   Navigator.pushNamed(context, '/rentcars');
@@ -36,7 +36,7 @@ class Myaboutcreen extends StatelessWidget {
             ),const Padding(padding: EdgeInsets.only(bottom: 10)),
             RaisedButton(
                 child: const Text("Buy a car"),
-                color: Colors.amber,
+                color: Colors.blueAccent,
                 textColor: Colors.white,
                 onPressed: () {
                   Navigator.pushNamed(context, '/screen3');

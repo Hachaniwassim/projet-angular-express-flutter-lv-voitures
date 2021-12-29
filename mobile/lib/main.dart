@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer:const NavigationDrawerWidget(),
       appBar: AppBar(
         title: const Text('RentCars'),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.blueAccent,
         actions: const [
         ],
       ),
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.white), label: 'home',backgroundColor: Colors.amberAccent,),
+            icon: Icon(Icons.home, color: Colors.white), label: 'home',backgroundColor: Colors.blue,),
 
           BottomNavigationBarItem(
               icon: Icon(Icons.contact_mail, color: Colors.white), label: 'contact us',backgroundColor: Colors.deepPurpleAccent),
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
           $_currentindex = 4;
           break;
         case 5:
-          _displayed = 'OurBlog';
+          _displayed = 'Teams';
           $_currentindex = 5;
           break;
       }
