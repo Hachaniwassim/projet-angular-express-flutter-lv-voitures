@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ServicesComponent } from './services/services.component';
-import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
 const routes : Routes =[
@@ -13,8 +12,7 @@ const routes : Routes =[
   { path : "home", component : HomeComponent},
   { path : "services" ,component :ServicesComponent},
  // { path : "about", component: AboutComponent},
-  { path : "blog", component :BlogComponent}, 
-  { path :  "contact",component: ContactComponent}, 
+   { path :  "contact",component: ContactComponent}, 
 
  
  //teams routing
@@ -34,6 +32,8 @@ const routes : Routes =[
   { path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule) },
 
   { path: 'layout', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
+  
+  { path: 'blogs', loadChildren: () => import('./blogs/blogs.module').then(m => m.BlogsModule) },
 
  //notfound
 
