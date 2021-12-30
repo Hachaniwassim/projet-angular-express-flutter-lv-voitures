@@ -17,6 +17,10 @@ import { TeamsAdminComponent } from './teams-admin/teams-admin.component';
 import { TeamAddComponent } from './teams-admin/team-add/team-add.component';
 import { TeamListComponent } from './teams-admin/team-list/team-list.component';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AgencysAdminComponent } from './agencys-admin/agencys-admin.component';
+import { AgencyAddComponent } from './agencys-admin/agency-add/agency-add.component';
+import { AgencyListComponent } from './agencys-admin/agency-list/agency-list.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -31,6 +35,9 @@ import { MatDialogRef } from '@angular/material/dialog';
     TeamsAdminComponent,
     TeamAddComponent,
     TeamListComponent,
+    AgencysAdminComponent,
+    AgencyAddComponent,
+    AgencyListComponent,
 
   ],
   imports: [
@@ -44,7 +51,7 @@ import { MatDialogRef } from '@angular/material/dialog';
     HttpClientModule
   ],
   
-  providers: [{provide: MatDialogRef, useValue: {close: (_dialogResult: any) => { }} }],
+  providers: [{provide: MatDialogRef, useValue: {close: (_dialogResult: any) => { }} },DatePipe],
   bootstrap: [AppComponent],
   entryComponents: [TeamAddComponent]
 })

@@ -14,25 +14,25 @@
   <mat-spinner style="margin-left: 560px; width:100px;" *ngIf="showspinner" color="primary"></mat-spinner>
   <div class="mat-elevation-z8 " *ngIf ="!showspinner">
     <mat-table [dataSource]="datasource" matSort >
-      <ng-container matColumnDef="name"  >
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.name}} </mat-cell>
+      <ng-container matColumnDef="owner"  >
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Owner </mat-header-cell>
+        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.owner}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="mail">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Email </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.mail}} </mat-cell>
+      <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Location </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="phone">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Phone </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+      <ng-container matColumnDef="date_creation">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date creation </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.date_creation}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="city">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header  style="margin-Left:30px;"> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let row">
+        <mat-cell *matCellDef="let row"  style="margin-Left:50px;">
           <button mat-icon-button (click)="onEdit(row)">
             <mat-icon>edit_outline</mat-icon>
           </button>|
