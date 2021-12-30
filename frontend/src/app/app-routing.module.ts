@@ -6,6 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
+import { TeamsAdminComponent } from './teams-admin/teams-admin.component';
 const routes : Routes =[
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes : Routes =[
   { path : "services" ,component :ServicesComponent},
  // { path : "about", component: AboutComponent},
    { path :  "contact",component: ContactComponent}, 
+   {path : 'team', component: TeamsAdminComponent},
 
  
  //teams routing
