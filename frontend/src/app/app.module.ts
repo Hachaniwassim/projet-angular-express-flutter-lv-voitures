@@ -13,6 +13,11 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import { TeamsAdminComponent } from './teams-admin/teams-admin.component';
+import { TeamAdminComponent } from './teams-admin/team-admin/team-admin.component';
+import { TeamListComponent } from './teams-admin/team-list/team-list.component';
+import { HttpDataService } from './shared/http-data.service';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -24,6 +29,10 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     ServicesComponent,
     ContactComponent,
     MatConfirmDialogComponent,
+    TeamsAdminComponent,
+    TeamAdminComponent,
+    TeamListComponent,
+  
 
   ],
   imports: [
@@ -34,9 +43,11 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{provide: MatDialogRef, useValue: {close: (_dialogResult: any) => { }} }],
+  bootstrap: [AppComponent],
+  entryComponents: [TeamAdminComponent]
 })
 export class AppModule { }

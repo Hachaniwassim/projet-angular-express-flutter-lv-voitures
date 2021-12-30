@@ -12,9 +12,7 @@
   
   <!--******************************************* ladd  cars *****************************************************--->
   <form [formGroup]="httpDataService.form" class="normal-form" (submit)="onSubmit()" >
-    <input type="hidden" formControlName="_id">
-  
-    <mat-form-field>
+   <mat-form-field>
       <input formControlName="matricule" matInput placeholder="matricule">
       <mat-error *ngIf="httpDataService.form.controls['matricule'].errors?.required">this field is mandatory.
       </mat-error>
@@ -22,13 +20,13 @@
     <mat-form-field>
       <input formControlName="modele" matInput placeholder="Modele">
       <mat-error *ngIf="httpDataService.form.controls['modele'].errors?.required">this field is mandatory.</mat-error>
-      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 8 charactors needed.
+      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 3 charactors needed.
       </mat-error>
     </mat-form-field>
     <mat-form-field>
       <input formControlName="marque" matInput placeholder="Marque">
       <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.required">This field is mandatory.</mat-error>
-      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 8 charactors needed.
+      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 3 charactors needed.
       </mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -87,7 +85,7 @@
         <mat-cell *matCellDef="let row">
           <button mat-icon-button (click)="onEdit(row)">
             <mat-icon>edit_outline</mat-icon>
-          </button>
+          </button>|
           <button mat-icon-button color="warn" (click)="onDelete(row._id)">
             <mat-icon>delete_outline</mat-icon>
           </button>

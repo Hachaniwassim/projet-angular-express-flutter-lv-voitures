@@ -105,15 +105,18 @@ export class CarsComponent implements OnInit {
   onSubmit() {
   
     if (this.httpDataService.form.valid) {
-       this.httpDataService.create(this.httpDataService.form.value);
-      
-  
-    }
+       this.httpDataService.create(this.httpDataService.form.value).subscribe(()=>{
+         
     this.httpDataService.form.reset();
     this.httpDataService.initializeFormGroup();
     this.notificationService.success(' :: Add successfully ')
     this.getAllCars();
     this.reloadPage();
+        
+       })
+      }
+  
+  
   }
   
 

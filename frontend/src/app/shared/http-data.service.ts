@@ -46,8 +46,8 @@ export class HttpDataService {
 
 
 // insert a car
-create(car : Voiture):Observable<any>{
-  return this.http.post<Voiture>(this.base_url,JSON.stringify(car),this.httpOptions).pipe(retry(2),catchError(this.handleError));
+create(item : Voiture):Observable<Voiture>{
+  return this.http.post<Voiture>(this.base_url,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError));
 }
 
 //get all cars data 
@@ -87,7 +87,7 @@ create(car : Voiture):Observable<any>{
 // inialisation formulaire 
 initializeFormGroup() {
   this.form.setValue({
-    _id :'',
+    _id :null,
     matricule: '',
     modele: '',
     marque: '',
