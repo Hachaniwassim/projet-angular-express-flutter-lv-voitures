@@ -25,14 +25,7 @@ export class CarsComponent implements OnInit {
   isEditeMode = false;
   searchKey!: string;
   submitted = false ;
-  res : any ;
-  element = {
-    matricue: "",
-     modele: "",
-     marque: "",
-     prix: "",
-     kilometrage: "" };
-   list: any;
+  
    showspinner=false;
 
   base_url = "http://localhost:3000/voiture";
