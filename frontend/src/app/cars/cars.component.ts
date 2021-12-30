@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as _ from 'lodash'
 import { FormGroup, NgForm } from '@angular/forms';
-import { HttpDataService } from '../shared/http-data.service';
-import { Voiture } from '../models/voiture';
+import { VendreService } from '../shared/vendre.service';
+import { voiture_vendre } from '../voiture-vendre-model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -20,8 +20,8 @@ import { first } from 'rxjs/operators';
 export class CarsComponent implements OnInit {
   @ViewChild('carsForm', { static: false })
   carsForm!: FormGroup;
-  carsData !: Voiture;
-  voiture !: Voiture[];
+  carsData !: voiture_vendre;
+  voiture !: voiture_vendre[];
   isEditeMode = false;
   searchKey!: string;
   submitted = false ;
@@ -31,13 +31,13 @@ export class CarsComponent implements OnInit {
   base_url = "http://localhost:3000/voiture";
 
   datasource = new MatTableDataSource(this.voiture)
-  displayedColumns: string[] = ['matricule', 'modele', 'marque', 'puissance', 'prix', 'actions'];
+  displayedColumns: string[] = ['title', 'description', 'image', 'Kilometrage', 'price', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort, {}) sort!: MatSort;
 
-  constructor(public httpDataService: HttpDataService, private dialog: MatDialog, private dialogService: DialogService,
+  constructor(public httpDataService:VendreService , private dialog: MatDialog, private dialogService: DialogService,
     private notificationService: NotificationService) {
-    this.carsData = {} as Voiture;
+    this.carsData = {} as voiture_vendre;
   }
 
   ngAfterViewInit() {
@@ -105,15 +105,18 @@ export class CarsComponent implements OnInit {
   onSubmit() {
   
     if (this.httpDataService.form.valid) {
-       this.httpDataService.create(this.httpDataService.form.value);
+       this.httpDataService.create(this.httpDataService.form.value).subscribe(()=>{
+
+        this.httpDataService.form.reset();
+        this.httpDataService.initializeFormGroup();
+        this.notificationService.success(' :: Add successfully ')
+        this.getAllCars();
+        this.reloadPage();
+       })
       
   
     }
-    this.httpDataService.form.reset();
-    this.httpDataService.initializeFormGroup();
-    this.notificationService.success(' :: Add successfully ')
-    this.getAllCars();
-    this.reloadPage();
+   
   }
   
 

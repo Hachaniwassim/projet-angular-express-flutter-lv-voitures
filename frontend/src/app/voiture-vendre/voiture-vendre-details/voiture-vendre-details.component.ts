@@ -49,7 +49,7 @@ ngOnInit(): void {
 
 getone(){
   // status 304 ok  
-   this.vendreService.get(this._id).subscribe((data)=>
+   this.vendreService.getByid(this._id).subscribe((data)=>
    { this.list=data;
     this.voiturevendre=this.list;
     console.log(this.voiturevendre);

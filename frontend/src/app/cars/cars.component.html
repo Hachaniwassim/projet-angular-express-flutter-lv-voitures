@@ -15,32 +15,29 @@
     <input type="hidden" formControlName="_id">
   
     <mat-form-field>
-      <input formControlName="matricule" matInput placeholder="matricule">
-      <mat-error *ngIf="httpDataService.form.controls['matricule'].errors?.required">this field is mandatory.
+      <input formControlName="title" matInput placeholder="Title">
+      <mat-error *ngIf="httpDataService.form.controls['title'].errors?.required">this field is mandatory.
       </mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input formControlName="modele" matInput placeholder="Modele">
-      <mat-error *ngIf="httpDataService.form.controls['modele'].errors?.required">this field is mandatory.</mat-error>
-      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 8 charactors needed.
+    <mat-form-field style="margin-left: 30px;">
+      <input formControlName="description" matInput placeholder="description">
+      <mat-error *ngIf="httpDataService.form.controls['description'].errors?.required">this field is mandatory.</mat-error>
+      <mat-error *ngIf="httpDataService.form.controls['image'].errors?.minlength">Minimum 8 charactors needed.
       </mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input formControlName="marque" matInput placeholder="Marque">
-      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.required">This field is mandatory.</mat-error>
-      <mat-error *ngIf="httpDataService.form.controls['marque'].errors?.minlength">Minimum 8 charactors needed.
+    <mat-form-field style="margin-left: 30px;">
+      <input formControlName="image" matInput placeholder="image">
+      <mat-error *ngIf="httpDataService.form.controls['image'].errors?.required">This field is mandatory.</mat-error>
+      <mat-error *ngIf="httpDataService.form.controls['image'].errors?.minlength">Minimum 8 charactors needed.
       </mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input formControlName="puissance" matInput placeholder="Puissance">
+    <mat-form-field style="margin-left: 30px;">
+      <input formControlName="Kilometrage" matInput placeholder="Kilometrage">
       <mat-error>this field is mandatory.</mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input formControlName="kilometrage" matInput placeholder="kilometrage">
-      <mat-error>Invalid kilometrage.</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input formControlName="prix" matInput placeholder="Price">
+    
+    <mat-form-field style="margin-left: 30px;">
+      <input formControlName="price" matInput placeholder="Price">
       <mat-error>this field is mandatory</mat-error>
     </mat-form-field>
       <button *ngIf="!isEditeMode" mat-raised-button color="primary"  type="submit" style="margin-left: 30px;" [disabled]="httpDataService.form.invalid">
@@ -58,29 +55,26 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header> #id </mat-header-cell>
         <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element._id}} </mat-cell>
       </ng-container>-->
-      <ng-container matColumnDef="matricule"  >
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Matricule </mat-header-cell>
-        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.matricule}} </mat-cell>
+      <ng-container matColumnDef="title"  >
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.title}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="modele">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Modele </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.modele}} </mat-cell>
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Description </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="marque">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Marque </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.marque}} </mat-cell>
+      <ng-container matColumnDef="image">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Image </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.image}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="puissance">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Puissance </mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.puissance}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="kilometrage">
+      <ng-container matColumnDef="Kilometrage">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Kilometrage </mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.kilometrage} </mat-cell>
+        <mat-cell *matCellDef="let element">{{element.Kilometrage}}</mat-cell>
       </ng-container>
-      <ng-container matColumnDef="prix">
+      
+      <ng-container matColumnDef="price">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Price</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.prix}}</mat-cell>
+        <mat-cell *matCellDef="let element">{{element.price}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
