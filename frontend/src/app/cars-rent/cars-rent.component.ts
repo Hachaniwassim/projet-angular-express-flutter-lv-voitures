@@ -6,6 +6,10 @@ import { LocalStorageService } from 'src/app/shared/local-storage.service';
 import { FavService } from 'src/app/shared/fav.service';
 import { NotificationService } from '../shared/notification.service';
 import { RentService } from '../shared/rent.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RentrdvService } from '../shared/rdv.service';
+
 
 @Component({
   selector: 'app-cars-rent',
@@ -14,10 +18,24 @@ import { RentService } from '../shared/rent.service';
 })
 export class CarsRentComponent implements OnInit {
   public voituresList: any = [];
- 
-
   public favContent: any[]= [];
-  constructor(private favService: FavService , private notificationService : NotificationService ,  private rentService: RentService ) { }
+  public formValue: FormGroup;
+  constructor(
+    private favService: FavService , 
+    private notificationService : NotificationService , 
+    private rentService: RentService,
+    private rdvservice: RentrdvService,
+    private formBuilder:FormBuilder,
+    public router:Router     ) 
+    {
+      this.formValue = this.formBuilder.group({
+        Nom_Voiture: [''],
+        Nom_utilisateur: [''],
+        email: [''],
+        Date_début: [''],
+        Date_fin: [''],
+      });
+     }
   ngOnInit(): void {
         //this.favContent = this.localStorageService.get('fav');
 
@@ -25,9 +43,22 @@ export class CarsRentComponent implements OnInit {
           res => this.voituresList = res
         );
   }
+  
   public addTofav(id: string):void {
     this.favService.add(id);
     this.notificationService.success('! Add successfully');
 }
 
+public addRent() {
+  this.rdvservice.create(this.formValue.value).subscribe(res => {
+
+    if(res.status == 201) {
+      this.formValue.reset();
+      this.router.navigate(['/rent']);
+      window.location.reload();
+      this.notificationService.success('! Add successfully');
+    }
+  });
+
+}
 }
