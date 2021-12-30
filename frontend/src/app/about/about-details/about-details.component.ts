@@ -30,7 +30,7 @@ export class AboutDetailsComponent implements OnInit {
 
 getone(){
   // status 304 ok  
-   this.agencyService.get(this._id).subscribe((data)=>
+   this.agencyService.getByid(this._id).subscribe((data)=>
    { this.list=data;
     this.Agency=this.list;
     console.log(this.Agency);

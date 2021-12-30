@@ -7,6 +7,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
 import { TeamsAdminComponent } from './teams-admin/teams-admin.component';
+import { AgencysAdminComponent } from './agencys-admin/agencys-admin.component';
 const routes : Routes =[
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +16,9 @@ const routes : Routes =[
  // { path : "about", component: AboutComponent},
    { path :  "contact",component: ContactComponent}, 
    {path : 'team', component: TeamsAdminComponent},
+   
+   {path : 'agencyAdmin', component: AgencysAdminComponent},
+
 
  
  //teams routing
