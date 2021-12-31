@@ -274,7 +274,7 @@ class choiix extends StatelessWidget {
       Pin(size: 53.0, start: 28.0),
       Pin(size: 52.0, start: 49.0),
       child: GestureDetector(
-        onTap: () => back?.call(),
+        onTap: () => back.call(),
         child: Stack(
           children: <Widget>[
             Pinned.fromPins(

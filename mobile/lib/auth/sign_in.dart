@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/pages/buycar_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:adobe_xd/pinned.dart';
 
@@ -18,18 +17,11 @@ class _SignInPageState extends State<SignInPage> {
   @override
 
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Welcome',
-
-    home :Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text('Sign_in'),
-      ),
-
       body:Stack(children: <Widget>[
-      Padding(
-      padding: const EdgeInsets.all(0.0),),
+      const Padding(
+      padding: EdgeInsets.all(0.0),),
         Pinned.fromPins(
           Pin(size: 497.0, end: -283.0),
           Pin(start: -16.0, end: 0.0),
@@ -150,7 +142,7 @@ class _SignInPageState extends State<SignInPage> {
                     child: ElevatedButton(
                       child: Text(
                         "sign_in".toUpperCase(),
-                        style: TextStyle(fontSize: 14),
+                        style: const TextStyle(fontSize: 14),
                       ),
                       style: ButtonStyle(
                         foregroundColor:
@@ -161,15 +153,12 @@ class _SignInPageState extends State<SignInPage> {
                         MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50.0),
-                                side: BorderSide(
+                                side: const BorderSide(
                                     color: Colors.redAccent))),
                       ),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => BuycarPage()),
-                        );
+                        Navigator.pushNamed(context, '/home');
+
                       },
                     ),
                   ),
@@ -182,19 +171,31 @@ class _SignInPageState extends State<SignInPage> {
                     const Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Text(
-                        "Already have an account?",
+                        "ADon't have an account?",
                         style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                             fontWeight: FontWeight.normal),
                       ),
                     ),
-
-
-
+                    FlatButton(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: const Text(
+                          'Sign UP',
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Color.fromRGBO(220, 184, 184, 1.0),
+                              fontWeight: FontWeight.normal),
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/signup');
+                        })
                   ]),
             ]),
       ),
-    ])));
+    ]
+    )
+    );
+
   }
 }

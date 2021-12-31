@@ -4,6 +4,8 @@ import 'package:mobile/model/buycar.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'Buy_detail.dart';
+
 class BuycarPage extends StatefulWidget {
   @override
   _BuyPageState createState() => _BuyPageState();
@@ -37,9 +39,29 @@ class _BuyPageState extends State<BuycarPage>  {
       appBar: AppBar(
         title: const Text('BuyCars'),
         centerTitle: true,
-        backgroundColor: Colors.blue,
       ),
       body: loading ? waitingScreen() : BuysList());
+
+  Widget BuysList() {
+    return GridView.builder(
+        gridDelegate:
+        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemCount: _buys.length,
+        itemBuilder: (context, index) {
+         Buy buy= _buys[index];
+          return  Expanded(child: Container(
+
+            margin: const EdgeInsets.all(2.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                cardBuild(buy)
+              ],
+            ),
+
+          ));
+        });
+  }
 
   Widget waitingScreen() {
     return Center(
@@ -53,65 +75,42 @@ class _BuyPageState extends State<BuycarPage>  {
       ),
     );
   }
-  Widget BuysList() {
-    return GridView.builder(
-        gridDelegate:
-        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemCount: _buys.length,
-        itemBuilder: (context, index) {
-          Buy buy = _buys[index];
-          return Card(
-            // color: Colors.pinkAccent,
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  Widget cardBuild(Buy buy) {
+    return  Card(
 
-                children: <Widget>[
-                  Expanded(child: Image.network(buy.image)),
-                  const Divider(color: Colors.grey),
-                  ListTile(
-                    title: Text(
-                      buy.marque,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                    subtitle: Text(
-                      "price: \$${buy.price.toString()}£",
-                      style: const TextStyle(color: Colors.grey, fontSize: 11),
-                    ),
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              backgroundColor: Colors.white,
-
-                              title: Text(
-                                "${buy.marque}\n"
-                                    "modele : ${buy.modele}\n"
-                                    "Puissance : ${buy.puissance}\n"
-                                    "Kilometrage : ${buy.Kilometrage} \n"
-                                //"Description :\n"
-                                // " ${buy.description}",
-                                ,style: const TextStyle(
-                                  fontSize: 18, color: Colors.grey),
-                              ),
-
-                              content: Image.network(buy.image),
-
-                            );
-                          });
-                    },
-                  ),
-                ],
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0))),
+      child: InkWell(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch, // add this
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(8.0),
+                topRight: Radius.circular(8.0),
               ),
+              child: Image.asset(buy.image,
+                  // width: 300,
+                  height: 80,
+                  fit: BoxFit.fill),
             ),
-          );
-        });
+            ListTile(
+              title: Text(
+                buy.marque,
+                style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(buy.modele),
+            ),
+            IconButton( icon:  const Icon(Icons.info_outline),
+              onPressed: ()  {Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) =>BuyDetail(buy: buy,)));},
+
+            )
+          ],
+        ),
+      ),
+
+    );
   }
 }
