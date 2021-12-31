@@ -39,7 +39,7 @@ export class CarsRentComponent implements OnInit {
   ngOnInit(): void {
         //this.favContent = this.localStorageService.get('fav');
 
-        this.rentService.all().subscribe(
+        this.rentService.getcars().subscribe(
           res => this.voituresList = res
         );
   }
