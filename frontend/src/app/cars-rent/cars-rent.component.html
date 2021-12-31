@@ -101,7 +101,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
-          Adding a new rent car
+          Rent a Car
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -128,7 +128,7 @@
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Date début</label>
             <input type="date" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image"
-              formControlName="Date_début" aria-describedby="emailHelp" />
+              formControlName="Date_debut" aria-describedby="emailHelp" />
           </div>
 
           <div class="mb-3">
@@ -136,7 +136,7 @@
             <input type="date" class="form-control" id="exampleInputEmail1" formControlName="Date_fin"
               aria-describedby="emailHelp" />
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
+          <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit" (click)="reloadPage()">
              add
           </button>
         </form>

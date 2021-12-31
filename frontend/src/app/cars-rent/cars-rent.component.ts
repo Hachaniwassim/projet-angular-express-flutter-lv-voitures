@@ -34,37 +34,45 @@ export class CarsRentComponent implements OnInit {
         Nom_Voiture: [''],
         Nom_utilisateur: [''],
         email: [''],
-        Date_début: [''],
+        Date_debut: [''],
         Date_fin: [''],
       });
      }
   ngOnInit(): void {
         //this.favContent = this.localStorageService.get('fav');
-
-        this.rentService.getcars().subscribe(
-          res => this.voituresList = res
-        );
+this.getcars();
   }
   
+
+ getcars() {
+
+  this.rentService.getcars().subscribe(
+    res => this.voituresList = res);
+ }
   public addTofav(id: string):void {
     this.favService.add(id);
     this.notificationService.success('! Add successfully');
 }
 
 public addRent() {
-  this.rdvservice.create(this.formValue.value).subscribe(res => {
-
-    if(res.status == 201) {
+  this.rdvservice.create(this.formValue.value).subscribe(()=>{
       this.formValue.reset();
-      this.router.navigate(['/rent']);
-      window.location.reload();
+      this.rentService.initializeFormGroup();
       this.notificationService.success('! Add successfully');
+       this.getcars();
+       this.reloadPage();
+  })
     }
-  });
 
-}
 onEditRent(voiture: any) {
   this.rentmodel._id = voiture._id;
   this.formValue.controls['Nom_Voiture'].setValue(voiture.title);
 }
+
+reloadPage() {
+  setTimeout(()=>{
+      window.location.reload();
+    }, 1000);  
+}
+
 }
