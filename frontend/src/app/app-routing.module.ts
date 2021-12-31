@@ -43,6 +43,8 @@ const routes : Routes =[
 
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 
+  { path: 'rent-add', loadChildren: () => import('./rent-add/rent-add.module').then(m => m.RentAddModule) },
+
  //notfound
 
  { path : "**", component : NotFoundComponent},

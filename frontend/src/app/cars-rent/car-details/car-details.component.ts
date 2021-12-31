@@ -37,7 +37,7 @@ export class CarDetailsComponent implements OnInit {
   }
   getone(){
     // status 304 ok  
-     this.rentService.get(this._id).subscribe((data)=>
+     this.rentService.getByid(this._id).subscribe((data)=>
      { this.list=data;
       this.voiture=this.list;
       console.log(this.voiture);
