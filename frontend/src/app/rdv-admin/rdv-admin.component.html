@@ -1,98 +1,59 @@
 <div class="container">
-    <br><br><br><br><br><br>
-    <h1></h1>
-    <div class="search-div">
-      <mat-form-field class="search-form-field" floatLabel="never">
-        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
-        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
-    
-    <!--******************************************* ladd  cars *****************************************************--->
-    <form [formGroup]="httpDataService.form" class="normal-form" (submit)="onSubmit()" >
-      <input type="hidden" formControlName="_id">
-    
-      <mat-form-field>
-        <input formControlName="Nom_Voiture" matInput placeholder="Nom_Voiture">
-        <mat-error *ngIf="httpDataService.form.controls['Nom_Voiture'].errors?.required">this field is mandatory.
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field style="margin-left: 30px;">
-        <input formControlName="Nom_utilisateur" matInput placeholder="Nom_utilisateur">
-        <mat-error>this field is mandatory.</mat-error>
-      </mat-form-field>
-      <mat-form-field style="margin-left: 30px;">
-        <input formControlName="email" matInput placeholder="email">
-        <mat-error>this field is mandatory.</mat-error>
-      </mat-form-field>
-      <mat-form-field style="margin-left: 30px;">
-        <input type="date" formControlName="Date_debut" matInput placeholder="Date_debut">
-        <mat-error>this field is mandatory.</mat-error>
-      </mat-form-field>
-      
-      <mat-form-field style="margin-left: 30px;">
-        <input type="date" formControlName="Date_fin" matInput placeholder="Date_fin">
-        <mat-error>this field is mandatory</mat-error>
-      </mat-form-field>
-        <button *ngIf="!isEditeMode" mat-raised-button color="primary"  type="submit" style="margin-left: 30px;" [disabled]="httpDataService.form.invalid">
-          add</button>&nbsp;
-          <button *ngIf="isEditeMode" mat-raised-button color="primary" (click)="updatee()" type="submit" style="margin-left: 30px;">
-            Edit</button>&nbsp;
-        <button mat-raised-button color="warn" (click)="onClear()">Clear</button>&nbsp;
-    
-    </form>
-    <!--******************************************* list cars *****************************************************--->
-    <mat-spinner style="margin-left: 560px; width:100px;" *ngIf="showspinner" color="primary"></mat-spinner>
-    <div class="mat-elevation-z8 " *ngIf ="!showspinner">
-      <mat-table [dataSource]="datasource" matSort >
-      <!--<ng-container matColumnDef="_id"  >
-          <mat-header-cell *matHeaderCellDef mat-sort-header> #id </mat-header-cell>
-          <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element._id}} </mat-cell>
-        </ng-container>-->
-        <ng-container matColumnDef="Nom_Voiture"  >
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Nom_Voiture </mat-header-cell>
-            <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.Nom_Voiture}} </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="Nom_utilisateur">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Nom_utilisateur </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.Nom_utilisateur}} </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="email">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="Date_debut">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Date_debut </mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.Date_debut}}</mat-cell>
-          </ng-container>
-          
-          <ng-container matColumnDef="Date_fin">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Date_fin</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.Date_fin}}</mat-cell>
-          </ng-container>
-        <ng-container matColumnDef="actions">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <button mat-icon-button (click)="onEdit(row)">
-              <mat-icon>edit_outline</mat-icon>
-            </button>
-            <button mat-icon-button color="warn" (click)="onDelete(row._id)">
-              <mat-icon>delete_outline</mat-icon>
-            </button>
-          </mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="loading">
-          <mat-footer-cell *matFooterCellDef colspan="6">
-            Loading data...
-          </mat-footer-cell>
-        </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':datasource!=null}"></mat-footer-row>
-      </mat-table>
-      <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
-    </div>
+  <br><br><br><br><br><br>
+  <h1></h1>
+  <div class="search-div">
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
-  <br>
+  <mat-spinner style="margin-left: 560px; width:100px;" *ngIf="showspinner" color="primary"></mat-spinner>
+  <div class="mat-elevation-z8 " *ngIf="!showspinner">
+    <mat-table [dataSource]="datasource" matSort>
+      <ng-container matColumnDef="Nom_Voiture">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nom_Voiture </mat-header-cell>
+        <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.Nom_Voiture}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Nom_utilisateur">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nom_utilisateur </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Nom_utilisateur}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Date_debut">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date_debut </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.Date_debut}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Date_fin">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date_fin</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.Date_fin}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="onEdit(row)">
+            <mat-icon>edit_outline</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="onDelete(row._id)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Loading data...
+        </mat-footer-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':datasource!=null}"></mat-footer-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
+<br>
