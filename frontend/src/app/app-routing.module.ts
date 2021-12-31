@@ -47,6 +47,8 @@ const routes : Routes =[
 
   { path: 'rdv-admin', loadChildren: () => import('./rdv-admin/rdv-admin.module').then(m => m.RdvAdminModule) },
 
+  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
+
  //notfound
 
  { path : "**", component : NotFoundComponent},
