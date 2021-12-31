@@ -65,7 +65,7 @@
         </ng-container>
         <ng-container matColumnDef="image">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Image </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.image}} </mat-cell>
+          <mat-cell *matCellDef="let element"> <img  class="images" src={{element.image}}/> </mat-cell>
         </ng-container>
         <ng-container matColumnDef="Kilometrage">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Kilometrage </mat-header-cell>
