@@ -45,7 +45,7 @@
       </div>
     </div>
   </div>
-  <section class="breadcrumb_section text-center clearfix">
+  <section class="breadcrumb_section text-center clearfix" >
     <div class="overlay"></div>
     <div class="page_title_area has_overlay d-flex align-items-center clearfix">
       <div class="container " data-aos="fade-up" data-aos-delay="100">
@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="row"> 
-          <div class="col-lg-4 col-md-6 mb-4" *ngFor="let voiture of voituresList">
+          <div class="col-lg-4 col-md-6 mb-4" *ngFor="let voiture of voituresList" >
             <div class="item-1">
                 <a href="#"><img [src]="voiture.image" alt="Image" class="img-fluid"></a>
                 <div class="item-1-contents">
@@ -81,7 +81,7 @@
                   <div class="d-flex action">
                     <button routerLink="/cars-rent/{{ voiture._id }}" class="btn btn-outline-primary">Details</button>&nbsp; &nbsp;
                      <button type="button" (click)="addTofav(voiture._id)" title="Add To Fav"  id ="heart" class="btn btn-sm btn-outline-secondary"><i id="like"  ></i>Add to favorites</button>&nbsp;
-                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Rent Now</button>&nbsp;
+                     <button class="btn btn-sm btn-outline-primary" (click)="onEditRent(voiture)" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Rent Now</button>&nbsp;
                     </div>
                 </div>
               </div>
@@ -109,8 +109,8 @@
         <form [formGroup]="formValue"(ngSubmit)="addRent()" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nom de la Voiture</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              formControlName="Nom_Voiture" />
+            <input type="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              formControlName="Nom_Voiture" readonly />
           </div>
 
           <div class="mb-3">
