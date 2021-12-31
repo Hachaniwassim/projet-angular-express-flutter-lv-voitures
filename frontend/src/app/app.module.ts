@@ -22,6 +22,7 @@ import { AgencyAddComponent } from './agencys-admin/agency-add/agency-add.compon
 import { AgencyListComponent } from './agencys-admin/agency-list/agency-list.component';
 import { DatePipe } from '@angular/common';
 import { AuthInterceptor } from "./auth.interceptor";
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { AuthInterceptor } from "./auth.interceptor";
     AgencysAdminComponent,
     AgencyAddComponent,
     AgencyListComponent,
+    SidebarComponent,
 
   ],
   imports: [
