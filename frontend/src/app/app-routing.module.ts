@@ -45,6 +45,8 @@ const routes : Routes =[
 
   { path: 'rent-add', loadChildren: () => import('./rent-add/rent-add.module').then(m => m.RentAddModule) },
 
+  { path: 'rdv-admin', loadChildren: () => import('./rdv-admin/rdv-admin.module').then(m => m.RdvAdminModule) },
+
  //notfound
 
  { path : "**", component : NotFoundComponent},
