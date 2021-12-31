@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {voitures} from "./../voiture-list";
 import { voiture } from "./../voiture.model";
+import { rentmodel } from './rentmodel.model';
 
 import { LocalStorageService } from 'src/app/shared/local-storage.service';
 import { FavService } from 'src/app/shared/fav.service';
@@ -20,6 +21,7 @@ export class CarsRentComponent implements OnInit {
   public voituresList: any = [];
   public favContent: any[]= [];
   public formValue: FormGroup;
+  rentmodel: rentmodel = new rentmodel();
   constructor(
     private favService: FavService , 
     private notificationService : NotificationService , 
@@ -60,5 +62,9 @@ public addRent() {
     }
   });
 
+}
+onEditRent(voiture: any) {
+  this.rentmodel._id = voiture._id;
+  this.formValue.controls['Nom_Voiture'].setValue(voiture.title);
 }
 }
