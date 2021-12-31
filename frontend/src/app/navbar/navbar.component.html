@@ -23,7 +23,12 @@
                 <li><a routerLink="/feedback" class="nav-link"(click)="reloadPage()">Feedback</a></li>
                 <li><a routerLink="/contact" class="nav-link"(click)="reloadPage()">Contact</a></li>
                 <li><a routerLink="/favorites" class="nav-link"(click)="reloadPage()">Favorites</a></li>
-                <li><a routerLink="/login" class="nav-link"(click)="reloadPage()">Login</a></li>
+                <li><a *ngIf="!currentUser.name " routerLink="/auth/login" class="nav-link"(click)="reloadPage()">Login</a></li>
+                <a class="nav-link  " href="#" aria-expanded="false">{{currentUser.name}}</a>
+                    
+                <div *ngIf="currentUser.name "><li>
+                  <div  (click)="logout()"><i class="bi bi-box-arrow-left"></i> Logout</div>
+                </li></div>     
               </ul>
             </nav>
           </div>
