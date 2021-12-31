@@ -31,7 +31,7 @@ export class RdvAdminComponent implements OnInit {
   base_url = "http://localhost:3000/rentsrdv";
 
   datasource = new MatTableDataSource(this.voiture)
-  displayedColumns: string[] = ['Nom Voiture', 'Nom utilisateur', 'email', 'Date_debut', 'Date_fin', 'actions'];
+  displayedColumns: string[] = ['Nom_Voiture', 'Nom_utilisateur', 'email', 'Date_debut', 'Date_fin', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort, {}) sort!: MatSort;
 
