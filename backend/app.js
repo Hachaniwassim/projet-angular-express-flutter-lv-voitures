@@ -8,6 +8,7 @@ const vendreRouter = require('./routes/vendres');
 const blogRouter = require('./routes/blogs');
 const userRouter = require('./routes/users');
 const rentsrdvrouter = require('./routes/rentsrdv');
+const buysrdvrouter = require('./routes/buysrdvs');
 
 
 const mongoose = require('mongoose');
@@ -37,6 +38,7 @@ mongoose.connect('mongodb://localhost:27017/final-project',
   app.use('/api/blogs', blogRouter);
   app.use('/api/auth', userRouter);
   app.use('/api/rentsrdvs', rentsrdvrouter);
+  app.use('/api/buysrdvs', buysrdvrouter);
 
 
 module.exports = app;
