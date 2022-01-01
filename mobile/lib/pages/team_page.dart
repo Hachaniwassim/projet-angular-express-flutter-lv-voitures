@@ -37,11 +37,6 @@ class _TeamPageState extends State<TeamPage>  {
   @override
   Widget build(BuildContext context) => Scaffold(
     //drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: const Text('Our team'),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
       body: loading ? waitingScreen() :TeamsList());
 
   Widget waitingScreen() {

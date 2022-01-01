@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
     'images/plan8.jpg',
     'images/plan20.jpg',
 
+
   ];
 
   @override
@@ -55,7 +56,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Padding(
             padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-            child:Text("OUR CARS FOR BUY",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+            child:Text("OUR CARS FOR BUY",
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+            ),
           ),
           Container(
             padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),

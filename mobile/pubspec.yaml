@@ -70,6 +70,10 @@ flutter:
     - images/background.png
     - images/rougecar.png
     - images/cari.png
+    - images/v6.jpg
+    - images/v5.jpg
+    - images/v1.jpg
+    - images/plan21.jpg
     - assets/images/cari.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
