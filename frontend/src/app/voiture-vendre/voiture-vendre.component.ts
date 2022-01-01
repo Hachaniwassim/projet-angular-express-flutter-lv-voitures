@@ -30,8 +30,8 @@ export class VoitureVendreComponent implements OnInit {
         Nom_Voiture: [''],
         Nom_utilisateur: [''],
         email: [''],
-        Date_debut: [''],
-        Date_fin: [''],
+        Date_rdv: [''],
+        localisation: [''],
       });
     }
     ngOnInit(): void {

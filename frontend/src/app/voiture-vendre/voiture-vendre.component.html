@@ -93,7 +93,7 @@
               <div class="container" align="center">
                 <button routerLink="/voiture_vendre/{{ voiturevendre._id }}" class="btn btn-sm btn-outline-primary">Details</button>&nbsp; &nbsp;
                  <button type="button" title="Add To Fav"  id ="heart" class="btn btn-sm btn-outline-secondary"><i id="like"  ></i>Add to favorites</button>&nbsp;&nbsp;
-                 <button class="btn btn-sm btn-outline-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Rent Now</button>&nbsp;
+                 <button class="btn btn-sm btn-outline-primary" (click)="onEditRent(voiturevendre)" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Buy Now</button>&nbsp;
                 </div>
             </div>
           </div>
@@ -113,7 +113,7 @@ aria-hidden="true">
 <div class="modal-content">
 <div class="modal-header">
   <h5 class="modal-title" id="exampleModalLabel">
-    Rent a Car
+    Buy a Car
   </h5>
   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
@@ -140,12 +140,12 @@ aria-hidden="true">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Date du rendez vous</label>
       <input type="date" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image"
-        formControlName="Date_debut" aria-describedby="emailHelp" />
+        formControlName="Date_rdv" aria-describedby="emailHelp" />
     </div>
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Localisation</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="Date_fin"
+      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="localisation"
         aria-describedby="emailHelp" />
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit" (click)="reloadPage()">
