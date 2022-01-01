@@ -13,7 +13,7 @@ import * as _ from 'lodash';
 export class BuyrdvService {
   //private apiUrl ='http://localhost:3000/rents'; //json url
     // API BACKEND
-    private base_url='http://localhost:3000/api/';
+    private base_url='http://localhost:3000/api/buysrdvs';
   constructor(private http :HttpClient) { }
 
   //http opttion
