@@ -52,6 +52,8 @@ const routes : Routes =[
 
   { path: 'streetmap', loadChildren: () => import('./streetmap/streetmap.module').then(m => m.StreetmapModule),canActivate: [AuthGuard] },
 
+  { path: 'rdv-buy', loadChildren: () => import('./rdv-buy/rdv-buy.module').then(m => m.RdvBuyModule) },
+
  //notfound
 
  { path : "**", component : NotFoundComponent},
