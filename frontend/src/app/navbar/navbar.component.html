@@ -40,8 +40,8 @@
 <nav class="main-men" *ngIf="currentUser.name "> 
   <ul>
     <li>
-      <a href="http://justinfarrow.com">
-        <i class="fa fa-home fa-2x"></i>
+      <a href="#">
+        <i class="fa fa-user fa-2x"></i>
         <span class="nav-text">
           {{currentUser.name}}
         </span>
@@ -52,7 +52,7 @@
     </a>
     <a class="nav-link  " href="#" aria-expanded="false"></a></li>
       <li>
-          <a routerLink="/cars">
+          <a routerLink="/">
               <i class="fa fa-home fa-2x"></i>
               <span class="nav-text">
                   Dashboard
@@ -61,75 +61,75 @@
         
       </li>
       <li class="has-subnav">
-          <a href="#">
+          <a routerLink="/team">
               <i class="fa fa-laptop fa-2x"></i>
               <span class="nav-text">
-                  Stars Components
+                  Teams
               </span>
           </a>
           
       </li>
-      <li class="has-subnav">
-          <a href="#">
-             <i class="fa fa-list fa-2x"></i>
+      <li>
+          <a  routerLink="/agencyAdmin">
+             <i class="fa fa-users fa-2x"></i>
               <span class="nav-text">
-                  Forms
+                  Agency Admin
               </span>
           </a>
           
       </li>
-      <li class="has-subnav">
-          <a href="#">
+      <li >
+          <a routerLink="/rent-add">
              <i class="fa fa-folder-open fa-2x"></i>
               <span class="nav-text">
-                  Pages
+                  Cars for rent
               </span>
           </a>
          
       </li>
       <li>
-          <a href="#">
+          <a routerLink="/cars">
               <i class="fa fa-bar-chart-o fa-2x"></i>
               <span class="nav-text">
-                  Graphs and Statistics
+                  Cars for sales
               </span>
           </a>
       </li>
       <li>
-          <a href="#">
-              <i class="fa fa-font fa-2x"></i>
+          <a routerLink="/rdv-admin">
+              <i class="fa fa-list fa-2x"></i>
               <span class="nav-text">
-                 Quotes
+                 RDV-admin
               </span>
           </a>
       </li>
       <li>
-         <a href="#">
-             <i class="fa fa-table fa-2x"></i>
+         <a routerLink="#">
+             <i class="fa fa-cogs fa-2x"></i>
               <span class="nav-text">
-                  Tables
+                  Parametre
               </span>
           </a>
       </li>
       <li>
-         <a href="#">
+         <a routerLink="#">
               <i class="fa fa-map-marker fa-2x"></i>
               <span class="nav-text">
-                  Maps
+                  Street Map
               </span>
           </a>
       </li>
       <li>
-        <a href="#">
-             <i class="fa fa-info fa-2x"></i>
+        <a routerLink="#">
+             <i class="fa fa-bell fa-2x"></i>
               <span class="nav-text">
-                  Documentation
+                  Notification
               </span>
          </a> 
       </li>
   </ul>
 
-  <ul >
+  <!-- <ul >
       <li>
         <div  (click)="logout()">
                <i class="fa fa-power-off fa-2x"></i>
@@ -137,5 +137,5 @@
                  Logout
               </span></div>
       </li>  
-  </ul>
+  </ul> -->
 </nav>
