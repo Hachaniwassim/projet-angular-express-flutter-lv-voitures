@@ -33,14 +33,8 @@ class _MyrentPageState extends State<Myrentpage>  {
   }
   @override
   Widget build(BuildContext context) => Scaffold(
-    //drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: const Text('RentCars'),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
-      body: loading ? waitingScreen() : RentsList());
 
+      body: loading ? waitingScreen() : RentsList());
   Widget waitingScreen() {
     return Center(
       child: Column(
@@ -62,6 +56,7 @@ class _MyrentPageState extends State<Myrentpage>  {
           Rent rent = _rents[index];
           return Card(
             // color: Colors.pinkAccent,
+
             child: Container(
               padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
               child: Column(
@@ -74,7 +69,7 @@ class _MyrentPageState extends State<Myrentpage>  {
                     title: Text(
                       rent.marque,
                       style: const TextStyle(
-                        color: Colors.blue,
+                        color: Colors.redAccent,
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
                       ),

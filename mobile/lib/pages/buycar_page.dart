@@ -36,10 +36,7 @@ class _BuyPageState extends State<BuycarPage>  {
   @override
   Widget build(BuildContext context) => Scaffold(
     //drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: const Text('BuyCars'),
-        centerTitle: true,
-      ),
+
       body: loading ? waitingScreen() : BuysList());
 
   Widget BuysList() {
@@ -98,11 +95,11 @@ class _BuyPageState extends State<BuycarPage>  {
             ListTile(
               title: Text(
                 buy.marque,
-                style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
               ),
               subtitle: Text(buy.modele),
             ),
-            IconButton( icon:  const Icon(Icons.info_outline),
+            IconButton( icon:  const Icon(Icons.info),
               onPressed: ()  {Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) =>BuyDetail(buy: buy,)));},
 
