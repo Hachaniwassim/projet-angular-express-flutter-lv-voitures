@@ -1,4 +1,6 @@
 
+
+
     <header class="site-navbar site-navbar-target" role="banner">
       <div class="container">
         <div class="row align-items-center position-relative">
@@ -24,13 +26,116 @@
                 <li><a routerLink="/contact" class="nav-link"(click)="reloadPage()">Contact</a></li>
                 <li><a routerLink="/favorites" class="nav-link"(click)="reloadPage()">Favorites</a></li>
                 <li><a *ngIf="!currentUser.name " routerLink="/auth/login" class="nav-link"(click)="reloadPage()">Login</a></li>
-                <a class="nav-link  " href="#" aria-expanded="false">{{currentUser.name}}</a>
+                
                     
-                <div *ngIf="currentUser.name "><li>
+                 <!-- <div *ngIf="currentUser.name "><li>
                   <div  (click)="logout()"><i class="bi bi-box-arrow-left"></i> Logout</div>
-                </li></div>     
+                </li></div>       -->
               </ul>
             </nav>
           </div>
         </div>
       </div>
+    </header>
+<nav class="main-men" *ngIf="currentUser.name "> 
+  <ul>
+    <li>
+      <a href="http://justinfarrow.com">
+        <i class="fa fa-home fa-2x"></i>
+        <span class="nav-text">
+          {{currentUser.name}}
+        </span>
+        <div  (click)="logout()">
+          <i class="fa fa-power-off fa-2x"></i>
+         <span class="nav-text">
+         </span></div>
+    </a>
+    <a class="nav-link  " href="#" aria-expanded="false"></a></li>
+      <li>
+          <a routerLink="/cars">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">
+                  Dashboard
+              </span>
+          </a>
+        
+      </li>
+      <li class="has-subnav">
+          <a href="#">
+              <i class="fa fa-laptop fa-2x"></i>
+              <span class="nav-text">
+                  Stars Components
+              </span>
+          </a>
+          
+      </li>
+      <li class="has-subnav">
+          <a href="#">
+             <i class="fa fa-list fa-2x"></i>
+              <span class="nav-text">
+                  Forms
+              </span>
+          </a>
+          
+      </li>
+      <li class="has-subnav">
+          <a href="#">
+             <i class="fa fa-folder-open fa-2x"></i>
+              <span class="nav-text">
+                  Pages
+              </span>
+          </a>
+         
+      </li>
+      <li>
+          <a href="#">
+              <i class="fa fa-bar-chart-o fa-2x"></i>
+              <span class="nav-text">
+                  Graphs and Statistics
+              </span>
+          </a>
+      </li>
+      <li>
+          <a href="#">
+              <i class="fa fa-font fa-2x"></i>
+              <span class="nav-text">
+                 Quotes
+              </span>
+          </a>
+      </li>
+      <li>
+         <a href="#">
+             <i class="fa fa-table fa-2x"></i>
+              <span class="nav-text">
+                  Tables
+              </span>
+          </a>
+      </li>
+      <li>
+         <a href="#">
+              <i class="fa fa-map-marker fa-2x"></i>
+              <span class="nav-text">
+                  Maps
+              </span>
+          </a>
+      </li>
+      <li>
+        <a href="#">
+             <i class="fa fa-info fa-2x"></i>
+              <span class="nav-text">
+                  Documentation
+              </span>
+         </a> 
+      </li>
+  </ul>
+
+  <ul >
+      <li>
+        <div  (click)="logout()">
+               <i class="fa fa-power-off fa-2x"></i>
+              <span class="nav-text">
+                 Logout
+              </span></div>
+      </li>  
+  </ul>
+</nav>
