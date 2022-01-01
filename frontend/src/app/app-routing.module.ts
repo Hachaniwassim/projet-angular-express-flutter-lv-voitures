@@ -49,6 +49,8 @@ const routes : Routes =[
 
   { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
 
+  { path: 'streetmap', loadChildren: () => import('./streetmap/streetmap.module').then(m => m.StreetmapModule) },
+
  //notfound
 
  { path : "**", component : NotFoundComponent},
