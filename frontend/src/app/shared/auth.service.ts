@@ -17,7 +17,7 @@ import { User } from 'src/app/user.model';
 export class AuthService {
   API_URL: string = 'http://localhost:3000/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  public isLoggedIn:boolean = false;
+  //public isLoggedIn:boolean = false;
   currentUser: any = null;
   constructor(
     private httpClient: HttpClient,
@@ -47,7 +47,11 @@ export class AuthService {
         })
       })
   }
-  
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '') ;
+    return (user !== null ) ? true : false;
+  }
+
 
   getUserProfile(id: string): Observable<any> {
     return this.httpClient.get(`${this.API_URL}/auth/profile/${id}`, { headers: this.headers }).pipe(

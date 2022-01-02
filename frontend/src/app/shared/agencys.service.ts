@@ -84,7 +84,7 @@ all():Observable<Agency>{
    location : new FormControl('',[ Validators.required]),
   date_creation: new FormControl('',Validators.required),
   description : new FormControl('',Validators.required),
- // image : new FormControl('',Validators.required),
+ image : new FormControl('',Validators.required),
 });
 
 // inialisation formulaire 
@@ -95,6 +95,7 @@ initializeFormGroup() {
     location:'',
     owner :'',
     date_creation:'' == "" ? "" : this.datePipe.transform(this.Agency.date_creation, 'yyyy-MM-dd'),
+    image :''
 
   });
 }

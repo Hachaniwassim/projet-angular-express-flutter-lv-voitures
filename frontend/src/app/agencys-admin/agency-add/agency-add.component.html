@@ -26,10 +26,10 @@
              <mat-error *ngIf="agencyService.form.controls['description'].errors?.required">this field is mandatory.</mat-error>
           </mat-form-field>
           
-       <!----<mat-form-field style="margin-Left:30px;"> 
-            <input formControlName="city" matInput placeholder="image">
+       <mat-form-field style="margin-Left:30px;"> 
+            <input formControlName="image" matInput placeholder="image">
             <mat-error *ngIf="agencyService.form.controls['image'].errors?.required">This field is mandatory.</mat-error>
-          </mat-form-field> -->
+          </mat-form-field> 
            <mat-form-field style="margin-Left:30px;">                                                                                                         
             <input formControlName="date_creation" matInput [matDatepicker]="picker" placeholder="Date Creation" style="margin-Left:30px;">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

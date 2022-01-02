@@ -1,4 +1,5 @@
-<div class="container">
+
+<div class="container" align="center">
     <br><br><br><br><br><br>
     <h1></h1>
     <div class="search-div">
@@ -19,7 +20,7 @@
         <mat-error *ngIf="httpDataService.form.controls['title'].errors?.required">this field is mandatory.
         </mat-error>
       </mat-form-field>
-      <mat-form-field style="margin-left: 30px;">
+      <mat-form-field style="margin-left: 40px;">
         <input formControlName="description" matInput placeholder="description">
         <mat-error *ngIf="httpDataService.form.controls['description'].errors?.required">this field is mandatory.</mat-error>
         <mat-error *ngIf="httpDataService.form.controls['image'].errors?.minlength">Minimum 8 charactors needed.
@@ -28,8 +29,6 @@
       <mat-form-field style="margin-left: 30px;">
         <input formControlName="image" matInput placeholder="image">
         <mat-error *ngIf="httpDataService.form.controls['image'].errors?.required">This field is mandatory.</mat-error>
-        <mat-error *ngIf="httpDataService.form.controls['image'].errors?.minlength">Minimum 8 charactors needed.
-        </mat-error>
       </mat-form-field>
       <mat-form-field style="margin-left: 30px;">
         <input formControlName="Kilometrage" matInput placeholder="Kilometrage">
@@ -56,20 +55,20 @@
           <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element._id}} </mat-cell>
         </ng-container>-->
         <ng-container matColumnDef="title"  >
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="margin-left: 10px;"> Title </mat-header-cell>
           <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.title}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="description">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Description </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="margin-left: 70px;" >Description </mat-header-cell>
+          <mat-cell *matCellDef="let element"style="margin-left: 30px;"> {{element.description}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="image">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Image </mat-header-cell>
-          <mat-cell *matCellDef="let element"> <img  class="images" src={{element.image}}/> </mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="margin-left: 50px;"> Image </mat-header-cell>
+          <mat-cell *matCellDef="let element"style="margin-left: 30px;"> <img  class="images" src={{element.image}}/> </mat-cell>
         </ng-container>
         <ng-container matColumnDef="Kilometrage">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Kilometrage </mat-header-cell>
-          <mat-cell *matCellDef="let element">{{element.Kilometrage}}</mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="margin-left: 30px;"> Kilometrage </mat-header-cell>
+          <mat-cell *matCellDef="let element" style="margin-left: 100px;">{{element.Kilometrage}}</mat-cell>
         </ng-container>
         
         <ng-container matColumnDef="price">
