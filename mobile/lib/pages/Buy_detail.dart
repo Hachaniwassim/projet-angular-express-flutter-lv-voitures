@@ -80,6 +80,119 @@ class BuyDetail extends StatelessWidget {
                     color: Color(0xFFB4B8B9))),
           ),
         ),
+           Padding(
+                padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                child: FlatButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            shape: const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                            title: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  "Buy our Car",
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(212, 202, 104, 1)),
+                                ),
+                                IconButton(
+                                  icon: const Icon(Icons.close),
+                                  onPressed: () => Navigator.pop(context),
+                                )
+                              ],
+                            ),
+                            content: Center(
+                              child: Column(
+                                children: [
+                                  Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 10),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50)),
+                                            hintText: 'Enter Car Name'),
+                                        keyboardType: TextInputType.text,
+                                      )),
+                                  Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 10),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50)),
+                                            hintText: 'Enter your name'),
+                                        keyboardType: TextInputType.text,
+                                      )),
+                                  Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 10),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50)),
+                                            hintText: 'Enter your email'),
+                                        keyboardType: TextInputType.emailAddress,
+                                      )),
+                                  Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 10),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50)),
+                                            hintText: 'Enter your localisation'),
+                                        keyboardType: TextInputType.text
+                                      )),
+                                  const Divider(
+                                    height: 2,
+                                    thickness: 2,
+                                    endIndent: 0,
+                                    color: Colors.grey,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            actions: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 5, 5),
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary:
+                                        const Color.fromRGBO(212, 202, 104, 1),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: const Text("Add"),
+                                ),
+                              )
+                            ],
+                          );
+                        });
+                  },
+                  child: const Text(
+                    "Buy Now",
+                    
+                    style: TextStyle(
+                        color: Color.fromRGBO(800, 202, 400, 1),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25),
+                  ),
+                )),
       ]),
     );
   }
