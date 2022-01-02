@@ -21,32 +21,45 @@
               <div class="col-md-6">
                 <span class="text-primary">WELCOME OUR RENTALCAR AGENCY</span><br><br>
                 <h2 class="mb-4">Please Sign Up</h2>
+                <div *ngIf="registerForm.dirty && registerFormn.invalid" class="alert alert-danger alert-dismissible fade show"
+    role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
                 <div class="container">
                   <main class="form-signin" style="margin-top: 100px;">
                     <form [formGroup]="registerForm" (ngSubmit)="signupUser()">
                       <div class="form-floating">
                         <input type="text" formControlName="name" class="form-control" id="floatingName"
-                          placeholder="Name">
+                          placeholder="Name"
+                          [class.is-invalid]="registerForm.dirty && registerForm.controls.name.invalid"
+                          [class.is-valid]="registerForm.dirty && registerForm.controls.name.valid">
                         <label for="floatingName">Name</label>
                       </div>
                       <div class="form-floating" style="margin-top: 15px;">
                         <input type="email" formControlName="email" class="form-control" id="floatingInput"
-                          placeholder="name@example.com">
+                          placeholder="name@example.com"
+                          [class.is-invalid]="registerForm.dirty && registerForm.controls.email.invalid"
+        [class.is-valid]="registerForm.dirty && registerForm.controls.email.valid">
                         <label for="floatingInput">Email address</label>
                       </div>
                       <div class="form-floating" style="margin-top: 15px;">
                         <input type="password" formControlName="password" class="form-control" id="floatingPassword"
-                          placeholder="Password">
+                          placeholder="Password"
+                          placeholder="Password" [class.is-invalid]="registerForm.dirty && registerForm.controls.password.invalid"
+        [class.is-valid]="registerForm.dirty && registerForm.controls.password.valid">
                         <label for="floatingPassword">Password</label>
                       </div>
                       <div class="form-floating" style="margin-top: 15px;">
                         <input type="password" formControlName="confirm_password" class="form-control"
-                          id="floatingConfirmPassword" placeholder="Confirm password">
+                          id="floatingConfirmPassword" placeholder="Confirm password"
+                          [class.is-invalid]="registerForm.dirty && registerForm.controls.confirm_password.invalid"
+        [class.is-valid]="registerForm.dirty && registerForm.controls.confirm_password.valid">
                         <label for="floatingConfirmPassword">Confirm password</label>
                       </div>
                       <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit"
                         style="margin-top: 15px;">Sign up</button>
                       <p class="mt-5 mb-3">Already have an account? <a routerLink="/auth/login">Login here!</a></p>
+                      <p>Form Status: {{ registerForm.status }}</p>
                       <p class="mt-5 mb-3 text-muted">&copy; RENTALCAR - 2021</p>
                     </form>
                   </main>

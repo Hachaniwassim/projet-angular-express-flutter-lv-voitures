@@ -23,15 +23,23 @@
           <h2 class="mb-4">Please Sign In</h2>
        <div class="container">
 <main style="margin-top:100px;">
+  <div *ngIf="loginForm.dirty && loginForm.invalid" class="alert alert-danger alert-dismissible fade show"
+    role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
     <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
   <div class="form-floating">
         <input type="email" formControlName="email" class="form-control" id="floatingInput"
-        placeholder="name@example.com">
+        placeholder="name@example.com" 
+        [class.is-invalid]="loginForm.dirty && loginForm.controls.email.invalid"
+        [class.is-valid]="loginForm.dirty && loginForm.controls.email.valid">
         <label for="floatingInput">Email address </label>
       </div>
       <div class="form-floating" style="margin-top: 15px;">
         <input type="password" formControlName="password" class="form-control" id="floatingPassword"
-        placeholder="Password">
+        placeholder="Password" placeholder="Password" 
+        [class.is-invalid]="loginForm.dirty && loginForm.controls.password.invalid"
+        [class.is-valid]="loginForm.dirty && loginForm.controls.password.valid">
         <label for="floatingPassword">Password</label>
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit" style="margin-top: 15px;">Sign in</button>
