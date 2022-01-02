@@ -189,7 +189,7 @@ class RentDetail extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: const Text("Rent",
+                                  child: const Text("Rent ",
                                   style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22),
