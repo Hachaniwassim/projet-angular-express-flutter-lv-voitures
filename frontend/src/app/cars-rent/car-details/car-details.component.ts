@@ -47,5 +47,10 @@ export class CarDetailsComponent implements OnInit {
   public addTofav():void {
     this.favService.add(this.voiture?.id);  
     this.notificationService.success('! Add successfully');}
+    reloadPage() {
+      setTimeout(()=>{
+          window.location.reload();
+        }, 1000);  
+    }
 
 }

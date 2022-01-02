@@ -39,6 +39,13 @@ export class FeedbackDetailsComponent implements OnInit {
       this.client=this.list;
       console.log(this.client);
     })
-   }
+
+  }
+  reloadPage() {
+    setTimeout(()=>{
+        window.location.reload();
+      }, 1000);  
+  }
+  
 
 }
