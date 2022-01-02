@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { RdvBuyComponent } from './rdv-buy.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 const routes: Routes = [{ path: '', component: RdvBuyComponent }];
 
@@ -15,7 +16,8 @@ const routes: Routes = [{ path: '', component: RdvBuyComponent }];
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatSlideToggleModule
   
   ],
   exports: [
@@ -24,6 +26,7 @@ const routes: Routes = [{ path: '', component: RdvBuyComponent }];
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSlideToggleModule
   
   ]
 })

@@ -25,7 +25,7 @@ export class TeamListComponent implements OnInit {
 
 
   datasource = new MatTableDataSource(this.team)
-  displayedColumns: string[] = ['name', 'mail', 'city', 'phone', 'actions'];
+  displayedColumns: string[] = ['name', 'mail','city', 'phone', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort, {}) sort!: MatSort;
 

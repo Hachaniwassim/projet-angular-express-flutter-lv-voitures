@@ -1,7 +1,12 @@
+
+ 
+    <div class="ftco-blocks-cover-1" >
+      <div class="ftco-cover-1 overlay " style="background-image: url('assets/images/hero_1.jpg')">
+      <br><br><br><br><br><br>
 <div class="container">
   <br><br><br><br><br><br>
-  <h1></h1>
   <div class="search-div">
+    
     <mat-form-field class="search-form-field" floatLabel="never">
       <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
@@ -9,28 +14,29 @@
       </button>
     </mat-form-field>
   </div>
+  <br>
   <mat-spinner style="margin-left: 560px; width:100px;" *ngIf="showspinner" color="primary"></mat-spinner>
   <div class="mat-elevation-z8 " *ngIf="!showspinner">
     <mat-table [dataSource]="datasource" matSort>
       <ng-container matColumnDef="Nom_Voiture">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> <h6> Nom de la Voiture</h6> </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nom de la Voiture </mat-header-cell>
         <mat-cell *matCellDef="let element" style="border-spacing: 25px;"> {{element.Nom_Voiture}} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="Nom_utilisateur">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> <h6> Nom d'utilisateur</h6> </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nom d'utilisateur </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.Nom_utilisateur}} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="email">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> <h6> Email </h6></mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="margin-left: 10px;"> Email</mat-header-cell>
+        <mat-cell *matCellDef="let element"> <a href="mailto:{{element.email}}">{{element.email}} </a></mat-cell>
       </ng-container>
       <ng-container matColumnDef="Date_rdv">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> <h6> Date du rendez-vous </h6></mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.Date_rdv}}</mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date du rendez-vous</mat-header-cell>
+        <mat-cell *matCellDef="let element" style="margin-left: 30px;">{{element.Date_rdv}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="localisation">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> <h6> localisation </h6></mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>localisation</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.localisation}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="actions">
@@ -39,6 +45,8 @@
           <button mat-icon-button color="warn" (click)="onDelete(row._id)">
             <mat-icon>delete_outline</mat-icon>
           </button>
+         &nbsp;&nbsp;
+          <mat-slide-toggle ></mat-slide-toggle>
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="loading">

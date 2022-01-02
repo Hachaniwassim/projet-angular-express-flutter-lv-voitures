@@ -26,7 +26,7 @@ export class AgencyListComponent implements OnInit {
 
 
   datasource = new MatTableDataSource(this.agency)
-  displayedColumns: string[] = ['owner', 'location', 'date_creation', 'description','actions'];
+  displayedColumns: string[] = ['owner', 'location', 'date_creation','image', 'description','actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort,{}) sort!: MatSort;
 
