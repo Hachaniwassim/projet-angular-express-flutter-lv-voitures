@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 
 import { AuthService } from "src/app/shared/auth.service";
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     public authService: AuthService,
-    public router: Router
+    public router: Router, private notification:NotificationService
   ) {
     this.loginForm= this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   loginUser() {
-    this.authService.login(this.loginForm.value)
+    this.authService.login(this.loginForm.value);
+    this.notification.success(':: logged successfully  !');
   }
 
   reloadPage() {

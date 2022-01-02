@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { AuthService } from "src/app/shared/auth.service";
 import { MailService } from 'src/app/shared/mail.service';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     public authService: AuthService,
-    public router: Router , public http :MailService
+    public router: Router , public http :MailService , private notification :NotificationService
   ) {
     this.registerForm = this.formBuilder.group({
       name: [''],
@@ -43,6 +44,7 @@ export class RegisterComponent implements OnInit {
         
         this.registerForm.reset();
         this.router.navigate(['/auth/login']);
+        this.notification.success(':: Registred successfully ');
 
       /*  this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
           data => {
