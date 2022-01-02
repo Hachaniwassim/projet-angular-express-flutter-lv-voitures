@@ -3,6 +3,7 @@ import 'package:mobile/pages/Acceuil.dart';
 import 'package:mobile/pages/agency_page.dart';
 import 'package:mobile/pages/buycar_page.dart';
 import 'package:mobile/pages/contact.dart';
+import 'package:mobile/pages/feeds.dart';
 import 'package:mobile/pages/rentcars.dart';
 import 'package:mobile/pages/services.dart';
 import 'package:mobile/pages/team_page.dart';
@@ -99,7 +100,12 @@ class NavigationDrawerWidget extends StatelessWidget {
                       'Feedback',
                       style: TextStyle(color: Colors.white),
                     ),
-                    onTap: () => {},
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Feeds()),
+                      )
+                    },
                   ),
                   ListTile(
                     leading: const Icon(
@@ -158,48 +164,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
             ),
-      const ListTile(
-        leading: CircleAvatar(
-            radius: 10,
-            backgroundColor: Colors.white24,
-            child: Icon(
-              Icons.alternate_email_sharp,
 
-              color: Colors.white,
-            )),
-        title: Text(
-          'Rentalcaragency@ret.com',
-          style: TextStyle(color: Colors.white),
-        ),
-        onTap: null,
-      ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                    child:
-                    Text(
-                      "made with",
-                      style: TextStyle(color: Colors.white, fontSize: 10),
-                    )),
-                Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                    child:
-                    Icon(
-                      Icons.favorite,
-                      color: Colors.white,
-                      size: 10,
-                    )),
-                Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                    child:
-                    Text(
-                      "By RentalCar ",
-                      style: TextStyle(color: Colors.white, fontSize: 10),
-                    )),
-              ],
-            )
+
           ],
         ),
       ),
