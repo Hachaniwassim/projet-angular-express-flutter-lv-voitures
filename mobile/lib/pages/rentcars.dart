@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/model/cars_rent.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
+import 'rent_detail.dart';
 class Myrentpage extends StatefulWidget {
   @override
   State<Myrentpage> createState() => _MyrentPageState();
@@ -35,7 +35,28 @@ class _MyrentPageState extends State<Myrentpage>  {
   Widget build(BuildContext context) => Scaffold(
 
       body: loading ? waitingScreen() : RentsList());
-  Widget waitingScreen() {
+
+  Widget RentsList() {
+    return GridView.builder(
+        gridDelegate:
+        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemCount: _rents.length,
+        itemBuilder: (context, index) {
+         Rent rent= _rents[index];
+          return  Expanded(child: Container(
+
+            margin: const EdgeInsets.all(2.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                cardBuild(rent)
+              ],
+            ),
+
+          ));
+        });
+  }
+    Widget waitingScreen() {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -47,66 +68,43 @@ class _MyrentPageState extends State<Myrentpage>  {
       ),
     );
   }
-  Widget RentsList() {
-    return GridView.builder(
-        gridDelegate:
-        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemCount: _rents.length,
-        itemBuilder: (context, index) {
-          Rent rent = _rents[index];
-          return Card(
-            // color: Colors.pinkAccent,
+  Widget cardBuild(Rent rent) {
+    return  Card(
 
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                children: <Widget>[
-                  Expanded(child: Image.network(rent.image)),
-                  const Divider(color: Colors.grey),
-                  ListTile(
-                    title: Text(
-                      rent.marque,
-                      style: const TextStyle(
-                        color: Colors.redAccent,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                    subtitle: Text(
-                      "price: \$${rent.price.toString()}£",
-                      style: const TextStyle(color: Colors.grey, fontSize: 11),
-                    ),
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              backgroundColor: Colors.white,
-
-                              title: Text(
-                                "${rent.marque}\n"
-                                    "modele : ${rent.modele}\n"
-                                    "Puissance : ${rent.puissance}\n"
-                                    "Kilometrage : ${rent.Kilometrage} \n"
-                                //"Description :\n"
-                                // " ${rent.description}",
-                                ,style: const TextStyle(
-                                  fontSize: 18, color: Colors.grey),
-                              ),
-
-                              content: Image.network(rent.image),
-
-                            );
-                          });
-                    },
-                  ),
-                ],
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0))),
+      child: InkWell(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch, // add this
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(8.0),
+                topRight: Radius.circular(8.0),
               ),
+              child: Image.asset(rent.image,
+                  // width: 300,
+                  height: 80,
+                  fit: BoxFit.fill),
             ),
-          );
-        });
+            ListTile(
+              title: Text(
+                rent.marque,
+                style: const TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(rent.modele),
+            ),
+            IconButton( icon:  const Icon(Icons.info),
+              onPressed: ()  {Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) =>RentDetail(rent: rent,)));},
+
+            )
+          ],
+        ),
+      ),
+
+    );
   }
+
 }
