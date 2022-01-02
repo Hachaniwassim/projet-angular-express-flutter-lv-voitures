@@ -90,6 +90,28 @@ class NavigationDrawerWidget extends StatelessWidget {
                     )
                     },
                   ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.chat,
+                      color: Colors.white
+                    ),
+                    title: const Text(
+                      'Feedback',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {},
+                  ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.filter_7 ,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Blog',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {},
+                  ),
                   const Divider(color: Colors.white70),
                   ListTile(
                     leading: const Icon(
@@ -136,6 +158,21 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
             ),
+      const ListTile(
+        leading: CircleAvatar(
+            radius: 10,
+            backgroundColor: Colors.white24,
+            child: Icon(
+              Icons.alternate_email_sharp,
+
+              color: Colors.white,
+            )),
+        title: Text(
+          'Rentalcaragency@ret.com',
+          style: TextStyle(color: Colors.white),
+        ),
+        onTap: null,
+      ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [

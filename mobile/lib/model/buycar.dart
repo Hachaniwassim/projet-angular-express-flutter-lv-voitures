@@ -8,8 +8,7 @@ class Buy {
   final String image;
   final String Kilometrage;
   final String puissance;
-
-  final int price;
+  final num price;
 
   const Buy({
     required this.id,

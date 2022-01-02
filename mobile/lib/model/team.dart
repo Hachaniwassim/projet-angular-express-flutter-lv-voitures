@@ -5,6 +5,7 @@ class Team {
   final String name;
   final String mail;
   final String city;
+  final String phone;
   final String image;
 
 
@@ -13,7 +14,8 @@ class Team {
     required this.name,
     required this.mail,
     required this.city,
-    required this.image
+    required this.phone,
+    required this.image,
   });
 
 
@@ -24,6 +26,7 @@ class Team {
       image: json['image'],
       mail: json['mail'],
       city: json['city'],
+      phone:json['phone'],
     );
   }
 }

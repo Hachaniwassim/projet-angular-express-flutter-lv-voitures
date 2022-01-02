@@ -10,7 +10,7 @@ class Myrentpage extends StatefulWidget {
 }
 class _MyrentPageState extends State<Myrentpage>  {
 
-  final String url ='https://my-json-server.typicode.com/Hachaniwassim/rent-api/Rent';
+  final String url  ='http://localhost:3001/Rent';
   List<dynamic> _rents = [];
   bool loading = true;
   @override
@@ -28,35 +28,17 @@ class _MyrentPageState extends State<Myrentpage>  {
         loading = !loading;
       });
     } else {
-      throw Exception('Failed to load Rents Cars ...');
+      throw Exception('Failed to load rents');
     }
   }
+
   @override
   Widget build(BuildContext context) => Scaffold(
+    //drawer: NavigationDrawerWidget(),
 
-      body: loading ? waitingScreen() : RentsList());
+      body: loading ? waitingScreen() : rentsList());
 
-  Widget RentsList() {
-    return GridView.builder(
-        gridDelegate:
-        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemCount: _rents.length,
-        itemBuilder: (context, index) {
-         Rent rent= _rents[index];
-          return  Expanded(child: Container(
-
-            margin: const EdgeInsets.all(2.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                cardBuild(rent)
-              ],
-            ),
-
-          ));
-        });
-  }
-    Widget waitingScreen() {
+  Widget waitingScreen() {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -68,43 +50,64 @@ class _MyrentPageState extends State<Myrentpage>  {
       ),
     );
   }
-  Widget cardBuild(Rent rent) {
-    return  Card(
 
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0))),
-      child: InkWell(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch, // add this
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(8.0),
-                topRight: Radius.circular(8.0),
-              ),
-              child: Image.asset(rent.image,
-                  // width: 300,
-                  height: 80,
-                  fit: BoxFit.fill),
+  Widget rentsList() {
+    return ListView.builder(
+        itemCount: _rents.length,
+        itemBuilder: (context, index) {
+          Rent rent = _rents[index];
+          return Container(
+            margin: const EdgeInsets.all(2.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[cardBuild(rent)],
             ),
-            ListTile(
-              title: Text(
-                rent.marque,
-                style: const TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(rent.modele),
-            ),
-            IconButton( icon:  const Icon(Icons.info),
-              onPressed: ()  {Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) =>RentDetail(rent: rent,)));},
-
-            )
-          ],
-        ),
-      ),
-
-    );
+          );
+        });
   }
 
+  Widget cardBuild(Rent rent) {
+    return Card(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0))),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          ListTile(
+            leading: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+              child: Image.asset(rent.image,
+                  width: 100, height: 150, fit: BoxFit.fill),
+            ),
+            title: Text(
+              rent.marque,
+              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text("${rent.puissance}\n"),
+            trailing: Text(
+              "${rent.price}£/Day",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+            ),
+          ),
+          ButtonTheme(
+            // make buttons use the appropriate styles for cards
+              child: ButtonBar(children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => RentDetail(
+                          rent: rent,
+                        )));
+                  },
+                  child: const Text(
+                    "Show more",
+                    style: TextStyle(color: Color.fromRGBO(239, 106, 106, 1.0)),
+                  ),
+                )
+              ]))
+        ],
+      ),
+    );
+  }
 }

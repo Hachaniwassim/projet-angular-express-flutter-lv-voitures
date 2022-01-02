@@ -12,7 +12,7 @@ class BuycarPage extends StatefulWidget {
 }
 class _BuyPageState extends State<BuycarPage>  {
 
-  final String url ='https://my-json-server.typicode.com/abirtarchoun/public-buys-api/Buy';
+  final String url ='http://localhost:3001/Buy';
   List<dynamic> _buys = [];
   bool loading = true;
   @override
@@ -88,9 +88,7 @@ class _BuyPageState extends State<BuycarPage>  {
                 topRight: Radius.circular(8.0),
               ),
               child: Image.asset(buy.image,
-                  // width: 300,
-                  height: 80,
-                  fit: BoxFit.fill),
+                  width: 100, height: 100, fit: BoxFit.fill),
             ),
             ListTile(
               title: Text(
@@ -98,16 +96,24 @@ class _BuyPageState extends State<BuycarPage>  {
                 style: const TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
               ),
               subtitle: Text(buy.modele),
-            ),
-            IconButton( icon:  const Icon(Icons.info),
-              onPressed: ()  {Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) =>BuyDetail(buy: buy,)));},
-
-            )
-          ],
-        ),
-      ),
-
-    );
+            ),  ButtonTheme(
+    // make buttons use the appropriate styles for cards
+    child: ButtonBar(children: <Widget>[
+    FlatButton(
+    onPressed: () {
+    Navigator.of(context).push(MaterialPageRoute(
+    builder: (context) => BuyDetail(
+    buy: buy,
+    )));
+    },
+    child: const Text(
+    "Show More",
+    style: TextStyle(color: Color.fromRGBO(241, 82, 82, 1.0)),
+    ),
+    )
+    ]))
+    ],
+    ),
+    ));
   }
 }

@@ -13,8 +13,8 @@ class AgencyPage extends StatefulWidget {
 }
 class _AgencyPageState extends State<AgencyPage>  {
 
-  //final String url="http://localhost:3000/api/agencys";
-  final String url ='https://my-json-server.typicode.com/abirtarchoun/public-buys-api/Agency';
+  final String url="http://localhost:3001/Agency";
+  //final String url ='https://my-json-server.typicode.com/abirtarchoun/public-buys-api/Agency';
   List<dynamic> _agencys = [];
   bool loading = true;
   @override
@@ -42,26 +42,22 @@ class _AgencyPageState extends State<AgencyPage>  {
 
       body: loading ? waitingScreen() : AgencysList());
 
-  Widget AgencysList() {
-    return GridView.builder(
-        gridDelegate:
-        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemCount: _agencys.length,
-        itemBuilder: (context, index) {
-          Agency agency= _agencys[index];
-          return  Expanded(child: Container(
+  Widget AgencysList()
+  {
+  return ListView.builder(
+  itemCount: _agencys.length,
+  itemBuilder: (context, index) {
+  Agency agency= _agencys[index];
+  return Container(
+  margin: const EdgeInsets.all(2.0),
+  child: Column(
+  mainAxisAlignment: MainAxisAlignment.start,
+  children: <Widget>[cardBuild(agency)],
+  ),
+  );
+  });
+}
 
-            margin: const EdgeInsets.all(2.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                cardBuild(agency)
-              ],
-            ),
-
-          ));
-        });
-  }
 
   Widget waitingScreen() {
     return Center(
@@ -76,32 +72,29 @@ class _AgencyPageState extends State<AgencyPage>  {
     );
   }
   Widget cardBuild(Agency agency) {
-    return  Card(
-
+    return Card(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0))),
-      child: InkWell(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch, // add this
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(8.0),
-                topRight: Radius.circular(8.0),
-              ),
-              child: Image.asset(agency.image,
-                  // width: 300,
-                  height: 80,
-                  fit: BoxFit.fill),
-            ),
-            ListTile(
-              title: Text(
-                agency.owner,
-                style: const TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(agency.location),
-            ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+          ListTile(
+          leading: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+    child: Image.asset(agency.image,
+    width: 100, height: 180, fit: BoxFit.fill),
+    ),
+    title: Text(
+    agency.owner,
+    style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+    ),
+    subtitle: Text("${agency.location} "),
+    trailing: Text(
+    "${agency.datecreation} ",
+    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+    ),
+    ),
             IconButton( icon:  const Icon(Icons.info),
               onPressed: ()  {Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) =>AgencyDetail(agency: agency,)));},
@@ -109,7 +102,6 @@ class _AgencyPageState extends State<AgencyPage>  {
             )
           ],
         ),
-      ),
 
     );
   }

@@ -156,10 +156,13 @@ class _SignInPageState extends State<SignInPage> {
                                 side: const BorderSide(
                                     color: Colors.redAccent))),
                       ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/home');
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                      }
+                     // onPressed: () {
+                       // Navigator.pushNamed(context, '/home');
 
-                      },
+                     // },
                     ),
                   ),
                 ],
