@@ -9,7 +9,7 @@ class Rent {
   final String Kilometrage;
   final String puissance;
 
-  final int price;
+  final double price;
 
   const Rent({
     required this.id,

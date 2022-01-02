@@ -12,8 +12,8 @@ class Services extends StatelessWidget {
         centerTitle: true,
         flexibleSpace: ClipRRect(
           borderRadius: const BorderRadius.only(
-              bottomRight: Radius.circular(60),
-              bottomLeft: Radius.circular(60)),
+              bottomRight: Radius.circular(50),
+              bottomLeft: Radius.circular(50)),
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -27,14 +27,14 @@ class Services extends StatelessWidget {
         title: const Text(
           "Services",
           style: TextStyle(
-              color: Color.fromRGBO(246, 25, 55, 1.0),
+              color: Color.fromRGBO(253, 38, 66, 1.0),
               fontWeight: FontWeight.bold,
               fontSize: 35),
         ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(60),
-              bottomLeft: Radius.circular(60)),
+              bottomRight: Radius.circular(70),
+              bottomLeft: Radius.circular(70)),
         ),
       ),
     ),
@@ -54,12 +54,12 @@ class Services extends StatelessWidget {
                   ListTile(
                     leading: Icon(
                       Icons.directions_car,
-                      color: Color.fromRGBO(246, 25, 55, 1.0),
+                      color: Color.fromRGBO(248, 74, 99, 1.0),
                     ),
                     title: Text(
                       "Car Accessories",
                       style: TextStyle(
-                          color: Color.fromRGBO(246, 25, 55, 1.0),
+                          color: Color.fromRGBO(248, 74, 99, 1.0),
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
@@ -69,12 +69,12 @@ class Services extends StatelessWidget {
                   ListTile(
                     leading: Icon(
                       Icons.car_rental_outlined,
-                      color: Color.fromRGBO(240, 25, 55, 1.0),
+                      color: Color.fromRGBO(248, 74, 99, 1.0),
                     ),
                     title: Text(
                       "City Transfer",
                       style: TextStyle(
-                          color: Color.fromRGBO(240, 25, 55, 1.0),
+                          color: Color.fromRGBO(248, 74, 99, 1.0),
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
@@ -84,12 +84,12 @@ class Services extends StatelessWidget {
                   ListTile(
                     leading: Icon(
                       Icons.games,
-                      color: Color.fromRGBO(240, 25, 55, 1.0),
+                      color: Color.fromRGBO(248, 74, 99, 1.0),
                     ),
                     title: Text(
                       "Whole City Tour",
                       style: TextStyle(
-                          color: Color.fromRGBO(240, 25, 55, 1.0),
+                          color: Color.fromRGBO(248, 74, 99, 1.0),
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
@@ -99,12 +99,12 @@ class Services extends StatelessWidget {
                   ListTile(
                     leading: Icon(
                       Icons.bubble_chart,
-                      color: Color.fromRGBO(240, 25, 55, 1.0),
+                      color: Color.fromRGBO(248, 74, 99, 1.0),
                     ),
                     title: Text(
                       "Car Key",
                       style: TextStyle(
-                          color: Color.fromRGBO(240, 25, 55, 1.0),
+                          color: Color.fromRGBO(248, 74, 99, 1.0),
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
@@ -114,12 +114,12 @@ class Services extends StatelessWidget {
                   ListTile(
                     leading: Icon(
                       Icons.flight,
-                      color: Color.fromRGBO(240, 25, 55, 1.0),
+                      color: Color.fromRGBO(248, 74, 99, 1.0),
                     ),
                     title: Text(
                       "Airport Transfer",
                       style: TextStyle(
-                          color: Color.fromRGBO(240, 25, 55, 1.0),
+                          color: Color.fromRGBO(248, 74, 99, 1.0),
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),

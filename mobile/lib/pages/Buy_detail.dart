@@ -43,15 +43,7 @@ class BuyDetail extends StatelessWidget {
                   topRight: Radius.circular(8.0),
                 ), child :Image.asset(buy.image,
                 height: 150.0, width: 100.0, fit: BoxFit.contain)),
-        SizedBox(height: 20.0),
-        Center(
-          child: Text("${buy.modele}",
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromRGBO(243, 66, 66, 1.0))),
-        ),
+       const  SizedBox(height: 20.0),
         SizedBox(height: 10.0),
         Center(
           child: Text(buy.Kilometrage,
@@ -98,7 +90,7 @@ class BuyDetail extends StatelessWidget {
                                 const Text(
                                   "Buy our Car",
                                   style: TextStyle(
-                                      color: Color.fromRGBO(212, 202, 104, 1)),
+                                      color: Color.fromRGBO(1, 69, 24, 1.0),),
                                 ),
                                 IconButton(
                                   icon: const Icon(Icons.close),
@@ -171,8 +163,7 @@ class BuyDetail extends StatelessWidget {
                                 padding: const EdgeInsets.fromLTRB(0, 0, 5, 5),
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    primary:
-                                        const Color.fromRGBO(212, 202, 104, 1),
+                                    primary: const Color.fromRGBO(1, 69, 24, 1.0),
                                   ),
                                   onPressed: () {
                                     Navigator.of(context).pop();
@@ -193,7 +184,7 @@ class BuyDetail extends StatelessWidget {
                     "Buy Now",
                     
                     style: TextStyle(
-                        color: Color.fromRGBO(800, 202, 400, 1),
+                        color: Color.fromRGBO(1, 69, 24, 1.0),
                         fontWeight: FontWeight.bold,
                         fontSize: 25),
                   ),

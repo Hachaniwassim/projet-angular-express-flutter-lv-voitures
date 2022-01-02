@@ -36,39 +36,30 @@ class RentDetail extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: const Color.fromRGBO(243, 66, 66, 1.0))),
         ),
-        SizedBox(height: 15.0),
+        const SizedBox(height: 15.0),
        ClipRRect(
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10.0),
                   topRight: Radius.circular(8.0),
                 ), child :Image.asset(rent.image,
                 height: 150.0, width: 100.0, fit: BoxFit.contain)),
-        SizedBox(height: 20.0),
-        Center(
-          child: Text("${rent.modele}",
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromRGBO(243, 66, 66, 1.0))),
-        ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Center(
           child: Text(rent.Kilometrage,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
                   fontSize: 24.0)),
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Center(
           child: Text("${rent.puissance} ",
-              style: TextStyle(
+              style: const TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
                   fontSize: 24.0)),
         ),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         Center(
           child: Container(
             width: MediaQuery.of(context).size.width - 50.0,
@@ -98,7 +89,7 @@ class RentDetail extends StatelessWidget {
                                 const Text(
                                   "Rent our Car",
                                   style: TextStyle(
-                                      color: Color.fromRGBO(212, 202, 104, 1)),
+                                      color:  Color.fromRGBO(1, 69, 24, 1.0),),
                                 ),
                                 IconButton(
                                   icon: const Icon(Icons.close),
@@ -183,8 +174,7 @@ class RentDetail extends StatelessWidget {
                                 padding: const EdgeInsets.fromLTRB(0, 0, 5, 5),
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    primary:
-                                        const Color.fromRGBO(212, 202, 104, 1),
+                                    primary: const Color.fromRGBO(1, 69, 24, 1.0),
                                   ),
                                   onPressed: () {
                                     Navigator.of(context).pop();
