@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class BuyDetail extends StatelessWidget {
-  final buy;
+class RentDetail extends StatelessWidget {
+  final rent;
 
-  BuyDetail(
-      {required this.buy});
+  RentDetail(
+      {required this.rent});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class BuyDetail extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
-        title: const Text('Buy Car Details',
+        title: const Text('Rent Car Details',
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
@@ -29,7 +29,7 @@ class BuyDetail extends StatelessWidget {
         const SizedBox(height: 15.0),
          Padding(
           padding: EdgeInsets.only(left: 20.0),
-          child: Text(buy.marque,
+          child: Text(rent.marque,
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 42.0,
@@ -41,11 +41,11 @@ class BuyDetail extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10.0),
                   topRight: Radius.circular(8.0),
-                ), child :Image.asset(buy.image,
+                ), child :Image.asset(rent.image,
                 height: 150.0, width: 100.0, fit: BoxFit.contain)),
         SizedBox(height: 20.0),
         Center(
-          child: Text("${buy.modele}",
+          child: Text("${rent.modele}",
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 22.0,
@@ -54,7 +54,7 @@ class BuyDetail extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Center(
-          child: Text(buy.Kilometrage,
+          child: Text(rent.Kilometrage,
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
@@ -62,7 +62,7 @@ class BuyDetail extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Center(
-          child: Text("${buy.puissance} ",
+          child: Text("${rent.puissance} ",
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
@@ -72,7 +72,7 @@ class BuyDetail extends StatelessWidget {
         Center(
           child: Container(
             width: MediaQuery.of(context).size.width - 50.0,
-            child: Text(buy.description,
+            child: Text(rent.description,
                 textAlign: TextAlign.start,
                 style: TextStyle(
                     fontFamily: 'Varela',
@@ -96,7 +96,7 @@ class BuyDetail extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const Text(
-                                  "Buy our Car",
+                                  "Rent our Car",
                                   style: TextStyle(
                                       color: Color.fromRGBO(212, 202, 104, 1)),
                                 ),
@@ -154,8 +154,20 @@ class BuyDetail extends StatelessWidget {
                                             border: OutlineInputBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
-                                            hintText: 'Enter your localisation'),
-                                        keyboardType: TextInputType.text
+                                            hintText: 'Enter your start day '),
+                                        keyboardType: TextInputType.datetime
+                                      )),
+                                                                        Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 10),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50)),
+                                            hintText: 'Enter your finish day'),
+                                        keyboardType: TextInputType.datetime
                                       )),
                                   const Divider(
                                     height: 2,
@@ -177,7 +189,7 @@ class BuyDetail extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: const Text("Buy",
+                                  child: const Text("Rent",
                                   style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22),
@@ -190,7 +202,7 @@ class BuyDetail extends StatelessWidget {
                         });
                   },
                   child: const Text(
-                    "Buy Now",
+                    "Rent Now",
                     
                     style: TextStyle(
                         color: Color.fromRGBO(800, 202, 400, 1),
