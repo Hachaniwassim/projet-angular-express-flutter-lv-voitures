@@ -32,19 +32,19 @@ export class RegisterComponent implements OnInit {
   }
 
   signupUser() {
-    this.loading = true;
-    this.buttionText = "Submiting...";
+    /*this.loading = true;
+   this.buttionText = "Submiting...";
     let user = {
       name: this.registerForm.value,
       email: this.registerForm.value
-    }
+    }*/
     this.authService.signup(this.registerForm.value).subscribe(res => {
       if(res.status == 201) {
         
         this.registerForm.reset();
         this.router.navigate(['/auth/login']);
 
-        this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+      /*  this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
           data => {
             let res:any = data; 
             console.log(
@@ -62,12 +62,10 @@ export class RegisterComponent implements OnInit {
         );
         
       }
-    });
-
-   
-  }
+    });*/
 
   }
 
-
-
+  })
+  }
+  }

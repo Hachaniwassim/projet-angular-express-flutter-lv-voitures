@@ -22,7 +22,11 @@ export class TeamsDetailsComponent implements OnInit {
     city:"",
 
   }
-
+  reloadPage() {
+    setTimeout(()=>{
+        window.location.reload();
+      }, 1000);  
+  }
 
   constructor(private route: ActivatedRoute ,private TeamService : teamService) { }
 

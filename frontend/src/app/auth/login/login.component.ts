@@ -30,4 +30,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value)
   }
 
+  reloadPage() {
+    setTimeout(()=>{
+        window.location.reload();
+      }, 1000);  
+  }
+
 }

@@ -46,4 +46,10 @@ export class FavoritesRentComponent implements OnInit {
     this.notificationService.warn('!! Deleted successfully');
   }
 
+  reloadPage() {
+    setTimeout(()=>{
+        window.location.reload();
+      }, 1000);  
+  }
+
 }
