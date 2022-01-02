@@ -81,9 +81,36 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
-
+          const Padding(
+            padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+            child:Text("OUR CARS FOR RENT",
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+            height: 400,
+            child: ListView.builder(
+              itemCount: _buys.length,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context, index) {
+                Buy buy = _buys[index];
+                return Container(
+                  height: 250,
+                  width: 200,
+                  margin: const EdgeInsets.all(5.0),
+                  child: Column(
+                    children: [
+                      cardBuild(buy),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
         ],
-      ) 
+      )
+
     ));
   }
 
