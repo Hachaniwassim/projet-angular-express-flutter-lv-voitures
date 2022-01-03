@@ -49,8 +49,8 @@ this.getcars();
   this.rentService.getcars().subscribe(
     res => this.voituresList = res);
  }
-  public addTofav(id: string):void {
-    this.favService.add(id);
+  public addTofav(_id: string):void {
+    this.favService.add(_id);
     this.notificationService.success('! Add successfully');
 }
 
