@@ -29,7 +29,7 @@ class RentDetail extends StatelessWidget {
         const SizedBox(height: 15.0),
          Padding(
           padding: EdgeInsets.only(left: 20.0),
-          child: Text(rent.marque,
+          child: Text(rent.title,
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 42.0,
@@ -53,7 +53,7 @@ class RentDetail extends StatelessWidget {
         ),
         const SizedBox(height: 10.0),
         Center(
-          child: Text("${rent.puissance} ",
+          child: Text("${rent.price} ",
               style: const TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',

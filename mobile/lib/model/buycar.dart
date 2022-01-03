@@ -1,38 +1,43 @@
-import 'package:flutter/material.dart';
 
-class Buy {
-  final String id;
-  final String modele;
-  final String marque;
+//
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+Buy FILGHTSFOMJSON(String str) => Buy.fromJson(json.decode(str));
+
+String FLIGHTSTOJSON(Buy data) => json.encode(data.toJson());
+class Buy{
+  final String title;
   final String description;
   final String image;
   final String Kilometrage;
-  final String puissance;
-  final num price;
+  final String price;
+  
+
 
   const Buy({
-    required this.id,
-    required this.modele,
-    required this.marque,
+    required this.title,
     required this.description,
-    required this.Kilometrage,
     required this.image,
+    required this.Kilometrage,
     required this.price,
-    required this.puissance
   });
 
 
   factory Buy.fromJson(Map<String, dynamic> json) {
     return Buy(
-        id: json['id'],
-        marque: json['marque'],
-        modele: json['modele'],
+        title: json['title'],
         description: json['description'],
         image: json['image'],
-        puissance: json['puissance'],
         Kilometrage: json['Kilometrage'],
         price: json['price']
     );
   }
+      Map<String, dynamic> toJson() => {
+        "title": title,
+        "description": description,
+        "date_retour": image,
+        "prix": Kilometrage,
+        "photo":price,
+    };
 }
-

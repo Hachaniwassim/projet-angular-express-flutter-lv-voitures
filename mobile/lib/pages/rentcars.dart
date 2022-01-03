@@ -9,8 +9,9 @@ class Myrentpage extends StatefulWidget {
   State<Myrentpage> createState() => _MyrentPageState();
 }
 class _MyrentPageState extends State<Myrentpage>  {
+  //final String url  ='http://localhost:3001/Rent';
 
-  final String url  ='http://localhost:3001/Rent';
+  final String url  ='http://localhost:3000/api/voitures';
   List<dynamic> _rents = [];
   bool loading = true;
   @override
@@ -23,7 +24,7 @@ class _MyrentPageState extends State<Myrentpage>  {
     var response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       final parsedData = jsonDecode(response.body).cast<Map<String, dynamic>>();
-      _rents = parsedData.map<Rent>((json) => Rent.fromJson(json)).toList();
+      _rents = parsedData.map<Rent2>((json) => Rent2.fromJson(json)).toList();
       setState(() {
         loading = !loading;
       });
@@ -55,7 +56,7 @@ class _MyrentPageState extends State<Myrentpage>  {
     return ListView.builder(
         itemCount: _rents.length,
         itemBuilder: (context, index) {
-          Rent rent = _rents[index];
+          Rent2 rent = _rents[index];
           return Container(
             margin: const EdgeInsets.all(2.0),
             child: Column(
@@ -66,7 +67,7 @@ class _MyrentPageState extends State<Myrentpage>  {
         });
   }
 
-  Widget cardBuild(Rent rent) {
+  Widget cardBuild(Rent2 rent) {
     return Card(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0))),
@@ -81,10 +82,9 @@ class _MyrentPageState extends State<Myrentpage>  {
                   width: 100, height: 150, fit: BoxFit.fill),
             ),
             title: Text(
-              rent.marque,
+              rent.title,
               style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("${rent.puissance}\n"),
             trailing: Text(
               "${rent.price}£/Day",
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),

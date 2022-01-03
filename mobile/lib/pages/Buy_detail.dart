@@ -29,7 +29,7 @@ class BuyDetail extends StatelessWidget {
         const SizedBox(height: 15.0),
          Padding(
           padding: EdgeInsets.only(left: 20.0),
-          child: Text(buy.marque,
+          child: Text(buy.title,
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 42.0,
@@ -54,7 +54,7 @@ class BuyDetail extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Center(
-          child: Text("${buy.puissance} ",
+          child: Text("${buy.price} ",
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',

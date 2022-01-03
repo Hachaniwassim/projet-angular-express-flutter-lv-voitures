@@ -11,8 +11,9 @@ class BuycarPage extends StatefulWidget {
   _BuyPageState createState() => _BuyPageState();
 }
 class _BuyPageState extends State<BuycarPage>  {
+  //final String url ='http://localhost:3001/Buy';
 
-  final String url ='http://localhost:3001/Buy';
+  final String url ='http://localhost:3000/api/vvoitures';
   List<dynamic> _buys = [];
   bool loading = true;
   @override
@@ -92,10 +93,9 @@ class _BuyPageState extends State<BuycarPage>  {
             ),
             ListTile(
               title: Text(
-                buy.marque,
+                buy.title,
                 style: const TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(buy.modele),
             ),  ButtonTheme(
     // make buttons use the appropriate styles for cards
     child: ButtonBar(children: <Widget>[
