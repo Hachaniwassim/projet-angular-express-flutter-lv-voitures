@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:mobile/model/buycar.dart';
+import 'package:mobile/model/buycar2.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     var response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       final parsedData = jsonDecode(response.body).cast<Map<String, dynamic>>();
-      _buys = parsedData.map<Buy>((json) => Buy.fromJson(json)).toList();
+      _buys = parsedData.map<Buy2>((json) => Buy2.fromJson(json)).toList();
       setState(() {});
     } else {
       throw Exception('Failed to load rents');
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
               itemCount: _buys.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-               Buy buy = _buys[index];
+               Buy2 buy = _buys[index];
                 return Container(
                   height: 250,
                   width: 200,
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
               itemCount: _buys.length,
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
-                Buy buy = _buys[index];
+                Buy2 buy = _buys[index];
                 return Container(
                   height: 250,
                   width: 200,
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
     ));
   }
 
-  Widget cardBuild(Buy buy) {
+  Widget cardBuild(Buy2 buy) {
     return SingleChildScrollView(
       child: Card(
         shape: const RoundedRectangleBorder(

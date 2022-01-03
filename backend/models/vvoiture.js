@@ -8,4 +8,4 @@
       price: {type: String, required: true},
       });
       
-    module.exports = mongoose.model('Voiture', voitureSchema,'voitures');
+    module.exports = mongoose.model('Vvoiture', voitureSchema,'vvoitures');
